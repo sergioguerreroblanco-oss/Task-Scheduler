@@ -1,0 +1,13 @@
+<map id="Logger::log" name="Logger::log">
+<area shape="rect" id="Node000001" title="Core logging function that prints a message with explicit severity." alt="" coords="271,80,365,105"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="108,5,223,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,75,221,44,197,33,199,28,224,40,283,71"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="113,55,218,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="257,85,218,79,219,73,258,80"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="116,104,215,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,105,216,112,215,106,256,100"/>
+<area shape="rect" id="Node000006" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="112,153,219,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="282,114,224,143,197,156,195,151,222,138,279,109"/>
+<area shape="rect" id="Node000005" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="5,104,60,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="102,119,60,119,60,114,102,114"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Application entry point." alt="" coords="5,31,60,56"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="141,5,240,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,36,127,25,128,31,61,42"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98" title="Sets the minimum log level." alt="" coords="108,55,273,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="61,45,95,50,94,55,60,50"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="321,5,416,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,15,307,15,307,21,240,21"/>
+</map>
