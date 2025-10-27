@@ -1,0 +1,60 @@
+﻿name: Generate Documentation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y doxygen graphviz make \
+            texlive-latex-base texlive-fonts-recommended \
+            texlive-fonts-extra texlive-latex-extra
+
+      - name: Generate HTML & LaTeX
+        run: |
+          doxygen docs/Doxyfile
+
+      - name: Build PDF (manual LaTeX run)
+        run: |
+          if [ -d "docs/latex" ]; then
+            echo "Building PDF from LaTeX..."
+            cd docs/latex
+            sudo apt-get install -y texlive-lang-european texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended > /dev/null
+            pdflatex -interaction=nonstopmode refman.tex || true
+            pdflatex -interaction=nonstopmode refman.tex || true
+            if [ -f "refman.pdf" ]; then
+              echo "PDF built successfully."
+            else
+              echo "PDF build failed, showing LaTeX log:"
+              cat refman.log || true
+            fi
+            cd ../..
+          fi
+
+      - name: Upload documentation (HTML + PDF)
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: |
+            docs/html/
+            docs/latex/refman.pdf
+            
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs/html
