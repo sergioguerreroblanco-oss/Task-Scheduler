@@ -17,8 +17,9 @@ include(CTest)
 # Core library
 # -----------------------------------------------------------
 add_library(core STATIC
-    src/logger.cpp
-    
+    "src/logger.cpp"
+    "src/print_job.cpp"
+    "src/job_queue.cpp"
 )
 
 target_include_directories(core
@@ -53,7 +54,11 @@ if(BUILD_TESTING)
     set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
     FetchContent_MakeAvailable(googletest)
 
-    add_executable(tests tests/test_main.cpp)
+    add_executable(tests 
+        tests/test_main.cpp 
+        tests/test_jobs.cpp
+        tests/test_job_queue.cpp
+    )
     target_link_libraries(tests PRIVATE core gtest_main)
 
     include(GoogleTest)

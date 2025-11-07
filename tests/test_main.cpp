@@ -10,9 +10,9 @@
 
  *
  * The tests follow the GIVEN / WHEN / THEN documentation pattern:
- *  - GIVEN: 
- *  - WHEN:  
- *  - THEN:  
+ *  - GIVEN:
+ *  - WHEN:
+ *  - THEN:
  */
 
 /* Standard libraries */
@@ -21,17 +21,16 @@
 
 /* Project libraries */
 
-
 /*****************************************************************************/
 
 /* Tests */
 
 /**
- * @test 
- * @brief 
+ * @test
+ * @brief
  *
  * @details
- * GIVEN 
- * WHEN 
- * THEN 
+ * GIVEN
+ * WHEN
+ * THEN
  */
