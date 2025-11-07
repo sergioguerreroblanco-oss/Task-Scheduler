@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$db/d67/classLogger.html" title="Static thread&#45;safe console logger with configurable severity filtering." alt="" coords="5,5,72,31"/>
+<area shape="rect" id="Node000000" href="$d4/d75/classIJob.html" title="Abstract interface for jobs." alt="" coords="5,5,52,31"/>
+<area shape="rect" id="Node000001" href="$de/d95/classPrintJob.html" title=" " alt="" coords="100,5,172,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="66,15,100,15,100,21,66,21"/>
 </map>

@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "task_scheduler", "index.html", [
     [ "Task Scheduler", "index.html", "index" ],
+    [ "Test List", "d4/df6/test.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -62,7 +63,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"db/dd5/optional_8hpp.html#a7257d5d806a279ce215065f57fab1b00"
+"db/dd5/optional_8hpp.html#a21e05f8429dbfc7e03b20826a8021227"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

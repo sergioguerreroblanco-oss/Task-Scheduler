@@ -95,10 +95,6 @@ $(document).ready(function(){initNavTree('df/d0a/main_8cpp.html','../../'); init
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><br  />
-  
-<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
@@ -124,11 +120,9 @@ Functions</h2></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><br  />
- </p>
-<dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>&lt;2025-10-27&gt; </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.0.0</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.0.0 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="../../df/d0a/main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -157,37 +151,31 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   34</span>    <span class="comment">/* 1.                                  */</span></div>
 <div class="line"><span class="lineno">   35</span><span class="comment">    /**************************************************************************/</span></div>
 <div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   37</span><span class="comment">    /**************************************************************************/</span></div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">/* 2. Configure logger verbosity                                          */</span></div>
 <div class="line"><span class="lineno">   39</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   40</span>    <span class="comment">/* 2. Configure logger verbosity                                          */</span></div>
-<div class="line"><span class="lineno">   41</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   42</span>    </div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a>);</div>
-<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a>);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span><span class="comment">    /**************************************************************************/</span></div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">/* 3.                                               */</span></div>
 <div class="line"><span class="lineno">   45</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   46</span>    <span class="comment">/* 3.                                               */</span></div>
-<div class="line"><span class="lineno">   47</span><span class="comment">    /**************************************************************************/</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;Task Scheduler started successfully.&quot;</span>);</div>
 <div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;Task Scheduler started successfully.&quot;</span>);</div>
-<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   49</span><span class="comment">    /**************************************************************************/</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">/* 4.                                                        */</span></div>
 <div class="line"><span class="lineno">   51</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   52</span>    <span class="comment">/* 4.                                                        */</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
 <div class="line"><span class="lineno">   53</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="comment">/* 5.                                     */</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment">    /**************************************************************************/</span></div>
 <div class="line"><span class="lineno">   56</span> </div>
 <div class="line"><span class="lineno">   57</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">/* 5.                                     */</span></div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">/* 6. Exit cleanly                                                        */</span></div>
 <div class="line"><span class="lineno">   59</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   60</span>    </div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   64</span>    <span class="comment">/* 6. Exit cleanly                                                        */</span></div>
-<div class="line"><span class="lineno">   65</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   67</span>}</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 <div class="ttc" id="aclassLogger_html_a5a979e9c0f7e33c3663dcd69a0f62f98"><div class="ttname"><a href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a></div><div class="ttdeci">static void set_min_level(Level lvl)</div><div class="ttdoc">Sets the minimum log level.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00055">logger.cpp:55</a></div></div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a></div><div class="ttdeci">@ INFO</div></div>
 <div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
@@ -214,7 +202,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../df/d0a/main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Mon Oct 27 2025 12:16:50 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 7 2025 14:41:06 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

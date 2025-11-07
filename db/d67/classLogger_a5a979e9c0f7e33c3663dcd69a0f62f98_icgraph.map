@@ -1,5 +1,9 @@
 <map id="Logger::set_min_level" name="Logger::set_min_level">
-<area shape="rect" id="Node000001" title="Sets the minimum log level." alt="" coords="108,5,273,31"/>
-<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+<area shape="rect" id="Node000001" title="Sets the minimum log level." alt="" coords="211,55,376,80"/>
+<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="57,5,111,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,54,111,27,113,22,226,49"/>
+<area shape="rect" id="Node000003" href="$df/d3f/classJobQueueTest.html#a74af6a4347fa0f69ffaa20d3155a4408" title=" " alt="" coords="5,55,163,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,70,163,70,163,65,197,65"/>
+<area shape="rect" id="Node000004" href="$d7/d12/classPrintJobTest.html#aaa6a4d87e7f2b0dd4d6f27536a44be10" title=" " alt="" coords="11,104,157,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,86,139,107,138,101,225,81"/>
 </map>

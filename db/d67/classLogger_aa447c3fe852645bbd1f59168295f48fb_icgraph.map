@@ -1,13 +1,28 @@
 <map id="Logger::log" name="Logger::log">
-<area shape="rect" id="Node000001" title="Core logging function that prints a message with explicit severity." alt="" coords="271,80,365,105"/>
-<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="108,5,223,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,75,221,44,197,33,199,28,224,40,283,71"/>
-<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="113,55,218,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="257,85,218,79,219,73,258,80"/>
-<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="116,104,215,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,105,216,112,215,106,256,100"/>
-<area shape="rect" id="Node000006" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="112,153,219,179"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="282,114,224,143,197,156,195,151,222,138,279,109"/>
-<area shape="rect" id="Node000005" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="5,104,60,129"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="102,119,60,119,60,114,102,114"/>
+<area shape="rect" id="Node000001" title="Core logging function that prints a message with explicit severity." alt="" coords="488,80,583,105"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="325,5,440,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="498,75,439,44,414,33,416,28,441,40,501,71"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="330,55,435,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="474,85,435,79,436,73,475,80"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="333,104,432,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="475,105,433,112,432,106,474,100"/>
+<area shape="rect" id="Node000013" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="329,153,436,179"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="499,114,441,143,414,156,412,151,439,138,497,109"/>
+<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c" title="Clears all elements currently stored in the queue." alt="" coords="138,5,262,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="334,100,324,93,309,80,300,68,290,56,276,44,252,33,255,28,279,40,294,52,304,64,313,77,327,89,337,95"/>
+<area shape="rect" id="Node000006" href="$de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f" title=" " alt="" coords="135,55,265,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="321,103,247,83,249,78,323,98"/>
+<area shape="rect" id="Node000007" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="173,104,227,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="320,119,227,119,227,114,320,114"/>
+<area shape="rect" id="Node000008" href="$da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title=" " alt="" coords="142,153,258,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="323,135,249,156,247,151,321,130"/>
+<area shape="rect" id="Node000012" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="123,203,277,228"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="335,138,327,143,313,155,304,167,294,180,279,192,252,205,250,200,276,188,290,176,299,164,309,152,324,139,332,133"/>
+<area shape="rect" id="Node000009" href="$d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="5,104,75,129"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="144,152,74,130,76,125,146,147"/>
+<area shape="rect" id="Node000010" href="$d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="5,153,75,179"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="128,169,75,169,75,163,128,163"/>
+<area shape="rect" id="Node000011" href="$d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="5,203,75,228"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="146,185,76,207,74,202,144,180"/>
+<area shape="poly" id="edge12_Node000012_Node000011" title=" " alt="" coords="109,218,75,218,75,213,109,213"/>
 </map>
