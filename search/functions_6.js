@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['in_5fplace_0',['in_place',['../d1/dc1/namespacenonstd.html#a96e472c904d9595347fc5879b10e18b8',1,'nonstd::in_place(detail::in_place_type_tag&lt; T &gt;=detail::in_place_type_tag&lt; T &gt;())'],['../d1/dc1/namespacenonstd.html#ac1850ddd40883b56d7fe28c0ae5eb587',1,'nonstd::in_place(detail::in_place_index_tag&lt; K &gt;=detail::in_place_index_tag&lt; K &gt;())']]],
-  ['in_5fplace_5findex_1',['in_place_index',['../d1/dc1/namespacenonstd.html#a38c05903bf80bd5ecd208257f29cb2d2',1,'nonstd']]],
-  ['in_5fplace_5ftype_2',['in_place_type',['../d1/dc1/namespacenonstd.html#a2a59d6fa28e70ecc47a3bc1fa3fc567a',1,'nonstd']]],
-  ['info_3',['info',['../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657',1,'Logger']]],
-  ['is_5fclosed_4',['is_closed',['../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c',1,'JobQueue']]],
-  ['isrunning_5',['isRunning',['../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66',1,'ThreadPool']]]
+  ['jobqueue_0',['jobqueue',['../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2',1,'JobQueue::JobQueue()=default'],['../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9',1,'JobQueue::JobQueue(const JobQueue &amp;)=delete'],['../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448',1,'JobQueue::JobQueue(JobQueue &amp;&amp;)=delete']]],
+  ['join_1',['join',['../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1',1,'ThreadPool']]]
 ];

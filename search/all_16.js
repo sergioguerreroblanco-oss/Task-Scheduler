@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['value_0',['value',['../da/df9/structnonstd_1_1optional__lite_1_1std11_1_1integral__constant.html#af30f78d06f0741936743107f8bfd48f3a8488bb3e7ab7da2835f2f7e1b7664bbf',1,'nonstd::optional_lite::std11::integral_constant::value'],['../d7/d5e/structnonstd_1_1optional__lite_1_1detail_1_1alignment__of.html#aafce7a6759517238475a9e159eab3423a1fdc28ddae9f28eb7858a977f8084720',1,'nonstd::optional_lite::detail::alignment_of::value'],['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#af7bccad98692f18f6ce74966c0e67a68',1,'nonstd::optional_lite::detail::storage_t::value() const optional_ref_qual'],['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#aede16ee733e93f502169c8725bd2b854',1,'nonstd::optional_lite::detail::storage_t::value() optional_ref_qual'],['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a96d1fee2fad2bb1ae239064125d8ed78',1,'nonstd::optional_lite::optional::value() const optional_ref_qual'],['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#ac7a4bfd161fc1facbbe0ba18908f7178',1,'nonstd::optional_lite::optional::value() optional_ref_qual']]],
-  ['value_5for_1',['value_or',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a4dd8f8fc1549fee78bd80f1977b504dd',1,'nonstd::optional_lite::optional']]],
-  ['value_5for_5feval_2',['value_or_eval',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#ac18580fff74c5c53608197609c6e06a4',1,'nonstd::optional_lite::optional']]],
-  ['value_5fptr_3',['value_ptr',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a232bf1c2ba2d729cc613ed060eac11e4',1,'nonstd::optional_lite::detail::storage_t::value_ptr() const'],['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a530d227843304940c16f654d4b72bd06',1,'nonstd::optional_lite::detail::storage_t::value_ptr()']]],
-  ['value_5ftype_4',['value_type',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a0224db97b7cc3fb687679165fc71b70e',1,'nonstd::optional_lite::detail::storage_t::value_type'],['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#afb67abeaaad640aa25b81f8564e53476',1,'nonstd::optional_lite::optional::value_type']]],
-  ['visual_20studio_202022_5',['Windows (Visual Studio 2022)',['../index.html#autotoc_md11',1,'']]],
-  ['visual_20studio_20code_20powershell_6',['Windows (Visual Studio Code / PowerShell)',['../index.html#autotoc_md40',1,'']]]
+  ['warn_0',['warn',['../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52',1,'Logger::warn(const std::string &amp;msg)'],['../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa32bd8a1db2275458673903bdb84cb277',1,'Logger::WARN']]],
+  ['wasexecuted_1',['wasexecuted',['../db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec',1,'FakeJob::wasExecuted()'],['../de/d34/classFakeThrowingJob.html#aed2b793070d9b1643ffa9f55e134752b',1,'FakeThrowingJob::wasExecuted()']]],
+  ['windows_2',['Running Tests (Windows)',['../index.html#autotoc_md24',1,'']]],
+  ['windows_20powershell_3',['Windows (PowerShell)',['../index.html#autotoc_md38',1,'']]],
+  ['windows_20powershell_20cli_4',['Windows (PowerShell/CLI)',['../index.html#autotoc_md13',1,'']]],
+  ['windows_20visual_20studio_202022_5',['Windows (Visual Studio 2022)',['../index.html#autotoc_md11',1,'']]],
+  ['windows_20visual_20studio_20code_20powershell_6',['Windows (Visual Studio Code / PowerShell)',['../index.html#autotoc_md44',1,'']]],
+  ['wsl_20debian_20ubuntu_20based_7',['wsl debian ubuntu based',['../index.html#autotoc_md15',1,'Linux / WSL (Debian/Ubuntu based)'],['../index.html#autotoc_md39',1,'Linux / WSL (Debian/Ubuntu based)'],['../index.html#autotoc_md45',1,'Linux / WSL (Debian/Ubuntu based)']]]
 ];

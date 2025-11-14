@@ -155,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A thread-safe FIFO queue for job dispatching. </p>
 <p>This queue is intended for use in thread pools and other concurrent job-processing systems. It provides deterministic shutdown semantics and safe synchronization between multiple producers and consumers.</p>
-<h3><a class="anchor" id="autotoc_md47"></a>
+<h3><a class="anchor" id="autotoc_md52"></a>
 Queue states:</h3>
 <ul>
 <li><b>Open</b>: accepts new jobs; <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code> may block.</li>
@@ -297,13 +297,13 @@ Queue states:</h3>
 <p>Removes all jobs currently stored in the queue.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Does not affect the open/closed state of the queue.</dd></dl>
 <p>Primarily used during manual cleanup or tests.</p>
-<h3><a class="anchor" id="autotoc_md55"></a>
+<h3><a class="anchor" id="autotoc_md60"></a>
 Important:</h3>
 <ul>
 <li>This does <em>not</em> wake consumers.</li>
 <li>Does <em>not</em> affect the closed state.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md56"></a>
+<h3><a class="anchor" id="autotoc_md61"></a>
 Concurrency:</h3>
 <ul>
 <li>Exclusive lock for the duration of the clear. </li>
@@ -365,19 +365,21 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph" id="ada/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph">
-<area shape="rect" title="Returns whether the queue is currently empty." alt="" coords="455,104,589,129"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="240,104,407,129"/>
-<area shape="poly" title=" " alt="" coords="441,119,407,119,407,114,441,114"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
-<area shape="poly" title=" " alt="" coords="291,99,245,71,191,44,133,27,134,22,193,40,247,66,294,94"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,55,133,80"/>
-<area shape="poly" title=" " alt="" coords="251,104,133,77,134,72,252,98"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,104,133,129"/>
-<area shape="poly" title=" " alt="" coords="226,119,134,119,134,114,226,114"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
-<area shape="poly" title=" " alt="" coords="252,135,134,161,133,156,251,130"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
-<area shape="poly" title=" " alt="" coords="293,139,247,166,193,192,156,205,154,200,191,188,244,162,290,134"/>
+<area shape="rect" title="Returns whether the queue is currently empty." alt="" coords="455,129,589,155"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="240,129,407,155"/>
+<area shape="poly" title=" " alt="" coords="441,145,407,145,407,139,441,139"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="71,5,126,31"/>
+<area shape="poly" title=" " alt="" coords="298,122,251,82,191,44,158,32,126,25,127,19,159,27,193,40,254,78,301,118"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,55,133,80"/>
+<area shape="poly" title=" " alt="" coords="279,127,191,94,133,78,134,73,193,89,281,122"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,104,133,129"/>
+<area shape="poly" title=" " alt="" coords="226,134,133,123,134,118,227,128"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,153,133,179"/>
+<area shape="poly" title=" " alt="" coords="227,155,134,165,133,160,226,150"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#aef4b678649e30b7b87f09ae78c9ab8ef" title="threads must survive exceptions thrown by jobs." alt="" coords="64,203,133,228"/>
+<area shape="poly" title=" " alt="" coords="278,162,193,193,134,209,133,204,191,187,276,157"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,252,192,277"/>
+<area shape="poly" title=" " alt="" coords="300,166,253,205,193,242,160,254,158,249,191,237,250,200,297,162"/>
 </map>
 </div>
 
@@ -507,7 +509,7 @@ Here is the caller graph for this function:</div>
 <li><code>nullptr</code> if the queue is closed AND empty.</li>
 </ul>
 </dd></dl>
-<h3><a class="anchor" id="autotoc_md52"></a>
+<h3><a class="anchor" id="autotoc_md57"></a>
 Blocking behaviour:</h3>
 <ul>
 <li>If the queue is empty and <em>not closed</em>, the caller blocks.</li>
@@ -517,12 +519,12 @@ Blocking behaviour:</h3>
 </ol>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md53"></a>
+<h3><a class="anchor" id="autotoc_md58"></a>
 Shutdown semantics:</h3>
 <ul>
 <li>If <code>closed == true</code> and there are no jobs remaining, this function returns <code>nullptr</code> immediately.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md54"></a>
+<h3><a class="anchor" id="autotoc_md59"></a>
 Concurrency:</h3>
 <ul>
 <li><code>buffer</code> is protected by <code>mtx</code>.</li>
@@ -605,14 +607,14 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<h3><a class="anchor" id="autotoc_md50"></a>
+<h3><a class="anchor" id="autotoc_md55"></a>
 Concurrency:</h3>
 <ul>
 <li>Acquires <code>mtx</code> exclusively.</li>
 <li>Appends the job to the FIFO buffer.</li>
 <li>Calls <code>notify_one()</code> to wake exactly one thread blocked in <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md51"></a>
+<h3><a class="anchor" id="autotoc_md56"></a>
 Notes:</h3>
 <ul>
 <li>There is no rejection of jobs after shutdown; the thread pool is responsible for preventing enqueue after close. </li>
@@ -629,23 +631,25 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph" id="ada/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph">
-<area shape="rect" title="Pushes a job into the queue." alt="" coords="348,153,471,179"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="132,79,291,104"/>
-<area shape="poly" title=" " alt="" coords="371,150,299,118,264,107,266,102,301,113,373,145"/>
-<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="177,128,246,153"/>
-<area shape="poly" title=" " alt="" coords="334,159,246,148,247,142,335,154"/>
-<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="177,177,246,203"/>
-<area shape="poly" title=" " alt="" coords="334,178,247,189,246,183,334,172"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="123,227,300,252"/>
-<area shape="poly" title=" " alt="" coords="372,187,301,218,265,229,264,224,299,213,370,182"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="5,5,75,31"/>
-<area shape="poly" title=" " alt="" coords="167,76,70,33,72,28,169,71"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="5,55,75,80"/>
-<area shape="poly" title=" " alt="" coords="118,81,75,75,75,69,118,76"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="5,104,75,129"/>
-<area shape="poly" title=" " alt="" coords="118,108,75,114,74,109,118,103"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="5,153,75,179"/>
-<area shape="poly" title=" " alt="" coords="142,111,124,118,89,136,60,155,57,151,86,132,122,113,140,106"/>
+<area shape="rect" title="Pushes a job into the queue." alt="" coords="348,179,471,204"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="132,104,291,129"/>
+<area shape="poly" title=" " alt="" coords="371,175,299,143,264,132,266,127,301,138,373,170"/>
+<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="177,153,246,179"/>
+<area shape="poly" title=" " alt="" coords="334,184,246,173,247,168,335,179"/>
+<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="177,203,246,228"/>
+<area shape="poly" title=" " alt="" coords="334,203,247,214,246,209,334,198"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="123,252,300,277"/>
+<area shape="poly" title=" " alt="" coords="372,212,301,243,265,254,264,249,299,238,370,207"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="13,5,67,31"/>
+<area shape="poly" title=" " alt="" coords="175,99,62,33,65,29,178,95"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="5,55,75,80"/>
+<area shape="poly" title=" " alt="" coords="153,103,74,80,76,75,154,98"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="5,104,75,129"/>
+<area shape="poly" title=" " alt="" coords="118,119,75,119,75,114,118,114"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="5,153,75,179"/>
+<area shape="poly" title=" " alt="" coords="150,136,123,143,76,158,74,153,122,138,149,130"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#aef4b678649e30b7b87f09ae78c9ab8ef" title="threads must survive exceptions thrown by jobs." alt="" coords="5,203,75,228"/>
+<area shape="poly" title=" " alt="" coords="136,137,124,143,109,154,99,165,77,192,61,205,57,201,73,188,95,162,105,150,121,138,134,132"/>
 </map>
 </div>
 
@@ -671,14 +675,14 @@ Here is the caller graph for this function:</div>
 <li>Consumers eventually return <code>nullptr</code> from <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</li>
 <li>The queue will not block again.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md57"></a>
+<h3><a class="anchor" id="autotoc_md62"></a>
 Effects:</h3>
 <ul>
 <li>Sets <code>closed = true</code>.</li>
 <li>Wakes <em>all</em> threads waiting on <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</li>
 <li>Allows <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code> to return <code>nullptr</code> when the queue becomes empty.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md58"></a>
+<h3><a class="anchor" id="autotoc_md63"></a>
 Concurrency:</h3>
 <ul>
 <li>Fully thread-safe; multiple calls are safe (idempotent). </li>
@@ -708,25 +712,28 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph" id="ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph">
-<area shape="rect" title="Closes the queue and wakes all waiting threads." alt="" coords="483,215,637,240"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,129,421,155"/>
-<area shape="poly" title=" " alt="" coords="512,212,371,157,372,152,514,207"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,215,435,240"/>
-<area shape="poly" title=" " alt="" coords="469,230,435,230,435,225,469,225"/>
-<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="303,264,372,289"/>
-<area shape="poly" title=" " alt="" coords="489,246,373,272,372,266,488,240"/>
+<area shape="rect" title="Closes the queue and wakes all waiting threads." alt="" coords="483,252,637,277"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,153,421,179"/>
+<area shape="poly" title=" " alt="" coords="517,249,366,181,368,176,519,244"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,252,435,277"/>
+<area shape="poly" title=" " alt="" coords="469,267,435,267,435,262,469,262"/>
+<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="303,301,372,327"/>
+<area shape="poly" title=" " alt="" coords="489,283,373,309,372,304,488,278"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="71,252,126,277"/>
+<area shape="poly" title=" " alt="" coords="304,188,252,215,193,242,127,261,125,256,191,237,250,210,301,183"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
-<area shape="poly" title=" " alt="" coords="309,123,257,83,191,44,133,26,135,21,193,40,260,78,313,118"/>
+<area shape="poly" title=" " alt="" coords="314,145,261,94,227,67,191,44,162,33,133,26,134,20,164,28,193,40,230,63,265,90,318,141"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,55,133,80"/>
-<area shape="poly" title=" " alt="" coords="289,127,191,94,133,78,134,73,193,89,291,122"/>
+<area shape="poly" title=" " alt="" coords="302,149,250,121,191,94,133,77,134,72,193,89,253,116,304,144"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,104,133,129"/>
-<area shape="poly" title=" " alt="" coords="239,134,133,123,134,118,240,129"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
-<area shape="poly" title=" " alt="" coords="240,154,134,165,133,160,239,149"/>
+<area shape="poly" title=" " alt="" coords="261,153,133,126,134,121,262,148"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#aef4b678649e30b7b87f09ae78c9ab8ef" title="threads must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
+<area shape="poly" title=" " alt="" coords="240,169,134,169,134,163,240,163"/>
 <area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
-<area shape="poly" title=" " alt="" coords="287,162,193,193,149,205,147,200,191,187,286,157"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,252,133,277"/>
-<area shape="poly" title=" " alt="" coords="242,245,134,262,133,257,242,240"/>
+<area shape="poly" title=" " alt="" coords="263,184,162,205,160,200,262,179"/>
+<area shape="poly" title=" " alt="" coords="226,267,126,267,126,262,226,262"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,301,133,327"/>
+<area shape="poly" title=" " alt="" coords="262,283,134,310,133,304,261,278"/>
 </map>
 </div>
 
@@ -773,7 +780,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d3d/classJobQueue.html">JobQueue</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 13:33:47 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['has_5fvalue_0',['has_value',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a8d36137e398950bfbd63e02d2dac7789',1,'nonstd::optional_lite::optional']]],
-  ['hasfinished_1',['hasFinished',['../de/d3d/classFakeSlowJob.html#a8d61f9f5f180abb07a113c623a63c84d',1,'FakeSlowJob']]],
-  ['hasstarted_2',['hasStarted',['../de/d3d/classFakeSlowJob.html#aa78279ce1b59c880d21d4a7b3daef253',1,'FakeSlowJob']]]
+  ['info_0',['info',['../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657',1,'Logger']]],
+  ['is_5fclosed_1',['is_closed',['../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c',1,'JobQueue']]],
+  ['isrunning_2',['isRunning',['../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66',1,'ThreadPool']]]
 ];

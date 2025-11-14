@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5f_0',['_',['../d0/d00/structnonstd_1_1optional__lite_1_1detail_1_1struct__t.html#acbc325ac6387c0977510e637073b4e70',1,'nonstd::optional_lite::detail::struct_t']]]
+  ['oldbuf_0',['oldBuf',['../d7/d12/classPrintJobTest.html#aa42687dc19bd781fc8cc8200ba53eeea',1,'PrintJobTest']]],
+  ['oss_1',['oss',['../d7/d12/classPrintJobTest.html#a0d20ba5038b1578db99f82c4005083c3',1,'PrintJobTest']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['generate_20documentation_0',['Generate documentation',['../index.html#autotoc_md33',1,'']]],
-  ['guarantees_3a_1',['Concurrency guarantees:',['../db/d9d/job__queue_8h.html#autotoc_md45',1,'']]]
+  ['hasfinished_0',['hasFinished',['../de/d3d/classFakeSlowJob.html#a8d61f9f5f180abb07a113c623a63c84d',1,'FakeSlowJob']]],
+  ['hasstarted_1',['hasStarted',['../de/d3d/classFakeSlowJob.html#aa78279ce1b59c880d21d4a7b3daef253',1,'FakeSlowJob']]],
+  ['highlights_2',['🌟 Project Highlights',['../index.html#autotoc_md4',1,'']]]
 ];

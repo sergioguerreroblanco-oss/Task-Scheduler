@@ -1,6 +1,6 @@
 <map id="Logger::set_min_level" name="Logger::set_min_level">
 <area shape="rect" id="Node000001" title="Sets the minimum log level." alt="" coords="221,80,387,105"/>
-<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="62,5,117,31"/>
+<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="62,5,117,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="259,77,172,45,116,28,118,22,174,39,261,72"/>
 <area shape="rect" id="Node000003" href="$df/d3f/classJobQueueTest.html#a74af6a4347fa0f69ffaa20d3155a4408" title=" " alt="" coords="11,55,168,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,84,168,79,169,74,208,79"/>

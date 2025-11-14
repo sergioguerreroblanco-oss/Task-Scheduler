@@ -1,17 +1,20 @@
 <map id="Logger::warn" name="Logger::warn">
-<area shape="rect" id="Node000001" title="Logs a warning message (WARN level)." alt="" coords="465,129,572,155"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="245,104,412,129"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="451,136,412,130,412,125,452,130"/>
-<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="240,153,417,179"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="452,153,418,157,417,152,452,148"/>
-<area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="295,99,247,71,191,44,133,27,134,22,193,40,249,66,298,94"/>
-<area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,55,133,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="255,104,133,77,134,72,256,98"/>
-<area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,104,133,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="232,119,134,119,134,114,232,114"/>
-<area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="256,135,134,161,133,156,255,130"/>
-<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="254,137,241,143,227,155,218,167,209,180,193,192,165,205,163,200,191,188,205,176,214,164,223,151,239,138,251,132"/>
+<area shape="rect" id="Node000001" title="Logs a warning message (WARN level)." alt="" coords="465,104,572,129"/>
+<area shape="rect" id="Node000002" href="$df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="71,5,126,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="454,103,417,94,126,26,127,21,418,89,455,98"/>
+<area shape="rect" id="Node000003" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="245,104,412,129"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="452,119,412,119,412,114,452,114"/>
+<area shape="rect" id="Node000009" href="$dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="240,153,417,179"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="457,135,379,156,378,151,455,130"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="295,99,247,71,191,44,126,26,127,20,193,40,249,66,298,94"/>
+<area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,55,133,80"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="255,104,133,77,134,72,256,98"/>
+<area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,104,133,129"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="232,119,134,119,134,114,232,114"/>
+<area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,153,133,179"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="256,135,134,161,133,156,255,130"/>
+<area shape="rect" id="Node000007" href="$df/df8/test__thread__pool_8cpp.html#aef4b678649e30b7b87f09ae78c9ab8ef" title="threads must survive exceptions thrown by jobs." alt="" coords="64,203,133,228"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="254,137,241,143,227,155,218,167,209,180,193,192,164,205,134,213,133,208,162,200,191,188,205,176,214,164,223,151,239,138,251,132"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,252,192,277"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="248,138,242,143,231,154,224,166,219,191,213,216,205,229,194,241,172,254,170,250,190,237,201,226,208,214,213,189,219,164,227,151,238,139,245,134"/>
 </map>

@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['effects_3a_0',['Effects:',['../da/d3d/classJobQueue.html#autotoc_md57',1,'']]],
-  ['empty_1',['empty',['../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c',1,'JobQueue']]],
-  ['enqueue_2',['enqueue',['../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2',1,'ThreadPool']]],
-  ['environment_3',['Docker (fully reproducible environment)',['../index.html#autotoc_md16',1,'']]],
-  ['error_4',['error',['../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fabb1ca97ec761fc37101737ba0aa2e7c5',1,'Logger::ERROR'],['../db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90',1,'Logger::error(const std::string &amp;msg)']]],
-  ['example_20output_3a_5',['Example output:',['../index.html#autotoc_md22',1,'']]],
-  ['example_3a_6',['Usage example:',['../db/d67/classLogger.html#autotoc_md49',1,'']]],
-  ['execute_7',['execute',['../d4/d75/classIJob.html#a0f23d9f62f40e2a2c25dfd0262f15492',1,'IJob::execute()'],['../de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f',1,'PrintJob::execute()'],['../db/ded/classFakeJob.html#afe0d9a30a7b18c8caa6896f79fbf8569',1,'FakeJob::execute()'],['../de/d3d/classFakeSlowJob.html#abaefc0cb768df7a2a55d80b85799d8da',1,'FakeSlowJob::execute()'],['../de/d34/classFakeThrowingJob.html#a696e09e2ddb2bf4ed53e98624cbbe780',1,'FakeThrowingJob::execute()']]]
+  ['fake_5fjob_2eh_0',['fake_job.h',['../d1/d99/fake__job_8h.html',1,'']]],
+  ['fake_5fslow_5fjob_2eh_1',['fake_slow_job.h',['../dc/dd8/fake__slow__job_8h.html',1,'']]],
+  ['fake_5fthrowing_5fjob_2eh_2',['fake_throwing_job.h',['../d5/d71/fake__throwing__job_8h.html',1,'']]],
+  ['fakejob_3',['fakejob',['../db/ded/classFakeJob.html',1,'FakeJob'],['../db/ded/classFakeJob.html#ad3e55d2cd8cf8df0e3300febffa5977f',1,'FakeJob::FakeJob()']]],
+  ['fakeslowjob_4',['fakeslowjob',['../de/d3d/classFakeSlowJob.html',1,'FakeSlowJob'],['../de/d3d/classFakeSlowJob.html#acc5477137d5b0074e8e40d954a24a876',1,'FakeSlowJob::FakeSlowJob()']]],
+  ['fakethrowingjob_5',['fakethrowingjob',['../de/d34/classFakeThrowingJob.html',1,'FakeThrowingJob'],['../de/d34/classFakeThrowingJob.html#af341c54dcd245b35342e0e0628aa2e1e',1,'FakeThrowingJob::FakeThrowingJob()']]],
+  ['features_6',['✨ Core Features',['../index.html#autotoc_md2',1,'']]],
+  ['features_3a_7',['Features:',['../db/d67/classLogger.html#autotoc_md53',1,'']]],
+  ['format_8',['🎨 Code Style (clang-format)',['../index.html#autotoc_md41',1,'']]],
+  ['fully_20reproducible_20environment_9',['Docker (fully reproducible environment)',['../index.html#autotoc_md16',1,'']]]
 ];

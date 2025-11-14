@@ -95,19 +95,73 @@ $(document).ready(function(){initNavTree('df/d0a/main_8cpp.html','../../'); init
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>&quot;</code><br />
+
+<p>Entry point for the Task Scheduler demo application.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d99/fake__job_8h_source.html">../tests/fake_job.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dd8/fake__slow__job_8h_source.html">../tests/fake_slow_job.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d8c/logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d07/print__job_8h_source.html">print_job.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/dec/thread__pool_8h_source.html">thread_pool.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/dce/main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" alt=""/></div>
 <map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="27,5,133,31"/>
-<area shape="rect" href="../../d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="43,79,117,104"/>
-<area shape="poly" title=" " alt="" coords="83,31,83,65,77,65,77,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,69,177"/>
-<area shape="poly" title=" " alt="" coords="75,106,53,142,49,139,71,103"/>
-<area shape="rect" title=" " alt="" coords="93,152,152,177"/>
-<area shape="poly" title=" " alt="" coords="89,103,111,139,107,142,85,106"/>
+<area shape="rect" title="Entry point for the Task Scheduler demo application." alt="" coords="405,5,510,31"/>
+<area shape="rect" title=" " alt="" coords="5,86,72,111"/>
+<area shape="poly" title=" " alt="" coords="405,26,259,45,172,60,85,81,77,84,75,79,83,76,170,55,258,39,404,21"/>
+<area shape="rect" title=" " alt="" coords="96,86,176,111"/>
+<area shape="poly" title=" " alt="" coords="405,32,304,52,189,81,180,84,178,79,187,76,303,47,404,26"/>
+<area shape="rect" title=" " alt="" coords="239,167,297,192"/>
+<area shape="poly" title=" " alt="" coords="425,33,382,52,339,81,306,118,282,155,278,153,302,115,336,77,379,48,423,28"/>
+<area shape="rect" title=" " alt="" coords="687,167,751,192"/>
+<area shape="poly" title=" " alt="" coords="505,28,562,47,620,76,668,115,704,154,700,158,664,119,617,81,560,52,503,33"/>
+<area shape="rect" title=" " alt="" coords="599,167,662,192"/>
+<area shape="poly" title=" " alt="" coords="503,28,548,47,570,60,590,77,604,94,614,114,628,152,623,153,610,116,599,97,586,81,567,65,546,51,501,33"/>
+<area shape="rect" href="../../d1/d99/fake__job_8h.html" title=" " alt="" coords="861,86,998,111"/>
+<area shape="poly" title=" " alt="" coords="511,23,663,45,850,76,871,80,870,86,849,81,662,50,510,29"/>
+<area shape="rect" href="../../dc/dd8/fake__slow__job_8h.html" title=" " alt="" coords="702,79,837,119"/>
+<area shape="poly" title=" " alt="" coords="503,28,689,75,688,80,502,33"/>
+<area shape="rect" href="../../d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="200,86,275,111"/>
+<area shape="poly" title=" " alt="" coords="426,33,283,84,282,79,424,28"/>
+<area shape="rect" href="../../d8/d07/print__job_8h.html" title="Definition of PrintJob, a simple job that logs a message when executed." alt="" coords="349,86,440,111"/>
+<area shape="poly" title=" " alt="" coords="450,33,415,77,410,74,446,29"/>
+<area shape="rect" href="../../d3/dec/thread__pool_8h.html" title="ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue." alt="" coords="465,86,575,111"/>
+<area shape="poly" title=" " alt="" coords="469,29,504,74,500,77,465,33"/>
+<area shape="rect" title=" " alt="" coords="775,167,841,192"/>
+<area shape="poly" title=" " alt="" coords="913,114,839,161,836,157,910,109"/>
+<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="774,240,839,265"/>
+<area shape="poly" title=" " alt="" coords="926,113,906,150,875,194,835,233,831,229,871,190,901,147,921,110"/>
+<area shape="poly" title=" " alt="" coords="759,120,736,156,731,154,755,117"/>
+<area shape="poly" title=" " alt="" coords="781,118,799,153,794,155,776,120"/>
+<area shape="poly" title=" " alt="" coords="808,117,835,137,856,166,859,184,855,201,833,232,829,228,850,199,854,183,851,168,831,141,805,121"/>
+<area shape="poly" title=" " alt="" coords="244,111,261,153,256,155,239,112"/>
+<area shape="rect" title=" " alt="" coords="259,240,323,265"/>
+<area shape="poly" title=" " alt="" coords="235,113,225,149,224,170,229,191,243,212,262,230,259,234,239,216,224,193,219,171,220,148,230,111"/>
+<area shape="poly" title=" " alt="" coords="377,114,300,162,297,157,375,109"/>
+<area shape="poly" title=" " alt="" coords="420,109,537,164,589,190,680,219,761,239,760,244,679,224,587,194,535,169,418,114"/>
+<area shape="poly" title=" " alt="" coords="484,114,311,167,310,162,483,109"/>
+<area shape="poly" title=" " alt="" coords="550,109,678,159,676,164,548,114"/>
+<area shape="poly" title=" " alt="" coords="538,109,604,156,601,161,535,114"/>
+<area shape="poly" title=" " alt="" coords="563,109,762,163,761,168,561,114"/>
+<area shape="poly" title=" " alt="" coords="495,114,446,137,392,169,350,201,314,232,311,228,346,197,389,164,444,133,493,109"/>
+<area shape="rect" title=" " alt="" coords="347,240,424,265"/>
+<area shape="poly" title=" " alt="" coords="491,114,450,135,430,150,413,168,398,197,391,227,385,226,393,195,408,165,426,146,447,131,488,109"/>
+<area shape="rect" href="../../db/d9d/job__queue_8h.html" title="Thread&#45;safe FIFO queue for IJob instances." alt="" coords="423,167,524,192"/>
+<area shape="poly" title=" " alt="" coords="515,113,490,156,485,153,511,110"/>
+<area shape="poly" title=" " alt="" coords="525,189,761,239,760,244,524,194"/>
+<area shape="poly" title=" " alt="" coords="445,195,334,237,332,232,443,190"/>
+<area shape="poly" title=" " alt="" coords="461,194,412,233,409,229,458,190"/>
+<area shape="rect" title=" " alt="" coords="535,240,678,265"/>
+<area shape="poly" title=" " alt="" coords="496,190,574,231,572,236,494,194"/>
+<area shape="rect" title=" " alt="" coords="449,240,511,265"/>
+<area shape="poly" title=" " alt="" coords="477,192,480,226,475,227,472,193"/>
 </map>
 </div>
 </div>
@@ -115,19 +169,26 @@ Include dependency graph for main.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application entry point.  <br /></td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>&lt;2025-10-27&gt; </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.0.0 </dd></dl>
+<div class="textblock"><p>Entry point for the Task Scheduler demo application. </p>
+<dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>&lt;2025-11-14&gt; </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0.0</dd></dl>
+<p>This program demonstrates:</p><ul>
+<li>Starting a <a class="el" href="../../dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a> with configurable number of threads</li>
+<li>Enqueuing jobs (<a class="el" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a>)</li>
+<li>Graceful shutdown()</li>
+<li>Immediate shutdownNow()</li>
+</ul>
+<p>CLI options: &ndash;threads N Number of threads (default: HW concurrency) &ndash;demo Enqueue several PrintJobs &ndash;slow Enqueue slow jobs (requires <a class="el" href="../../de/d3d/classFakeSlowJob.html">FakeSlowJob</a>) &ndash;immediate-shutdown Stop immediately (shutdownNow) </p>
 
 <p class="definition">Definition in file <a class="el" href="../../df/d0a/main_8cpp_source.html">main.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,62 +196,171 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Application entry point. </p>
-<dl class="section return"><dt>Returns</dt><dd>Exit code (0 = success).</dd></dl>
-<p>GIVEN WHEN THEN </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d0a/main_8cpp_source.html#l00031">31</a> of file <a class="el" href="../../df/d0a/main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
-<div class="line"><span class="lineno">   33</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   34</span>    <span class="comment">/* 1.                                  */</span></div>
-<div class="line"><span class="lineno">   35</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment">/* 2. Configure logger verbosity                                          */</span></div>
-<div class="line"><span class="lineno">   39</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a>);</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   44</span>    <span class="comment">/* 3.                                               */</span></div>
-<div class="line"><span class="lineno">   45</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;Task Scheduler started successfully.&quot;</span>);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   50</span>    <span class="comment">/* 4.                                                        */</span></div>
-<div class="line"><span class="lineno">   51</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   54</span>    <span class="comment">/* 5.                                     */</span></div>
-<div class="line"><span class="lineno">   55</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">/* 6. Exit cleanly                                                        */</span></div>
-<div class="line"><span class="lineno">   59</span><span class="comment">    /**************************************************************************/</span></div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   61</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../df/d0a/main_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../df/d0a/main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a>(<a class="code hl_enumvalue" href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a>);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">size_t</span> nThreads          = std::thread::hardware_concurrency();</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">bool</span>   runDemo           = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">bool</span>   runSlow           = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">bool</span>   immediateShutdown = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// Parse CLI arguments</span></div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; argc; ++i)</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        std::string arg = argv[i];</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">if</span> (arg == <span class="stringliteral">&quot;--threads&quot;</span> &amp;&amp; i + 1 &lt; argc)</div>
+<div class="line"><span class="lineno">   52</span>        {</div>
+<div class="line"><span class="lineno">   53</span>            nThreads = std::stoul(argv[++i]);</div>
+<div class="line"><span class="lineno">   54</span>        }</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg == <span class="stringliteral">&quot;--demo&quot;</span>)</div>
+<div class="line"><span class="lineno">   56</span>        {</div>
+<div class="line"><span class="lineno">   57</span>            runDemo = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   58</span>        }</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg == <span class="stringliteral">&quot;--slow&quot;</span>)</div>
+<div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>            runSlow = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   62</span>        }</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg == <span class="stringliteral">&quot;--immediate-shutdown&quot;</span>)</div>
+<div class="line"><span class="lineno">   64</span>        {</div>
+<div class="line"><span class="lineno">   65</span>            immediateShutdown = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg == <span class="stringliteral">&quot;--help&quot;</span>)</div>
+<div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;TaskScheduler usage:\n&quot;</span></div>
+<div class="line"><span class="lineno">   70</span>                      &lt;&lt; <span class="stringliteral">&quot;  --threads N            Number of threads\n&quot;</span></div>
+<div class="line"><span class="lineno">   71</span>                      &lt;&lt; <span class="stringliteral">&quot;  --demo                 Run simple PrintJob demo\n&quot;</span></div>
+<div class="line"><span class="lineno">   72</span>                      &lt;&lt; <span class="stringliteral">&quot;  --slow                 Run FakeSlowJob demo\n&quot;</span></div>
+<div class="line"><span class="lineno">   73</span>                      &lt;&lt; <span class="stringliteral">&quot;  --immediate-shutdown   Demonstrate shutdownNow()\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>            std::cerr &lt;&lt; <span class="stringliteral">&quot;Unknown argument: &quot;</span> &lt;&lt; arg &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">// Create and start ThreadPool</span></div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Main] Creating thread pool with &quot;</span> + std::to_string(nThreads) + <span class="stringliteral">&quot; threads&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> pool;</div>
+<div class="line"><span class="lineno">   89</span>    pool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(nThreads);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">// Run desired mode</span></div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span> (runDemo)</div>
+<div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Main] Running PrintJob demo...&quot;</span>);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; ++i)</div>
+<div class="line"><span class="lineno">   99</span>        {</div>
+<div class="line"><span class="lineno">  100</span>            pool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">enqueue</a>(std::make_unique&lt;PrintJob&gt;(<span class="stringliteral">&quot;Task &quot;</span> + std::to_string(i)));</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>        std::this_thread::sleep_for(std::chrono::milliseconds(200));</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span> (runSlow)</div>
+<div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Main] Running FakeSlowJob demo...&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i)</div>
+<div class="line"><span class="lineno">  111</span>        {</div>
+<div class="line"><span class="lineno">  112</span>            pool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">enqueue</a>(std::make_unique&lt;FakeSlowJob&gt;());</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>        std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// Shutdown mode</span></div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">// --------------------------</span></div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (immediateShutdown)</div>
+<div class="line"><span class="lineno">  122</span>    {</div>
+<div class="line"><span class="lineno">  123</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a>(<span class="stringliteral">&quot;[Main] Calling shutdownNow()&quot;</span>);</div>
+<div class="line"><span class="lineno">  124</span>        pool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">shutdownNow</a>();</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  127</span>    {</div>
+<div class="line"><span class="lineno">  128</span>        <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Main] Calling graceful shutdown()&quot;</span>);</div>
+<div class="line"><span class="lineno">  129</span>        pool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">shutdown</a>();</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Main] Exiting program.&quot;</span>);</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  134</span>}</div>
 <div class="ttc" id="aclassLogger_html_a5a979e9c0f7e33c3663dcd69a0f62f98"><div class="ttname"><a href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98">Logger::set_min_level</a></div><div class="ttdeci">static void set_min_level(Level lvl)</div><div class="ttdoc">Sets the minimum log level.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00055">logger.cpp:55</a></div></div>
 <div class="ttc" id="aclassLogger_html_ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="../../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3">Logger::Level::INFO</a></div><div class="ttdeci">@ INFO</div></div>
+<div class="ttc" id="aclassLogger_html_adcbe6e560903cbb4257bccf546789e52"><div class="ttname"><a href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52">Logger::warn</a></div><div class="ttdeci">static void warn(const std::string &amp;msg)</div><div class="ttdoc">Logs a warning message (WARN level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00095">logger.cpp:95</a></div></div>
 <div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
+<div class="ttc" id="aclassThreadPool_html"><div class="ttname"><a href="../../dc/de7/classThreadPool.html">ThreadPool</a></div><div class="ttdoc">A fixed-size pool of worker threads executing asynchronous jobs.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/dec/thread__pool_8h_source.html#l00061">thread_pool.h:62</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a465c5f0162edf2b529e473b5873494eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">ThreadPool::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">Gracefully shuts down the pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00090">thread_pool.cpp:90</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a51043ddfec7df4cef92160ca85f583d2"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdoc">Enqueues a job for execution.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00061">thread_pool.cpp:61</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a7e017a077f358e3718f672a8bfb58922"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">ThreadPool::shutdownNow</a></div><div class="ttdeci">void shutdownNow()</div><div class="ttdoc">Immediately shuts down the pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00122">thread_pool.cpp:122</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_afdbd8eb5d2d3eeceae634a9b143aa9e0"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">ThreadPool::start</a></div><div class="ttdeci">void start(size_t number_threads=std::thread::hardware_concurrency())</div><div class="ttdoc">Starts the threads.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00043">thread_pool.cpp:43</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/d0a/main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#adf/d0a/main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
-<map name="adf/d0a/main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="adf/d0a/main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title="Application entry point." alt="" coords="5,31,60,56"/>
-<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="141,5,240,31"/>
-<area shape="poly" title=" " alt="" coords="60,36,127,25,128,31,61,42"/>
-<area shape="rect" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98" title="Sets the minimum log level." alt="" coords="108,55,273,80"/>
-<area shape="poly" title=" " alt="" coords="61,45,95,50,94,55,60,50"/>
-<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="321,5,416,31"/>
-<area shape="poly" title=" " alt="" coords="240,15,307,15,307,21,240,21"/>
+<div class="center"><img src="../../df/d0a/main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#adf/d0a/main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="adf/d0a/main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="adf/d0a/main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" title=" " alt="" coords="5,208,60,233"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="126,5,285,31"/>
+<area shape="poly" title=" " alt="" coords="33,207,40,176,53,133,75,88,106,48,126,34,129,39,110,52,79,90,58,135,45,177,39,208"/>
+<area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="553,208,652,233"/>
+<area shape="poly" title=" " alt="" coords="43,206,70,178,107,152,213,96,260,75,305,60,351,53,398,55,450,68,507,92,536,112,561,140,593,194,588,197,556,143,533,116,504,96,448,73,398,61,351,59,306,65,262,80,215,101,109,156,73,182,47,210"/>
+<area shape="rect" href="../../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98" title="Sets the minimum log level." alt="" coords="123,359,288,384"/>
+<area shape="poly" title=" " alt="" coords="41,232,65,283,85,312,110,337,133,351,130,356,106,341,81,316,61,286,36,235"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="122,208,289,233"/>
+<area shape="poly" title=" " alt="" coords="60,218,108,218,108,223,60,223"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="361,107,495,132"/>
+<area shape="poly" title=" " alt="" coords="59,208,107,193,236,159,352,132,353,138,238,164,109,198,61,214"/>
+<area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="375,408,481,433"/>
+<area shape="poly" title=" " alt="" coords="45,232,72,263,109,293,160,315,204,323,249,328,304,345,355,371,399,398,396,402,352,375,302,350,248,334,203,328,159,320,107,298,68,267,41,236"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="108,257,303,283"/>
+<area shape="poly" title=" " alt="" coords="61,227,109,242,141,251,140,256,107,247,59,232"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="367,5,489,31"/>
+<area shape="poly" title=" " alt="" coords="285,15,352,15,352,21,285,21"/>
+<area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="700,283,795,308"/>
+<area shape="poly" title=" " alt="" coords="630,231,711,274,708,278,627,236"/>
+<area shape="poly" title=" " alt="" coords="265,205,350,193,428,187,506,193,550,202,549,207,505,198,428,192,351,198,266,211"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty." alt="" coords="361,208,495,233"/>
+<area shape="poly" title=" " alt="" coords="289,218,347,218,347,223,289,223"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="365,307,491,332"/>
+<area shape="poly" title=" " alt="" coords="278,231,304,242,320,255,329,268,338,281,352,293,363,299,360,304,349,298,334,284,325,271,316,259,301,247,276,236"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="351,257,505,283"/>
+<area shape="poly" title=" " alt="" coords="264,231,357,252,356,257,263,236"/>
+<area shape="poly" title=" " alt="" coords="231,205,350,149,382,135,384,140,352,154,234,210"/>
+<area shape="poly" title=" " alt="" coords="285,231,304,243,325,266,333,291,339,316,353,343,377,372,403,397,399,401,373,376,348,346,334,317,328,292,320,269,301,247,283,236"/>
+<area shape="poly" title=" " alt="" coords="473,255,543,235,544,240,474,260"/>
+<area shape="poly" title=" " alt="" coords="465,130,507,149,577,197,574,201,504,154,463,134"/>
+<area shape="poly" title=" " alt="" coords="460,405,700,311,702,316,462,410"/>
+<area shape="poly" title=" " alt="" coords="259,280,304,300,319,311,328,323,337,334,352,342,394,357,429,363,464,358,504,342,522,327,544,302,584,244,588,247,548,305,526,331,507,347,465,363,429,368,393,362,350,347,334,338,324,327,315,315,301,304,257,285"/>
+<area shape="poly" title=" " alt="" coords="264,280,357,301,356,306,263,285"/>
+<area shape="poly" title=" " alt="" coords="303,267,336,267,336,273,303,273"/>
 </map>
 </div>
 
@@ -202,7 +372,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../df/d0a/main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 13:33:47 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

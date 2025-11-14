@@ -98,21 +98,39 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <h1><a class="anchor" id="autotoc_md2"></a>
 ✨ Core Features</h1>
 <ul>
-<li>**...**<ul>
-<li>A</li>
-<li>B</li>
-<li>C</li>
+<li><b>Multithreaded Thread Pool</b><ul>
+<li>Fixed-size pool created at startup.</li>
+<li>Each worker thread runs an independent job execution loop.</li>
+<li>Fully thread-safe job submission via a synchronized job queue.</li>
 </ul>
 </li>
-<li>**Logging System (<code><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></code>)** <br  />
-<ul>
-<li>Thread-safe static utility for centralized logging. <br  />
+<li><b>Lock-free style Job Queue (internally synchronized)</b><ul>
+<li>Uses <code>std::mutex</code> + <code>std::condition_variable</code> for safe blocking <code>pop()</code>.</li>
+<li>Supports graceful shutdown and immediate shutdown modes.</li>
+<li>Ensures no job is lost on normal shutdown.</li>
+</ul>
 </li>
-<li>Configurable minimum log level (<code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>). <br  />
+<li>**Extensible Job Interface (<code><a class="el" href="d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a></code>)**<ul>
+<li>Abstract base class representing a unit of work.</li>
+<li>Enables custom job types such as <code><a class="el" href="de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a></code>, <code><a class="el" href="db/ded/classFakeJob.html">FakeJob</a></code>, <code><a class="el" href="de/d3d/classFakeSlowJob.html">FakeSlowJob</a></code>.</li>
+<li>Easy to extend for real-world tasks (I/O, timers, background tasks…).</li>
+</ul>
 </li>
-<li>Adds timestamp and severity to each log line. <br  />
+<li><b>Graceful and Immediate Shutdown</b><ul>
+<li><code>shutdown()</code> → waits for queued work to finish.</li>
+<li><code>shutdownNow()</code> → wakes all workers and stops immediately (no new jobs accepted).</li>
+</ul>
 </li>
-<li>Used across all components for consistent diagnostics.</li>
+<li><b>Exception-resistant Worker Loop</b><ul>
+<li>Exceptions thrown by job handlers <b>do not</b> crash the worker thread.</li>
+<li>Ensures long-running systems remain stable.</li>
+</ul>
+</li>
+<li>**Logging System (<code><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a></code>)**<ul>
+<li>Thread-safe global logger.</li>
+<li>Timestamped and color-coded message formatting.</li>
+<li>Severity levels: <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>.</li>
+<li>Used across all subsystems for homogeneous diagnostics.</li>
 </ul>
 </li>
 </ul>
@@ -120,42 +138,202 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <h1><a class="anchor" id="autotoc_md4"></a>
 🌟 Project Highlights</h1>
 <ul>
-<li><b>Unit testing</b> with GoogleTest (<code>ctest</code> integrated). <br  />
-</li>
-<li><b>CMake presets</b> for consistent builds (<code>debug</code> / <code>release</code>). <br  />
-</li>
-<li><b>Cross-platform</b>: builds cleanly on Linux, Windows, and inside Docker. <br  />
-</li>
-<li><b>CI integration</b> via GitHub Actions:<ul>
-<li>Builds and runs all unit tests automatically.</li>
-<li>Validates Docker image reproducibility.</li>
+<li><b>Modern CMake Build System</b><ul>
+<li>Clear separation between core library, tests, and executable.</li>
+<li>CMake presets (<code>debug</code> / <code>release</code>) for consistent multi-platform builds.</li>
 </ul>
 </li>
-<li><b>Reproducible builds</b> using a minimal <b>Ubuntu 22.04</b> image and <b>CMake 3.28</b>.</li>
-<li><b>Strict compiler flags</b> (<code>-Wall -Wextra -Wpedantic</code>) to enforce quality and correctness.</li>
-<li><b>C++14 compliance</b> — no dependency on newer standards.</li>
+<li><b>Extensive Unit Testing (GoogleTest + CTest)</b><ul>
+<li>Full coverage of:<ul>
+<li>Job queue behavior (blocking pop, shutdown, sequential operations)</li>
+<li>Thread pool lifecycle</li>
+<li>Worker execution, exception handling, shutdown modes</li>
+</ul>
+</li>
+<li>Automatically executed in CI pipelines.</li>
+</ul>
+</li>
+<li><b>Cross-Platform Compatibility</b><ul>
+<li>Fully validated on:<ul>
+<li>🪟 Windows 10/11 (MSVC 2022)</li>
+<li>🐧 Linux (g++ / clang++)</li>
+<li>🐳 Docker containers (Ubuntu 22.04 base image)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><b>Continuous Integration with GitHub Actions</b><ul>
+<li>Builds both Debug and Release configurations.</li>
+<li>Runs all unit tests on every commit.</li>
+<li>Builds and validates a Docker image.</li>
+<li>Guarantees project reproducibility.</li>
+</ul>
+</li>
+<li><b>Reproducible Development Environments</b><ul>
+<li>Docker image provides a clean, isolated environment.</li>
+<li>Ensures identical results regardless of host OS.</li>
+</ul>
+</li>
+<li><b>Strict Compiler Warnings</b><ul>
+<li><code>-Wall -Wextra -Wpedantic</code> (Linux/Clang/GCC)</li>
+<li><code>/W4 /permissive-</code> (MSVC)</li>
+<li>Helps catch errors early and maintain code quality.</li>
+</ul>
+</li>
+<li><b>Doxygen-Generated Documentation</b><ul>
+<li>Automatic HTML and PDF documentation.</li>
+<li>Generated via GitHub Actions (docs.yml).</li>
+<li>Deploys to GitHub Pages for public viewing.</li>
+</ul>
+</li>
+<li><b>C++14-Compliant</b><ul>
+<li>No dependency on C++17/20 features.</li>
+<li>Ensures wider compatibility and avoids needless complexity.</li>
+</ul>
+</li>
 </ul>
 <hr  />
 <h1><a class="anchor" id="autotoc_md6"></a>
 🏗 Architecture</h1>
 <p>The following diagram illustrates the internal architecture of the project:</p>
 <div class="fragment"><div class="line">flowchart LR</div>
+<div class="line"> </div>
+<div class="line">subgraph MAIN [&quot;Main Application&quot;]</div>
+<div class="line">    M1[&quot;Start ThreadPool&quot;]</div>
+<div class="line">    M2[&quot;Enqueue Jobs&quot;]</div>
+<div class="line">    M3[&quot;Shutdown / ShutdownNow&quot;]</div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line">subgraph TP [&quot;ThreadPool&quot;]</div>
+<div class="line">    TP1[&quot;Threads&quot;]</div>
+<div class="line">    TP2[&quot;running flag (atomic&lt;bool&gt;)&quot;]</div>
+<div class="line">    TP3[&quot;threadLoop()&quot;]</div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line">subgraph JQ [&quot;JobQueue&quot;]</div>
+<div class="line">    Q1[&quot;queue buffer&quot;]</div>
+<div class="line">    Q2[&quot;mutex&quot;]</div>
+<div class="line">    Q3[&quot;condition_variable&quot;]</div>
+<div class="line">    Q4[&quot;closed flag&quot;]</div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line">subgraph JOBS [&quot;Jobs&quot;]</div>
+<div class="line">    J1[&quot;IJob&quot;]</div>
+<div class="line">    J2[&quot;PrintJob&quot;]</div>
+<div class="line">    J3[&quot;Fake Jobs&quot;]</div>
+<div class="line">end</div>
+<div class="line"> </div>
+<div class="line">%% Flow</div>
+<div class="line">M1 -- &quot;start()&quot; --&gt; TP1</div>
+<div class="line">M2 -- &quot;enqueue()&quot; --&gt; Q1</div>
+<div class="line"> </div>
+<div class="line">%% shutdown affects multiple internals</div>
+<div class="line">M3 -- &quot;shutdown()/shutdownNow()&quot; --&gt; TP2</div>
+<div class="line">M3 -- &quot;queue.shutdown()&quot; --&gt; Q4</div>
+<div class="line">M3 -- &quot;join()&quot; --&gt; TP1</div>
+<div class="line"> </div>
+<div class="line">TP1 --&gt; TP3</div>
+<div class="line">TP3 -- &quot;pop()&quot; --&gt; Q1</div>
+<div class="line">Q1  -- &quot;pop(): job or nullptr&quot; --&gt; TP3</div>
+<div class="line"> </div>
+<div class="line">TP3 -- &quot;execute()&quot; --&gt; J1</div>
+<div class="line">J1 --&gt; J2</div>
+<div class="line">J1 --&gt; J3</div>
+<div class="line"> </div>
+<div class="line">TP3 -- &quot;exit&quot; --&gt; TP1</div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="autotoc_md8"></a>
 🗂 Class Diagram</h1>
 <div class="fragment"><div class="line">classDiagram</div>
-<div class="line">    %% Relationships</div>
-</div><!-- fragment --><p> 🔍 Explanation</p><ul>
-<li><a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> — shared static utility providing thread-safe logging.</li>
-</ul>
-<hr  />
+<div class="line">    %% ===== Interfaces =====</div>
+<div class="line">    class IJob {</div>
+<div class="line">        &lt;&lt;interface&gt;&gt;</div>
+<div class="line">        +execute()*</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    %% ===== Job Implementations =====</div>
+<div class="line">    class PrintJob {</div>
+<div class="line">        -string message</div>
+<div class="line">        +PrintJob(message)</div>
+<div class="line">        +execute()</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    class FakeJob {</div>
+<div class="line">        -atomic~bool~ executed</div>
+<div class="line">        +execute()</div>
+<div class="line">        +wasExecuted() bool</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    class FakeSlowJob {</div>
+<div class="line">        -atomic~bool~ started</div>
+<div class="line">        -atomic~bool~ finished</div>
+<div class="line">        +execute()</div>
+<div class="line">        +hasStarted() bool</div>
+<div class="line">        +hasFinished() bool</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    class FakeThrowingJob {</div>
+<div class="line">        -atomic~bool~ executed</div>
+<div class="line">        +execute()</div>
+<div class="line">        +wasExecuted() bool</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    IJob &lt;|-- PrintJob</div>
+<div class="line">    IJob &lt;|-- FakeJob</div>
+<div class="line">    IJob &lt;|-- FakeSlowJob</div>
+<div class="line">    IJob &lt;|-- FakeThrowingJob</div>
+<div class="line"> </div>
+<div class="line">    %% ===== JobQueue =====</div>
+<div class="line">    class JobQueue {</div>
+<div class="line">        -queue~unique_ptr&lt;IJob&gt;~ buffer</div>
+<div class="line">        -mutex mtx</div>
+<div class="line">        -condition_variable cv</div>
+<div class="line">        -bool closed</div>
+<div class="line">        +push(job)</div>
+<div class="line">        +pop() unique_ptr&lt;IJob&gt;</div>
+<div class="line">        +shutdown()</div>
+<div class="line">        +empty() bool</div>
+<div class="line">        +is_closed() bool</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    JobQueue --&gt; IJob : stores</div>
+<div class="line"> </div>
+<div class="line">    %% ===== ThreadPool =====</div>
+<div class="line">    class ThreadPool {</div>
+<div class="line">        -JobQueue queue</div>
+<div class="line">        -atomic~bool~ running</div>
+<div class="line">        -vector~thread~ threads</div>
+<div class="line">        +start(workers)</div>
+<div class="line">        +enqueue(job)</div>
+<div class="line">        +shutdown()</div>
+<div class="line">        +shutdownNow()</div>
+<div class="line">        +join()</div>
+<div class="line">        -threadLoop(worker_name)</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    ThreadPool --&gt; JobQueue : owns</div>
+<div class="line">    ThreadPool ..&gt; IJob : consumes</div>
+<div class="line">    ThreadPool ..&gt; Logger : logs</div>
+<div class="line"> </div>
+<div class="line">    %% ===== Logger =====</div>
+<div class="line">    class Logger {</div>
+<div class="line">        &lt;&lt;static&gt;&gt;</div>
+<div class="line">        +debug(msg)</div>
+<div class="line">        +info(msg)</div>
+<div class="line">        +warn(msg)</div>
+<div class="line">        +error(msg)</div>
+<div class="line">        +set_min_level(level)</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    PrintJob ..&gt; Logger</div>
+</div><!-- fragment --><hr  />
 <h1><a class="anchor" id="autotoc_md10"></a>
 🛠 Build Instructions</h1>
 <h2><a class="anchor" id="autotoc_md11"></a>
 Windows (Visual Studio 2022)</h2>
 <ol type="1">
 <li>Open Visual Studio 2022.</li>
-<li>Choose “Open Folder” → select the project root (worker_cola_multithread/).</li>
+<li>Choose “Open Folder” → select the project root (Task-Scheduler/).</li>
 <li>Visual Studio automatically detects CMakePresets.json.</li>
 <li>In the toolbar, select a configuration:<ul>
 <li>debug → includes unit tests (BUILD_TESTING=ON).</li>
@@ -194,18 +372,79 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 <div class="line">cmake --preset debug</div>
 <div class="line">cmake --build --preset debug -j$(nproc)</div>
 <div class="line">ctest --preset debug</div>
-</div><!-- fragment --><p> The resulting binary will be located in: </p><div class="fragment"><div class="line">build/release/Task_Scheduler</div>
+</div><!-- fragment --><p> The resulting binary will be located in: </p><div class="fragment"><div class="line">build/release/task_scheduler</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md16"></a>
 Docker (fully reproducible environment)</h2>
-<p>The project includes a Dockerfile that performs a clean build and runs tests automatically: </p><div class="fragment"><div class="line">docker build -t Task_Scheduler:local .</div>
-<div class="line">docker run --rm Task_Scheduler:local</div>
+<p>The project includes a Dockerfile that performs a clean build and runs tests automatically: </p><div class="fragment"><div class="line">docker build -t task_scheduler:local .</div>
+<div class="line">docker run --rm task_scheduler:local</div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="autotoc_md18"></a>
 🧪 Unit Tests</h1>
-<p>Unit tests are implemented with GoogleTest and integrated into the CMake build system via CTest. They validate the core behavior of ...</p>
+<p>Unit tests are implemented using GoogleTest and fully integrated into the build system via CTest. Running a Debug build automatically enables all tests (BUILD_TESTING=ON).</p>
+<p>The test suite ensures the correctness and thread-safety of all major components in the project.</p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 ✅ Covered Scenarios</h2>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<p>Below is the list of all behaviors validated by the current test suite:</p>
+<h3><a class="anchor" id="autotoc_md20"></a>
+🧵 ThreadPool</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Test Name   </th><th class="markdownTableHeadNone">Validates    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>StartsCorrectNumberOfThreads</b>   </td><td class="markdownTableBodyNone"><code>start(N)</code> correctly spawns N worker threads.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>EnqueueExecutesAJob</b>   </td><td class="markdownTableBodyNone">Enqueued job is executed by a worker thread.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>EnqueueExecutesJob</b>   </td><td class="markdownTableBodyNone">Multiple workers consume tasks correctly.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>ShutdownCorrectNumberOfThreads</b>   </td><td class="markdownTableBodyNone"><code>shutdown()</code> stops all workers and clears thread vector.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>ShutdownNowStopsImmediately</b>   </td><td class="markdownTableBodyNone"><code>shutdownNow()</code> stops the pool immediately, skipping queue drain.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>WorkerSurvivesExceptionAndContinues</b>   </td><td class="markdownTableBodyNone">Exceptions thrown inside jobs do <b>not</b> crash the thread — worker continues processing the following job.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md21"></a>
+📦 JobQueue</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Test Name   </th><th class="markdownTableHeadNone">Validates    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>PushPopSequence</b>   </td><td class="markdownTableBodyNone">FIFO push/pop ordering and correctness.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>BlockPopInOtherThread</b>   </td><td class="markdownTableBodyNone"><code>pop()</code> blocks correctly and wakes when data is available.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>ShutdownBehaviour</b>   </td><td class="markdownTableBodyNone"><code>shutdown()</code> unblocks waiting threads and prevents further blocking.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md22"></a>
+💼 Jobs</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Test Name   </th><th class="markdownTableHeadNone">Validates    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>PrintJob.ExecutesAndLogsMessage</b>   </td><td class="markdownTableBodyNone"><code><a class="el" href="de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f" title="Executes the job by printing the stored message.">PrintJob::execute()</a></code> logs the correct output.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>JobInterfaceTest.IsAbstract</b>   </td><td class="markdownTableBodyNone">Ensures <code><a class="el" href="d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a></code> is a true abstract interface.   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md23"></a>
+🧩 Behavioral Guarantees Provided by Tests</h3>
+<p>The test suite ensures:</p>
+<p>✔ <a class="el" href="dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a> is safe</p><ul>
+<li>No thread leaks</li>
+<li>Correct shutdown semantics (shutdown() + shutdownNow())</li>
+<li>Robust to exceptions inside jobs</li>
+<li>No job is silently lost unless shutdownNow() is explicit</li>
+</ul>
+<p>✔ <a class="el" href="da/d3d/classJobQueue.html" title="A thread-safe FIFO queue for job dispatching.">JobQueue</a> is safe</p><ul>
+<li>Fully blocking FIFO queue</li>
+<li>Wakes consumers properly</li>
+<li>Graceful exit on shutdown</li>
+</ul>
+<p>✔ Jobs execute correctly</p><ul>
+<li>Clear interface (<a class="el" href="d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a>)</li>
+<li>Real jobs (<a class="el" href="de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a>)</li>
+<li>Test jobs (<a class="el" href="db/ded/classFakeJob.html">FakeJob</a>, <a class="el" href="de/d34/classFakeThrowingJob.html">FakeThrowingJob</a>, <a class="el" href="de/d3d/classFakeSlowJob.html">FakeSlowJob</a>)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Running Tests (Windows)</h2>
 <p>On Windows, the project has been validated with Visual Studio 2022. Tests can be executed directly from Test Explorer: </p><div class="fragment"><div class="line">→ Test → Run All Tests</div>
 </div><!-- fragment --><p>Alternatively, you can also build and run tests using the provided CMake presets: </p><div class="fragment"><div class="line">cmake --preset debug</div>
@@ -218,31 +457,56 @@ Running Tests (Windows)</h2>
 </ol>
 </blockquote>
 <p>&gt;<code>bash &lt;blockquote&gt;&amp;zwj;winget install Ninja-build.Ninja &lt;/blockquote&gt;&gt;</code></p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Running Tests (Linux / Docker)</h2>
 <p>After building the project, run the following command inside the build directory:</p>
 <div class="fragment"><div class="line">cd build/debug</div>
 <div class="line">ctest --output-on-failure</div>
 </div><!-- fragment --><p>This will automatically discover and execute all registered GoogleTest cases.</p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Example output:</h2>
-<p>(example output inside container) </p><div class="fragment"></div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md24"></a>
+<p>(example output inside container) </p><div class="fragment"><div class="line">Test project C:/PROJECTS/Task-Scheduler/build/debug</div>
+<div class="line">      Start  1: PrintJobTest.ExecutesAndLogsMessage</div>
+<div class="line"> 1/11 Test  #1: PrintJobTest.ExecutesAndLogsMessage ..................   Passed    0.01 sec</div>
+<div class="line">      Start  2: JobInterfaceTest.IsAbstract</div>
+<div class="line"> 2/11 Test  #2: JobInterfaceTest.IsAbstract ..........................   Passed    0.01 sec</div>
+<div class="line">      Start  3: JobQueueTest.PushPopSquence</div>
+<div class="line"> 3/11 Test  #3: JobQueueTest.PushPopSquence ..........................   Passed    0.01 sec</div>
+<div class="line">      Start  4: JobQueueTest.BlockPopInOtherThread</div>
+<div class="line"> 4/11 Test  #4: JobQueueTest.BlockPopInOtherThread ...................   Passed    0.02 sec</div>
+<div class="line">      Start  5: JobQueueTest.ShutdownBehaviour</div>
+<div class="line"> 5/11 Test  #5: JobQueueTest.ShutdownBehaviour .......................   Passed    0.01 sec</div>
+<div class="line">      Start  6: ThreadPoolTest.StartsCorrectNumberOfThreads</div>
+<div class="line"> 6/11 Test  #6: ThreadPoolTest.StartsCorrectNumberOfThreads ..........   Passed    0.01 sec</div>
+<div class="line">      Start  7: ThreadPoolTest.EnqueueExecutesAJob</div>
+<div class="line"> 7/11 Test  #7: ThreadPoolTest.EnqueueExecutesAJob ...................   Passed    0.08 sec</div>
+<div class="line">      Start  8: ThreadPoolTest.EnqueueExecutesJob</div>
+<div class="line"> 8/11 Test  #8: ThreadPoolTest.EnqueueExecutesJob ....................   Passed    0.03 sec</div>
+<div class="line">      Start  9: ThreadPoolTest.ShutdownCorrectNumberOfThreads</div>
+<div class="line"> 9/11 Test  #9: ThreadPoolTest.ShutdownCorrectNumberOfThreads ........   Passed    0.01 sec</div>
+<div class="line">      Start 10: ThreadPoolTest.ShutdownNowStopsImmediately</div>
+<div class="line">10/11 Test #10: ThreadPoolTest.ShutdownNowStopsImmediately ...........   Passed    0.21 sec</div>
+<div class="line">      Start 11: ThreadPoolTest.threadsurvivesExceptionAndContinues</div>
+<div class="line">11/11 Test #11: ThreadPoolTest.threadsurvivesExceptionAndContinues ...   Passed    0.03 sec</div>
+<div class="line">100% tests passed, 0 tests failed out of 11</div>
+<div class="line">Total Test time (real) =   0.44 sec</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md28"></a>
 🐳 Docker</h1>
 <p>This project includes a Dockerfile to provide a reproducible build and test environment.</p>
 <p>Requires Docker installed and running on your system.</p>
 <p>Build image:</p>
-<div class="fragment"><div class="line">build -t Task_Scheduler:dev .</div>
+<div class="fragment"><div class="line">build -t task_scheduler:dev .</div>
 </div><!-- fragment --><p>Run tests inside container:</p>
-<div class="fragment"><div class="line">run --rm Task_Scheduler:dev</div>
+<div class="fragment"><div class="line">run --rm task_scheduler:dev</div>
 </div><!-- fragment --><p>Run main binary:</p>
-<div class="fragment"><div class="line">run --rm Task_Scheduler:dev ./build/release/Task_Scheduler</div>
+<div class="fragment"><div class="line">run --rm task_scheduler:dev ./build/release/task_scheduler</div>
 </div><!-- fragment --><p>By default, the container builds the project in /app/build/. The binary can be invoked as shown.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md26"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 🔄 Continuous Integration</h1>
 <p>This project provides two GitHub Actions workflows under .github/workflows/:</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 ci.yml</h2>
 <p>This workflow performs the following steps:</p><ul>
 <li>Builds the project on ubuntu-latest using CMake + Ninja and g++.</li>
@@ -254,7 +518,7 @@ ci.yml</h2>
 <li>All unit tests pass consistently.</li>
 <li>The Docker image remains functional and up-to-date.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 docs.yml</h2>
 <p>This workflow automates documentation generation:</p><ul>
 <li>Installs Doxygen, Graphviz, and LaTeX.</li>
@@ -268,21 +532,69 @@ docs.yml</h2>
 <li>Public docs can be viewed directly from the project’s GitHub Pages site.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 📂 Project Structure</h1>
-<div class="fragment"></div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md32"></a>
+<div class="fragment"><div class="line">Task-Scheduler/</div>
+<div class="line">├── .github/</div>
+<div class="line">│   └── workflows/</div>
+<div class="line">│       ├── ci.yml                 # CI pipeline: build + tests + Docker</div>
+<div class="line">│       └── docs.yml               # Auto-generate Doxygen docs (HTML + PDF)</div>
+<div class="line">│</div>
+<div class="line">├── docs/</div>
+<div class="line">│   ├── Doxyfile                   # Doxygen configuration</div>
+<div class="line">│   └── README.md                  # Additional documentation notes</div>
+<div class="line">│</div>
+<div class="line">├── include/                       # Public headers (library interface)</div>
+<div class="line">│   ├── i_job.h                    # Abstract job interface</div>
+<div class="line">│   ├── job_queue.h                # Thread-safe queue of jobs</div>
+<div class="line">│   ├── logger.h                   # Thread-safe logging utility</div>
+<div class="line">│   ├── print_job.h                # Example job implementation</div>
+<div class="line">│   └── thread_pool.h              # Thread pool interface &amp; declarations</div>
+<div class="line">│</div>
+<div class="line">├── scripts/                       # Automation scripts</div>
+<div class="line">│   ├── build.ps1                  # Windows build helper (PowerShell)</div>
+<div class="line">│   ├── build.sh                   # Linux build helper</div>
+<div class="line">│   ├── generate_docs.ps1          # Windows Doxygen generator</div>
+<div class="line">│   └── generate_docs.sh           # Linux Doxygen generator</div>
+<div class="line">│</div>
+<div class="line">├── src/                           # Private implementation files</div>
+<div class="line">│   ├── job_queue.cpp              # JobQueue implementation</div>
+<div class="line">│   ├── logger.cpp                 # Logger implementation</div>
+<div class="line">│   ├── main.cpp                   # Application entry point</div>
+<div class="line">│   ├── print_job.cpp              # PrintJob implementation</div>
+<div class="line">│   └── thread_pool.cpp            # ThreadPool implementation</div>
+<div class="line">│</div>
+<div class="line">├── tests/                         # GoogleTest unit tests</div>
+<div class="line">│   ├── fake_job.h                 # Fake job for basic testing</div>
+<div class="line">│   ├── fake_slow_job.h            # Slow job used for shutdown tests</div>
+<div class="line">│   ├── fake_throwing_job.h        # Job that throws exceptions</div>
+<div class="line">│   ├── test_jobs.cpp              # Tests for job behavior</div>
+<div class="line">│   ├── test_job_queue.cpp         # Tests for JobQueue</div>
+<div class="line">│   ├── test_main.cpp              # Tests related to main / app behavior</div>
+<div class="line">│   └── test_thread_pool.cpp       # Tests for ThreadPool</div>
+<div class="line">│</div>
+<div class="line">├── .clang-format                  # Code style configuration</div>
+<div class="line">├── .dockerignore                  # Ignore files in Docker context</div>
+<div class="line">├── .gitattributes                 # Git attribute configuration</div>
+<div class="line">├── .gitignore                     # Files ignored by Git</div>
+<div class="line">│</div>
+<div class="line">├── CMakeLists.txt                 # Root CMake build file</div>
+<div class="line">├── CMakePresets.json              # Presets for build/debug/release/CI</div>
+<div class="line">├── Dockerfile                     # Reproducible CI/Docker environment</div>
+<div class="line">└── README.md                      # Project documentation</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md36"></a>
 📖 Documentation</h1>
 <p>This project uses <a href="https://www.doxygen.nl/">Doxygen</a> to generate API documentation from source code comments.</p>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Generate documentation</h2>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
 Windows (PowerShell)</h3>
 <div class="fragment"><div class="line">Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</div>
 <div class="line">.\scripts\generate_docs.ps1</div>
 </div><!-- fragment --><p> Generates HTML (docs/html/index.html) and LaTeX sources (docs/latex/).</p>
 <p>PDF (refman.pdf) is not generated on Windows unless you install a full LaTeX toolchain (MiKTeX/TeX Live + make).</p>
-<h3><a class="anchor" id="autotoc_md35"></a>
+<h3><a class="anchor" id="autotoc_md39"></a>
 Linux / WSL (Debian/Ubuntu based)</h3>
 <div class="fragment"><div class="line">sudo apt update</div>
 <div class="line">sudo apt install -y doxygen graphviz texlive-latex-base texlive-fonts-recommended texlive-latex-extra make</div>
@@ -292,11 +604,11 @@ Linux / WSL (Debian/Ubuntu based)</h3>
 <p>Open in your browser: </p><div class="fragment"><div class="line">docs/html/index.html</div>
 </div><!-- fragment --><p>For more details, see docs/README.md</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md41"></a>
 🎨 Code Style (clang-format)</h1>
 <p>This project uses <b>clang-format</b> to enforce a consistent C++ code style. <br  />
  The formatting rules are defined in <a href="./.clang-format"><code>.clang-format</code></a>.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 🔧 Chosen Style</h2>
 <p>The configuration is based on Google C++ Style, with a few modifications to improve readability for embedded and multithreaded systems:</p>
 <table class="markdownTable">
@@ -340,7 +652,7 @@ Linux / WSL (Debian/Ubuntu based)</h3>
 <td class="markdownTableBodyNone"><b>CommentPragmas</b>   </td><td class="markdownTableBodyNone">&lsquo;&rsquo;^!'<code>\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; Allows pragma-specific comment formatting. \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowOdd"&gt; &lt;td class="markdownTableBodyNone"&gt; **FixNamespaceComments** \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt;</code>true<code>\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; Automatically adds trailing</code>// namespace X<code>comments when closing. \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowEven"&gt; &lt;td class="markdownTableBodyNone"&gt; **SpacesBeforeTrailingComments** \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt;</code>2<code>\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; Keeps a consistent gap before end-of-line comments. \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowOdd"&gt; &lt;td class="markdownTableBodyNone"&gt; **KeepEmptyLinesAtTheStartOfBlocks** \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt;</code>false`   </td><td class="markdownTableBodyNone">Avoids unnecessary blank lines at block starts.   </td></tr>
 </table>
 <hr  />
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Windows (Visual Studio Code / PowerShell)</h2>
 <ol type="1">
 <li>Install LLVM (includes clang-format):<ul>
@@ -355,7 +667,7 @@ Windows (Visual Studio Code / PowerShell)</h2>
 <li>Format all project files: <div class="fragment"><div class="line">clang-format -i include\*.h include\*.ipp src\*.cpp tests\*.cpp</div>
 </div><!-- fragment --> </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Linux / WSL (Debian/Ubuntu based)</h2>
 <ol type="1">
 <li>Install clang-format: <div class="fragment"><div class="line">sudo apt update</div>
@@ -367,12 +679,25 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 </div><!-- fragment --></li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md47"></a>
 📌 Notes</h1>
 <ul>
-<li><b>C++ Standard</b>: C++ 14 (set(CMAKE_CXX_STANDARD 14)).</li>
+<li><b>C++ Standard</b>: The project uses <b>C++14</b>, configured via <code>set(CMAKE_CXX_STANDARD 14)</code> ensuring maximum compatibility with embedded systems, legacy compilers, and cross-platform builds.</li>
 <li><p class="startli"><b>Logging</b>:</p>
-<p class="startli">Centralized thread-safe <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> utility with severity levels (DEBUG, INFO, WARN, ERROR), ensuring coherent runtime diagnostics across threads.</p>
+<p class="startli">A fully centralized, thread-safe <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a> utility is used throughout the project. It provides:</p><ul>
+<li>Atomic writes to avoid interleaved logs</li>
+<li>Timestamps with millisecond precision</li>
+<li>Configurable severity levels (DEBUG, INFO, WARN, ERROR)</li>
+<li>Uniform log formatting across all components (<a class="el" href="dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a>, <a class="el" href="da/d3d/classJobQueue.html" title="A thread-safe FIFO queue for job dispatching.">JobQueue</a>, Jobs, main application)</li>
+</ul>
+</li>
+<li><p class="startli"><b>Thread Safety</b>:</p>
+<p class="startli">Core concurrency structures (<a class="el" href="dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a>, <a class="el" href="da/d3d/classJobQueue.html" title="A thread-safe FIFO queue for job dispatching.">JobQueue</a>) use:</p><ul>
+<li>std::mutex</li>
+<li>std::condition_variable</li>
+<li>std::atomic&lt;bool&gt;</li>
+</ul>
+<p class="startli">ensuring correct synchronization across multiple worker threads without data races.</p>
 </li>
 <li><p class="startli"><b>Cross-Platform Compatibility</b>:</p>
 <p class="startli">Successfully builds and runs on: </p><pre class="fragment">- 🪟 Windows (MSVC 2022)
@@ -380,26 +705,50 @@ Linux / WSL (Debian/Ubuntu based)</h2>
 - 🐳 Docker container environments
 
 Each environment uses consistent CMake presets to simplify builds and CI/CD automation.
-</pre> <hr  />
+</pre></li>
+<li><p class="startli"><b>Reproducibility</b>:</p>
+<p class="startli">Thanks to Docker + CI:</p><ul>
+<li>Every build uses the same compiler version and toolchain.</li>
+<li>Unit tests run automatically inside a clean container.</li>
+<li>Documentation is generated predictably using Doxygen + Graphviz.</li>
+</ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<hr  />
+<h1><a class="anchor" id="autotoc_md49"></a>
 ❤️ Acknowledgements</h1>
-<p>This project was originally developed as part of a technical assessment, then extended into a fully professional implementation showcasing:</p><ul>
-<li>Clean architecture and modular design.</li>
-<li>Thread-safe data structures and concurrency patterns.</li>
-<li>Comprehensive Doxygen documentation.</li>
-<li>Automated testing (GoogleTest + CTest).</li>
-<li>CI/CD pipelines (GitHub Actions).</li>
-<li>Cross-platform Docker-based builds. </li>
+<p>his project was originally developed as part of a technical assessment and was later expanded into a full professional-grade implementation demonstrating:</p>
+<ul>
+<li><b>Clean architecture</b> with clear responsibility boundaries (<a class="el" href="dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a>, <a class="el" href="da/d3d/classJobQueue.html" title="A thread-safe FIFO queue for job dispatching.">JobQueue</a>, Jobs, <a class="el" href="db/d67/classLogger.html" title="Static thread-safe console logger with configurable severity filtering.">Logger</a>).</li>
+<li><b>Robust multithreading design</b> using condition variables, atomics, and safe shutdown semantics.</li>
+<li><b>Thread-safe data structures</b> and exception-resilient worker loops.</li>
+<li><b>Comprehensive unit testing</b> using GoogleTest + CTest, covering all core scenarios.</li>
+<li><b>Automated documentation</b> using Doxygen, Graphviz, and optional LaTeX PDF generation.</li>
+<li><b>Modern CI/CD pipelines</b> with GitHub Actions validating build, tests, Docker reproducibility, and documentation.</li>
+<li><b>Cross-platform tooling</b>, building cleanly on Windows, Linux, and inside containerized environments.</li>
 </ul>
+<p>Special thanks to the open-source community behind:</p><ul>
+<li>CMake <br  />
+</li>
+<li>GoogleTest <br  />
+</li>
+<li>Doxygen <br  />
+</li>
+<li>Graphviz <br  />
+</li>
+<li>LLVM / clang-format <br  />
+</li>
+<li>The GitHub Actions ecosystem <br  />
+</li>
+</ul>
+<p>Their tools made this project reliable, maintainable, and fully reproducible. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 13:33:47 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

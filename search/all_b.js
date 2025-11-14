@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['job_5fqueue_2ecpp_0',['job_queue.cpp',['../dd/d4c/job__queue_8cpp.html',1,'']]],
-  ['job_5fqueue_2eh_1',['job_queue.h',['../db/d9d/job__queue_8h.html',1,'']]],
-  ['jobqueue_2',['jobqueue',['../da/d3d/classJobQueue.html',1,'JobQueue'],['../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2',1,'JobQueue::JobQueue()=default'],['../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9',1,'JobQueue::JobQueue(const JobQueue &amp;)=delete'],['../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448',1,'JobQueue::JobQueue(JobQueue &amp;&amp;)=delete']]],
-  ['jobqueuetest_3',['JobQueueTest',['../df/d3f/classJobQueueTest.html',1,'']]],
-  ['join_4',['join',['../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1',1,'ThreadPool']]]
+  ['level_0',['Level',['../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8f',1,'Logger']]],
+  ['linux_20docker_1',['Running Tests (Linux / Docker)',['../index.html#autotoc_md25',1,'']]],
+  ['linux_20wsl_20debian_20ubuntu_20based_2',['linux wsl debian ubuntu based',['../index.html#autotoc_md15',1,'Linux / WSL (Debian/Ubuntu based)'],['../index.html#autotoc_md39',1,'Linux / WSL (Debian/Ubuntu based)'],['../index.html#autotoc_md45',1,'Linux / WSL (Debian/Ubuntu based)']]],
+  ['list_3',['Test List',['../d4/df6/test.html',1,'']]],
+  ['log_4',['log',['../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb',1,'Logger']]],
+  ['logger_5',['Logger',['../db/d67/classLogger.html',1,'']]],
+  ['logger_2ecpp_6',['logger.cpp',['../d3/d30/logger_8cpp.html',1,'']]],
+  ['logger_2eh_7',['logger.h',['../d1/d8c/logger_8h.html',1,'']]]
 ];

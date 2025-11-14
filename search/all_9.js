@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['has_5fvalue_0',['has_value',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a8d36137e398950bfbd63e02d2dac7789',1,'nonstd::optional_lite::optional']]],
-  ['hasfinished_1',['hasFinished',['../de/d3d/classFakeSlowJob.html#a8d61f9f5f180abb07a113c623a63c84d',1,'FakeSlowJob']]],
-  ['hasstarted_2',['hasStarted',['../de/d3d/classFakeSlowJob.html#aa78279ce1b59c880d21d4a7b3daef253',1,'FakeSlowJob']]],
-  ['head_3',['head',['../d0/de3/structnonstd_1_1optional__lite_1_1detail_1_1typelist.html#a04089f94a2174513804b587c37fc6e3f',1,'nonstd::optional_lite::detail::typelist']]],
-  ['highlights_4',['🌟 Project Highlights',['../index.html#autotoc_md4',1,'']]]
+  ['i_5fjob_2eh_0',['i_job.h',['../d0/df3/i__job_8h.html',1,'']]],
+  ['ijob_1',['IJob',['../d4/d75/classIJob.html',1,'']]],
+  ['important_3a_2',['Important:',['../da/d3d/classJobQueue.html#autotoc_md60',1,'']]],
+  ['info_3',['info',['../db/d67/classLogger.html#ad766a24576ea8b27ad9d5649cef46d8fa551b723eafd6a31d444fcb2f5920fbd3',1,'Logger::INFO'],['../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657',1,'Logger::info(const std::string &amp;msg)']]],
+  ['instructions_4',['🛠 Build Instructions',['../index.html#autotoc_md10',1,'']]],
+  ['integration_5',['🔄 Continuous Integration',['../index.html#autotoc_md30',1,'']]],
+  ['is_5fclosed_6',['is_closed',['../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c',1,'JobQueue']]],
+  ['isrunning_7',['isRunning',['../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66',1,'ThreadPool']]]
 ];

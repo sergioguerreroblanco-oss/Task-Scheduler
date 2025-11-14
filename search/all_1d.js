@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🌟_20project_20highlights_0',['🌟 Project Highlights',['../index.html#autotoc_md4',1,'']]]
+  ['🎨_20code_20style_20clang_20format_0',['🎨 Code Style (clang-format)',['../index.html#autotoc_md41',1,'']]]
 ];

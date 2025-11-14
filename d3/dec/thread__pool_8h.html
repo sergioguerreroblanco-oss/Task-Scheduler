@@ -140,11 +140,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/d06/thread__pool_8h__dep__incl.png" border="0" usemap="#ainclude_2thread__pool_8hdep" alt=""/></div>
 <map name="ainclude_2thread__pool_8hdep" id="ainclude_2thread__pool_8hdep">
-<area shape="rect" title="ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue." alt="" coords="96,5,259,31"/>
-<area shape="rect" href="../../df/d17/thread__pool_8cpp.html" title="Implementation of ThreadPool." alt="" coords="5,79,155,104"/>
-<area shape="poly" title=" " alt="" coords="152,41,97,81,94,76,149,37"/>
-<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html" title=" " alt="" coords="179,79,373,104"/>
-<area shape="poly" title=" " alt="" coords="206,36,261,76,258,81,202,41"/>
+<area shape="rect" title="ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue." alt="" coords="127,5,290,31"/>
+<area shape="rect" href="../../df/d0a/main_8cpp.html" title="Entry point for the Task Scheduler demo application." alt="" coords="5,79,111,104"/>
+<area shape="poly" title=" " alt="" coords="173,39,84,81,82,76,171,34"/>
+<area shape="rect" href="../../df/d17/thread__pool_8cpp.html" title="Implementation of ThreadPool." alt="" coords="134,79,283,104"/>
+<area shape="poly" title=" " alt="" coords="211,44,211,79,206,79,206,44"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html" title=" " alt="" coords="307,79,502,104"/>
+<area shape="poly" title=" " alt="" coords="254,33,374,76,372,81,252,38"/>
 </map>
 </div>
 </div>
@@ -165,13 +167,13 @@ Classes</h2></td></tr>
 <li>A configurable number of worker threads (default = hardware concurrency).</li>
 <li>FIFO job submission through <code>enqueue()</code> and <code>tryEnqueue()</code>.</li>
 <li>Graceful shutdown (<code>shutdown()</code>): waits for queued jobs to finish.</li>
-<li>Immediate shutdown (<code>shutdownNow()</code>): stops accepting jobs, interrupts waiting workers.</li>
+<li>Immediate shutdown (<code>shutdownNow()</code>): stops accepting jobs, interrupts waiting threads.</li>
 <li>Automatic thread joining and safe cleanup.</li>
 </ul>
 <p>Jobs must inherit from <code><a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a></code> and override <code>execute()</code>.</p>
 <p>The pool guarantees:</p><ul>
 <li>No job is lost after being accepted.</li>
-<li>Workers survive job exceptions.</li>
+<li>threads survive job exceptions.</li>
 <li>Shutdown always joins all threads safely. </li>
 </ul>
 
@@ -182,7 +184,7 @@ Classes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d3/dec/thread__pool_8h.html">thread_pool.h</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 13:33:47 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

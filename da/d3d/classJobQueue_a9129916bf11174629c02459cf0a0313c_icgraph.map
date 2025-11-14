@@ -1,15 +1,17 @@
 <map id="JobQueue::empty" name="JobQueue::empty">
-<area shape="rect" id="Node000001" title="Returns whether the queue is currently empty." alt="" coords="455,104,589,129"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="240,104,407,129"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,119,407,119,407,114,441,114"/>
-<area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="291,99,245,71,191,44,133,27,134,22,193,40,247,66,294,94"/>
-<area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,55,133,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,104,133,77,134,72,252,98"/>
-<area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,104,133,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="226,119,134,119,134,114,226,114"/>
-<area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="252,135,134,161,133,156,251,130"/>
-<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="293,139,247,166,193,192,156,205,154,200,191,188,244,162,290,134"/>
+<area shape="rect" id="Node000001" title="Returns whether the queue is currently empty." alt="" coords="455,129,589,155"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="240,129,407,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,145,407,145,407,139,441,139"/>
+<area shape="rect" id="Node000003" href="$df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="71,5,126,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,122,251,82,191,44,158,32,126,25,127,19,159,27,193,40,254,78,301,118"/>
+<area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,55,133,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="279,127,191,94,133,78,134,73,193,89,281,122"/>
+<area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,104,133,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="226,134,133,123,134,118,227,128"/>
+<area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,153,133,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="227,155,134,165,133,160,226,150"/>
+<area shape="rect" id="Node000007" href="$df/df8/test__thread__pool_8cpp.html#aef4b678649e30b7b87f09ae78c9ab8ef" title="threads must survive exceptions thrown by jobs." alt="" coords="64,203,133,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="278,162,193,193,134,209,133,204,191,187,276,157"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,252,192,277"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="300,166,253,205,193,242,160,254,158,249,191,237,250,200,297,162"/>
 </map>

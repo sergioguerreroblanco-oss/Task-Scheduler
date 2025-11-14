@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../df/d0a/main_8cpp.html',1,'']]],
-  ['make_5foptional_2',['make_optional',['../d5/d98/namespacenonstd_1_1optional__lite.html#a9509073e9af119424975ca9507381f49',1,'nonstd::optional_lite']]],
-  ['move_3',['move',['../dc/de8/namespacenonstd_1_1optional__lite_1_1std11.html#a6a01a8f1306d32e723046d0df3b31b3b',1,'nonstd::optional_lite::std11']]]
+  ['notes_0',['📌 Notes',['../index.html#autotoc_md47',1,'']]],
+  ['notes_3a_1',['Notes:',['../da/d3d/classJobQueue.html#autotoc_md56',1,'']]]
 ];

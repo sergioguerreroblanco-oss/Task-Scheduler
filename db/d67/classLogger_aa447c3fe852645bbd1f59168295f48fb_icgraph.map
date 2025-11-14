@@ -1,59 +1,63 @@
 <map id="Logger::log" name="Logger::log">
-<area shape="rect" id="Node000001" title="Core logging function that prints a message with explicit severity." alt="" coords="871,283,965,308"/>
-<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="708,208,823,233"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="881,278,821,247,797,236,799,231,824,242,883,273"/>
-<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="713,257,818,283"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="857,288,818,281,819,276,858,283"/>
-<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="716,307,815,332"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="857,308,816,314,815,309,856,302"/>
-<area shape="rect" id="Node000023" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="712,507,819,532"/>
-<area shape="poly" id="edge31_Node000001_Node000023" title=" " alt="" coords="903,321,778,508,773,505,898,318"/>
-<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c" title="Removes all pending jobs." alt="" coords="509,307,633,332"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="702,322,634,322,634,317,702,317"/>
-<area shape="rect" id="Node000006" href="$de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f" title="Executes the job by printing the stored message." alt="" coords="506,356,637,381"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="703,338,623,359,621,353,702,333"/>
-<area shape="rect" id="Node000007" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="544,405,599,431"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="740,343,704,370,661,395,630,407,599,415,598,410,628,402,659,390,701,366,737,339"/>
-<area shape="rect" id="Node000008" href="$da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking)." alt="" coords="513,104,629,129"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="711,301,706,296,692,276,685,257,682,221,678,186,671,168,658,151,644,140,629,132,631,127,647,135,662,147,676,166,684,184,687,220,691,256,697,274,710,292,715,297"/>
-<area shape="rect" id="Node000012" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="494,207,649,232"/>
-<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="717,303,706,296,692,283,682,270,673,258,659,247,631,235,633,230,661,242,677,255,687,267,696,279,710,292,720,298"/>
-<area shape="rect" id="Node000013" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,456,421,481"/>
-<area shape="poly" id="edge21_Node000004_Node000013" title=" " alt="" coords="753,346,717,398,692,425,661,446,602,468,538,480,477,484,421,482,421,476,476,478,538,475,600,463,659,441,688,421,713,395,749,343"/>
-<area shape="rect" id="Node000019" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,153,435,179"/>
-<area shape="poly" id="edge22_Node000004_Node000019" title=" " alt="" coords="713,301,706,296,695,282,689,269,683,242,677,218,670,207,658,196,630,180,599,168,533,154,468,152,410,156,410,151,468,146,534,149,601,162,632,175,662,192,674,203,682,216,689,241,694,267,700,280,710,292,716,297"/>
-<area shape="rect" id="Node000021" href="$dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="505,257,638,283"/>
-<area shape="poly" id="edge23_Node000004_Node000021" title=" " alt="" coords="702,306,621,285,623,280,703,301"/>
-<area shape="rect" id="Node000009" href="$d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="303,55,372,80"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="499,104,372,77,373,72,500,99"/>
-<area shape="rect" id="Node000010" href="$d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="303,5,372,31"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="538,99,490,71,434,44,371,27,373,22,436,40,492,66,540,94"/>
-<area shape="rect" id="Node000011" href="$d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="303,104,372,129"/>
-<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="499,119,372,119,372,114,499,114"/>
-<area shape="poly" id="edge20_Node000012_Node000011" title=" " alt="" coords="539,201,491,172,434,143,372,125,373,120,436,138,494,167,542,197"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="495,240,484,247,457,271,432,298,391,359,362,416,346,457,341,455,358,414,387,356,428,295,453,267,481,243,492,235"/>
-<area shape="poly" id="edge18_Node000012_Node000019" title=" " alt="" coords="501,206,393,181,394,176,502,201"/>
-<area shape="rect" id="Node000014" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,355,133,380"/>
-<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="302,451,251,423,191,395,133,377,134,372,193,390,253,418,305,447"/>
-<area shape="rect" id="Node000015" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,405,133,431"/>
-<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="263,456,133,428,134,423,264,450"/>
-<area shape="rect" id="Node000016" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,505,133,531"/>
-<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="262,487,134,514,133,508,261,482"/>
-<area shape="rect" id="Node000017" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,304,133,329"/>
-<area shape="poly" id="edge16_Node000013_Node000017" title=" " alt="" coords="314,447,261,395,227,368,191,344,162,332,133,325,134,320,164,327,193,340,231,364,265,391,318,444"/>
-<area shape="rect" id="Node000018" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,456,192,481"/>
-<area shape="poly" id="edge17_Node000013_Node000018" title=" " alt="" coords="240,471,192,471,192,466,240,466"/>
-<area shape="rect" id="Node000020" href="$df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,204,133,229"/>
-<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="264,184,134,212,133,207,263,179"/>
-<area shape="poly" id="edge24_Node000021_Node000013" title=" " alt="" coords="494,288,485,296,471,313,464,330,461,365,458,402,451,420,436,439,406,458,403,454,433,435,446,418,453,400,456,365,459,328,466,310,481,292,491,284"/>
-<area shape="poly" id="edge25_Node000021_Node000014" title=" " alt="" coords="510,289,483,297,435,311,266,345,134,365,133,360,265,340,434,306,482,291,509,284"/>
-<area shape="poly" id="edge26_Node000021_Node000015" title=" " alt="" coords="495,290,484,296,469,310,461,324,452,339,436,354,397,373,356,389,271,409,194,419,134,421,133,416,193,413,271,404,354,384,395,368,433,349,448,336,457,322,465,306,481,292,492,286"/>
-<area shape="poly" id="edge27_Node000021_Node000016" title=" " alt="" coords="494,288,485,296,468,320,461,345,461,370,464,396,466,422,465,448,456,472,436,496,401,519,361,535,319,544,277,547,196,542,133,530,134,525,197,536,277,541,319,538,360,530,398,515,433,492,452,470,460,447,461,422,458,397,455,371,456,344,463,318,481,292,491,284"/>
-<area shape="poly" id="edge30_Node000021_Node000017" title=" " alt="" coords="492,281,435,287,134,316,133,311,434,282,491,276"/>
-<area shape="poly" id="edge28_Node000021_Node000020" title=" " alt="" coords="490,267,240,242,133,225,134,220,240,237,491,261"/>
-<area shape="rect" id="Node000022" href="$df/df8/test__thread__pool_8cpp.html#a1cd649348a2e765ccd35ce64a68665e0" title=" " alt="" coords="303,203,372,228"/>
-<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="502,257,372,226,373,221,503,252"/>
-<area shape="poly" id="edge32_Node000023_Node000013" title=" " alt="" coords="708,538,659,548,602,555,542,556,482,547,445,535,409,518,355,484,358,479,412,513,447,530,483,542,542,550,602,549,658,543,707,533"/>
-<area shape="rect" id="Node000024" href="$dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="483,507,660,532"/>
-<area shape="poly" id="edge33_Node000023_Node000024" title=" " alt="" coords="698,522,660,522,660,517,698,517"/>
+<area shape="rect" id="Node000001" title="Core logging function that prints a message with explicit severity." alt="" coords="848,372,943,397"/>
+<area shape="rect" id="Node000002" href="$db/d67/classLogger.html#a84de7b2dac788717b2c3c3cf1942d1a5" title="Logs a debug message (DBG level)." alt="" coords="685,297,800,323"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="858,367,799,336,774,325,776,320,801,332,861,363"/>
+<area shape="rect" id="Node000003" href="$db/d67/classLogger.html#a52d98131462d3254f76fae8f43b2fa90" title="Logs an error message (ERROR level)." alt="" coords="690,347,795,372"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="834,377,795,371,796,365,835,372"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="693,396,792,421"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="835,397,793,404,792,398,834,392"/>
+<area shape="rect" id="Node000023" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="507,645,613,671"/>
+<area shape="poly" id="edge34_Node000001_Node000023" title=" " alt="" coords="876,410,780,512,713,573,639,628,600,648,598,643,636,624,709,569,777,508,873,406"/>
+<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c" title="Removes all pending jobs." alt="" coords="498,347,622,372"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="681,395,607,375,609,370,683,390"/>
+<area shape="rect" id="Node000006" href="$de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f" title="Executes the job by printing the stored message." alt="" coords="495,396,625,421"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="680,411,626,411,626,406,680,406"/>
+<area shape="rect" id="Node000007" href="$df/d0a/main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="71,396,126,421"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="730,434,693,485,668,511,639,534,535,592,488,611,443,622,396,626,348,621,296,607,239,583,213,568,189,548,149,502,121,457,103,423,108,420,125,454,154,499,193,544,216,563,241,578,298,602,349,616,396,621,442,617,487,606,533,587,636,529,664,507,689,482,725,431"/>
+<area shape="rect" id="Node000008" href="$da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking)." alt="" coords="502,495,618,520"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="717,432,681,459,639,484,608,497,606,492,636,480,678,454,714,428"/>
+<area shape="rect" id="Node000012" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="483,445,637,471"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="683,427,609,448,607,443,681,422"/>
+<area shape="rect" id="Node000013" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,244,421,269"/>
+<area shape="poly" id="edge23_Node000004_Node000013" title=" " alt="" coords="691,391,683,385,667,364,660,344,653,325,636,308,585,282,528,266,472,258,421,255,421,250,473,253,530,261,586,277,639,304,657,322,665,342,672,362,687,381,694,387"/>
+<area shape="rect" id="Node000019" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,396,435,421"/>
+<area shape="poly" id="edge24_Node000004_Node000019" title=" " alt="" coords="694,392,684,385,669,372,660,358,651,346,636,336,595,322,560,317,526,323,484,336,469,345,460,355,451,367,436,379,391,398,389,393,433,374,447,364,456,352,466,341,482,332,524,317,560,312,596,317,639,332,655,342,665,355,673,368,687,381,697,387"/>
+<area shape="rect" id="Node000021" href="$dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="493,193,627,219"/>
+<area shape="poly" id="edge25_Node000004_Node000021" title=" " alt="" coords="689,390,683,385,670,366,663,347,659,311,655,275,648,258,635,240,608,221,611,217,639,236,653,255,660,274,664,310,668,346,674,363,687,382,692,386"/>
+<area shape="rect" id="Node000009" href="$d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="303,495,372,520"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="488,510,372,510,372,505,488,505"/>
+<area shape="rect" id="Node000010" href="$d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="303,544,372,569"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="489,526,373,552,372,546,488,520"/>
+<area shape="rect" id="Node000011" href="$d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="303,445,372,471"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="488,494,372,468,373,463,489,489"/>
+<area shape="poly" id="edge22_Node000012_Node000011" title=" " alt="" coords="469,461,372,461,372,455,469,455"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="494,442,481,435,418,363,346,271,351,268,422,359,484,431,496,438"/>
+<area shape="poly" id="edge19_Node000012_Node000019" title=" " alt="" coords="488,445,395,424,396,419,490,440"/>
+<area shape="poly" id="edge13_Node000013_Node000007" title=" " alt="" coords="309,280,193,359,126,398,123,393,191,354,306,275"/>
+<area shape="rect" id="Node000014" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="315,235,238,130,217,91,207,74,190,57,162,40,133,29,135,24,165,35,194,53,211,71,221,88,242,127,320,231"/>
+<area shape="rect" id="Node000015" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,68,133,93"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="312,236,258,187,190,134,125,96,128,91,194,129,262,183,315,232"/>
+<area shape="rect" id="Node000016" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,144,133,169"/>
+<area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="302,239,250,212,191,184,133,167,135,162,193,180,253,207,304,235"/>
+<area shape="rect" id="Node000017" href="$df/df8/test__thread__pool_8cpp.html#aef4b678649e30b7b87f09ae78c9ab8ef" title="threads must survive exceptions thrown by jobs." alt="" coords="64,195,133,220"/>
+<area shape="poly" id="edge17_Node000013_Node000017" title=" " alt="" coords="261,244,133,217,134,212,262,239"/>
+<area shape="rect" id="Node000018" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,244,192,269"/>
+<area shape="poly" id="edge18_Node000013_Node000018" title=" " alt="" coords="240,259,192,259,192,254,240,254"/>
+<area shape="poly" id="edge20_Node000019_Node000007" title=" " alt="" coords="226,411,126,411,126,406,226,406"/>
+<area shape="rect" id="Node000020" href="$df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,320,133,345"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="283,394,133,346,134,341,284,389"/>
+<area shape="poly" id="edge26_Node000021_Node000007" title=" " alt="" coords="544,231,499,282,469,309,436,331,374,354,287,376,127,407,126,402,285,371,373,349,433,326,466,304,495,278,540,228"/>
+<area shape="poly" id="edge27_Node000021_Node000013" title=" " alt="" coords="490,224,394,247,393,241,489,219"/>
+<area shape="poly" id="edge28_Node000021_Node000014" title=" " alt="" coords="545,182,527,150,502,114,471,79,433,51,395,34,354,22,270,10,193,10,134,15,133,10,193,5,271,5,355,17,397,29,436,46,475,75,507,111,532,147,549,179"/>
+<area shape="poly" id="edge29_Node000021_Node000015" title=" " alt="" coords="542,183,498,129,468,102,434,82,394,69,353,61,269,57,193,64,134,75,133,70,192,59,269,52,353,55,396,63,436,77,471,98,502,125,546,180"/>
+<area shape="poly" id="edge30_Node000021_Node000016" title=" " alt="" coords="479,197,434,191,134,162,134,157,435,186,480,192"/>
+<area shape="poly" id="edge33_Node000021_Node000017" title=" " alt="" coords="479,209,133,210,133,205,479,204"/>
+<area shape="poly" id="edge31_Node000021_Node000020" title=" " alt="" coords="533,229,489,258,436,283,352,307,268,322,192,331,134,334,133,329,191,325,267,317,351,302,434,278,486,253,530,225"/>
+<area shape="rect" id="Node000022" href="$df/df8/test__thread__pool_8cpp.html#a1cd649348a2e765ccd35ce64a68665e0" title=" " alt="" coords="303,92,372,117"/>
+<area shape="poly" id="edge32_Node000021_Node000022" title=" " alt="" coords="526,189,483,164,434,139,371,117,373,112,436,134,485,159,529,184"/>
+<area shape="poly" id="edge35_Node000023_Node000007" title=" " alt="" coords="493,670,435,673,369,669,302,656,269,644,239,628,210,607,184,580,144,521,117,464,101,423,106,421,122,462,149,519,188,577,213,603,241,624,271,639,303,651,370,664,435,667,493,665"/>
+<area shape="poly" id="edge36_Node000023_Node000013" title=" " alt="" coords="540,635,510,589,480,532,465,491,457,457,449,424,432,385,389,319,349,271,353,268,393,316,437,382,454,423,463,456,470,490,485,530,515,586,544,633"/>
+<area shape="rect" id="Node000024" href="$dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="249,696,426,721"/>
+<area shape="poly" id="edge37_Node000023_Node000024" title=" " alt="" coords="494,676,394,699,393,693,493,670"/>
 </map>
