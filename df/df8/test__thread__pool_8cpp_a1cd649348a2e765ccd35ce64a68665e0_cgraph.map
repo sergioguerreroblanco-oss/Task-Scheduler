@@ -1,8 +1,8 @@
 <map id="TEST_F" name="TEST_F">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,31,75,56"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="join" alt="" coords="125,5,254,31"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="Returns the number of active worker threads." alt="" coords="125,5,254,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,35,111,29,112,34,75,40"/>
-<area shape="rect" id="Node000003" href="$dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="123,55,256,80"/>
+<area shape="rect" id="Node000003" href="$dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="123,55,256,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="75,46,109,52,108,57,75,51"/>
 <area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="304,55,403,80"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,65,290,65,290,70,256,70"/>

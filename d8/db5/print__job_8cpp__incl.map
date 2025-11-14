@@ -1,12 +1,12 @@
 <map id="src/print_job.cpp" name="src/print_job.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="59,5,188,31"/>
-<area shape="rect" id="Node000002" href="$d8/d07/print__job_8h.html" title=" " alt="" coords="25,79,115,104"/>
+<area shape="rect" id="Node000001" title="Implementation of PrintJob." alt="" coords="59,5,188,31"/>
+<area shape="rect" id="Node000002" href="$d8/d07/print__job_8h.html" title="Definition of PrintJob, a simple job that logs a message when executed." alt="" coords="25,79,115,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,33,89,69,85,66,112,29"/>
 <area shape="rect" id="Node000005" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="139,79,214,104"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="134,29,162,66,158,69,130,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="95,152,154,177"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,103,110,140,105,143,77,106"/>
-<area shape="rect" id="Node000004" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="5,152,71,177"/>
+<area shape="rect" id="Node000004" href="$d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="5,152,71,177"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="67,105,51,141,46,139,62,103"/>
 <area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="170,106,143,142,139,139,166,103"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="178,152,242,177"/>

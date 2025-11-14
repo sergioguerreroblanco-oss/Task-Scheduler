@@ -1,25 +1,25 @@
 <map id="include/thread_pool.h" name="include/thread_pool.h">
-<area shape="rect" id="Node000001" title="Thread pool manages multiple worker threads consuming tasks from a shared queue." alt="" coords="167,5,329,31"/>
+<area shape="rect" id="Node000001" title="ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue." alt="" coords="167,5,329,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,33,86,77,84,72,214,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="33,152,97,177"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="27,152,104,177"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,33,171,81,92,145,88,141,168,77,231,29"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="323,79,381,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="266,28,325,68,322,73,263,33"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="405,79,469,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="279,28,394,71,393,76,277,33"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="494,79,557,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="293,28,481,76,480,81,292,33"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="121,152,199,177"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="234,33,210,53,188,80,174,110,166,139,161,138,169,108,183,77,206,50,230,29"/>
-<area shape="rect" id="Node000008" href="$db/d9d/job__queue_8h.html" title=" " alt="" coords="197,79,299,104"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="128,152,192,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,33,210,53,188,80,174,110,166,139,161,138,169,108,183,77,206,50,230,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="323,79,381,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="266,28,325,68,322,73,263,33"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="405,79,469,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="279,28,394,71,393,76,277,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="494,79,557,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="293,28,481,76,480,81,292,33"/>
+<area shape="rect" id="Node000008" href="$db/d9d/job__queue_8h.html" title="Thread&#45;safe FIFO queue for IJob instances." alt="" coords="197,79,299,104"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="251,31,251,65,245,65,245,31"/>
 <area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="220,107,109,149,107,144,218,102"/>
-<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="236,106,187,145,183,141,232,102"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="223,152,366,177"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="258,103,282,139,277,142,253,106"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="390,152,453,177"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="277,102,381,144,379,149,275,106"/>
-<area shape="rect" id="Node000011" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="477,152,542,177"/>
-<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="291,101,464,148,463,154,289,107"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="236,106,187,145,183,141,232,102"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="217,152,359,177"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="257,103,277,139,272,141,252,106"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="383,152,446,177"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="276,102,376,144,374,149,274,106"/>
+<area shape="rect" id="Node000011" href="$d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="470,152,535,177"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="290,101,457,148,456,153,288,107"/>
 </map>

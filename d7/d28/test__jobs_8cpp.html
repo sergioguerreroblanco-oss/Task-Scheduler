@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d7/d28/test__jobs_8cpp.html','../../')
 </div><!--header-->
 <div class="contents">
 
-<p>Unit tests for <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface for jobs.">IJob</a> and <a class="el" href="../../de/d95/classPrintJob.html">PrintJob</a> components.  
+<p>Unit tests for <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a> and <a class="el" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a> components.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -120,11 +120,11 @@ Include dependency graph for test_jobs.cpp:</div>
 <area shape="poly" title=" " alt="" coords="366,33,305,73,302,69,363,28"/>
 <area shape="rect" title=" " alt="" coords="337,79,426,104"/>
 <area shape="poly" title=" " alt="" coords="384,31,384,65,379,65,379,31"/>
-<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="437,152,502,177"/>
+<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="437,152,502,177"/>
 <area shape="poly" title=" " alt="" coords="397,29,418,50,440,77,455,108,465,138,460,140,450,110,435,80,414,54,393,33"/>
 <area shape="rect" href="../../d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="616,79,691,104"/>
 <area shape="poly" title=" " alt="" coords="426,28,604,74,602,79,424,33"/>
-<area shape="rect" href="../../d8/d07/print__job_8h.html" title=" " alt="" coords="501,79,592,104"/>
+<area shape="rect" href="../../d8/d07/print__job_8h.html" title="Definition of PrintJob, a simple job that logs a message when executed." alt="" coords="501,79,592,104"/>
 <area shape="poly" title=" " alt="" coords="409,28,508,71,506,76,407,33"/>
 <area shape="rect" title=" " alt="" coords="621,152,685,177"/>
 <area shape="poly" title=" " alt="" coords="656,104,656,138,651,138,651,104"/>
@@ -150,11 +150,11 @@ Functions</h2></td></tr>
 <tr class="separator:a35453f2b19912ef6685fdfc3d9cfcd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Unit tests for <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface for jobs.">IJob</a> and <a class="el" href="../../de/d95/classPrintJob.html">PrintJob</a> components. </p>
+<div class="textblock"><p>Unit tests for <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a> and <a class="el" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a> components. </p>
 <dl class="section author"><dt>Author</dt><dd>Sergio Guerrero </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-10-27 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1.0</dd></dl>
-<p>GIVEN a polymorphic job interface (<a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface for jobs.">IJob</a>) WHEN derived jobs like <a class="el" href="../../de/d95/classPrintJob.html">PrintJob</a> are executed THEN they must produce the expected observable behavior (e.g., write a log line to the console). </p>
+<p>GIVEN a polymorphic job interface (<a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a>) WHEN derived jobs like <a class="el" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a> are executed THEN they must produce the expected observable behavior (e.g., write a log line to the console). </p>
 
 <p class="definition">Definition in file <a class="el" href="../../d7/d28/test__jobs_8cpp_source.html">test_jobs.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -183,7 +183,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="../../d4/df6/test.html#_test000005">Test:</a></b></dt><dd>Verify that <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface for jobs.">IJob</a> cannot be instantiated directly. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="../../d4/df6/test.html#_test000005">Test:</a></b></dt><dd>Verify that <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a> cannot be instantiated directly. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d28/test__jobs_8cpp_source.html#l00081">81</a> of file <a class="el" href="../../d7/d28/test__jobs_8cpp_source.html">test_jobs.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
@@ -220,8 +220,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="../../d4/df6/test.html#_test000004">Test:</a></b></dt><dd>Verify that a <a class="el" href="../../de/d95/classPrintJob.html">PrintJob</a> can be executed polymorphically through <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface for jobs.">IJob</a>.</dd></dl>
-<p>GIVEN an <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface for jobs.">IJob</a> pointer referencing a <a class="el" href="../../de/d95/classPrintJob.html">PrintJob</a> WHEN execute() is called THEN the expected log message is printed to stdout. </p>
+<dl class="test"><dt><b><a class="el" href="../../d4/df6/test.html#_test000004">Test:</a></b></dt><dd>Verify that a <a class="el" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a> can be executed polymorphically through <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a>.</dd></dl>
+<p>GIVEN an <a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a> pointer referencing a <a class="el" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed.">PrintJob</a> WHEN execute() is called THEN the expected log message is printed to stdout. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d28/test__jobs_8cpp_source.html#l00063">63</a> of file <a class="el" href="../../d7/d28/test__jobs_8cpp_source.html">test_jobs.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
@@ -246,7 +246,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="../../d7/d28/test__jobs_8cpp.html">test_jobs.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

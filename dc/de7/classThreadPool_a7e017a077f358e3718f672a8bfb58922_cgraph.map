@@ -1,10 +1,10 @@
 <map id="ThreadPool::shutdownNow" name="ThreadPool::shutdownNow">
-<area shape="rect" id="Node000001" title="shutdown" alt="" coords="5,24,200,49"/>
+<area shape="rect" id="Node000001" title="Immediately shuts down the pool." alt="" coords="5,24,200,49"/>
 <area shape="rect" id="Node000002" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="451,24,549,49"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,21,248,9,325,3,403,9,447,18,446,23,402,14,325,8,248,14,163,27"/>
-<area shape="rect" id="Node000004" href="$dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="262,24,389,49"/>
+<area shape="rect" id="Node000004" href="$dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="262,24,389,49"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,34,248,34,248,39,200,39"/>
-<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="248,73,403,99"/>
+<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="248,73,403,99"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="161,47,255,68,254,73,160,52"/>
 <area shape="rect" id="Node000003" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="597,24,692,49"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="549,34,584,34,584,39,549,39"/>

@@ -1,5 +1,5 @@
 <map id="JobQueue::shutdown" name="JobQueue::shutdown">
-<area shape="rect" id="Node000001" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000001" title="Closes the queue and wakes all waiting threads." alt="" coords="5,5,160,31"/>
 <area shape="rect" id="Node000002" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="208,5,307,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,15,194,15,194,21,160,21"/>
 <area shape="rect" id="Node000003" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="355,5,449,31"/>

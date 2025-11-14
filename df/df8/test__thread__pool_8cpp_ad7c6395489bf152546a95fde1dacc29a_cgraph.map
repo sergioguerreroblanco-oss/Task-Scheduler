@@ -1,22 +1,22 @@
 <map id="TEST_F" name="TEST_F">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,207,75,232"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="127,56,285,81"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="127,56,285,81"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,205,179,89,182,93,57,208"/>
-<area shape="rect" id="Node000004" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="123,181,289,207"/>
+<area shape="rect" id="Node000004" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="123,181,289,207"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="74,212,109,206,110,211,75,217"/>
-<area shape="rect" id="Node000010" href="$dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="348,307,481,332"/>
+<area shape="rect" id="Node000010" href="$dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="348,307,481,332"/>
 <area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="75,221,173,236,232,250,290,268,315,280,338,293,357,300,355,305,336,298,312,285,288,272,231,255,172,242,75,226"/>
 <area shape="rect" id="Node000012" href="$db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec" title=" " alt="" coords="124,283,288,308"/>
 <area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="64,230,124,261,157,275,155,280,122,266,62,234"/>
-<area shape="rect" id="Node000003" href="$da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title=" " alt="" coords="353,5,476,31"/>
+<area shape="rect" id="Node000003" href="$da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="353,5,476,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="259,53,348,31,349,37,260,58"/>
-<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Checks whether the queue is currently empty." alt="" coords="347,156,482,181"/>
+<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty." alt="" coords="347,156,482,181"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="289,181,333,176,334,181,290,187"/>
 <area shape="rect" id="Node000006" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="544,157,643,183"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="290,196,387,196,492,190,532,183,533,188,492,195,387,202,290,201"/>
-<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="351,257,478,283"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="351,257,478,283"/>
 <area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="243,204,367,250,365,255,241,209"/>
-<area shape="rect" id="Node000009" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="337,107,492,132"/>
+<area shape="rect" id="Node000009" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="337,107,492,132"/>
 <area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="238,179,336,141,358,134,359,139,338,146,240,184"/>
 <area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="255,204,291,224,307,242,315,260,323,277,339,293,347,298,344,303,336,297,319,280,311,262,303,245,288,228,253,209"/>
 <area shape="rect" id="Node000011" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="540,83,647,108"/>

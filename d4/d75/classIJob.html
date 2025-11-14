@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d4/d75/classIJob.html','../../'); init
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract interface for jobs.  
+<p>Abstract interface representing a unit of executable work.  
  <a href="../../d4/d75/classIJob.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d0/df3/i__job_8h_source.html">i_job.h</a>&gt;</code></p>
@@ -106,14 +106,14 @@ Inheritance diagram for IJob:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/dbf/classIJob__inherit__graph.png" border="0" usemap="#aIJob_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIJob_inherit__map" id="aIJob_inherit__map">
-<area shape="rect" title="Abstract interface for jobs." alt="" coords="247,5,336,91"/>
+<area shape="rect" title="Abstract interface representing a unit of executable work." alt="" coords="247,5,336,91"/>
 <area shape="rect" href="../../db/ded/classFakeJob.html" title=" " alt="" coords="5,149,129,254"/>
 <area shape="poly" title=" " alt="" coords="236,82,142,141,129,151,126,147,139,136,233,78"/>
 <area shape="rect" href="../../de/d3d/classFakeSlowJob.html" title=" " alt="" coords="153,139,272,264"/>
 <area shape="poly" title=" " alt="" coords="266,104,247,139,243,137,261,102"/>
 <area shape="rect" href="../../de/d34/classFakeThrowingJob.html" title=" " alt="" coords="296,149,444,254"/>
 <area shape="poly" title=" " alt="" coords="322,102,345,147,341,150,317,104"/>
-<area shape="rect" href="../../de/d95/classPrintJob.html" title=" " alt="" coords="468,159,557,244"/>
+<area shape="rect" href="../../de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed." alt="" coords="468,159,557,244"/>
 <area shape="poly" title=" " alt="" coords="350,72,404,100,458,137,480,157,477,160,455,141,401,105,347,77"/>
 </map>
 </div>
@@ -122,27 +122,32 @@ Collaboration diagram for IJob:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d66/classIJob__coll__graph.png" border="0" usemap="#aIJob_coll__map" alt="Collaboration graph"/></div>
 <map name="aIJob_coll__map" id="aIJob_coll__map">
-<area shape="rect" title="Abstract interface for jobs." alt="" coords="5,5,95,91"/>
+<area shape="rect" title="Abstract interface representing a unit of executable work." alt="" coords="5,5,95,91"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e19effe332b5203d634957e6f92f592" id="r_a7e19effe332b5203d634957e6f92f592"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d75/classIJob.html#a7e19effe332b5203d634957e6f92f592">~IJob</a> ()=default</td></tr>
+<tr class="memdesc:a7e19effe332b5203d634957e6f92f592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for safe polymorphic cleanup.  <br /></td></tr>
 <tr class="separator:a7e19effe332b5203d634957e6f92f592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f23d9f62f40e2a2c25dfd0262f15492" id="r_a0f23d9f62f40e2a2c25dfd0262f15492"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d75/classIJob.html#a0f23d9f62f40e2a2c25dfd0262f15492">execute</a> ()=0</td></tr>
+<tr class="memdesc:a0f23d9f62f40e2a2c25dfd0262f15492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the job's logic.  <br /></td></tr>
 <tr class="separator:a0f23d9f62f40e2a2c25dfd0262f15492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract interface for jobs. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<div class="textblock"><p>Abstract interface representing a unit of executable work. </p>
+<p>Any task that can be executed by the <a class="el" href="../../dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a> must inherit from this class. The <code><a class="el" href="../../d4/d75/classIJob.html#a0f23d9f62f40e2a2c25dfd0262f15492" title="Executes the job&#39;s logic.">execute()</a></code> method is called by worker threads inside a safe loop that catches exceptions to avoid crashing the worker.</p>
+<p>Example: </p><div class="fragment"><div class="line"><span class="keyword">class </span>MyJob : <span class="keyword">public</span> <a class="code hl_class" href="../../d4/d75/classIJob.html">IJob</a> {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> execute()<span class="keyword"> override </span>{</div>
+<div class="line">        <span class="comment">// Do some work...</span></div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="ttc" id="aclassIJob_html"><div class="ttname"><a href="../../d4/d75/classIJob.html">IJob</a></div><div class="ttdoc">Abstract interface representing a unit of executable work.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/df3/i__job_8h_source.html#l00056">i_job.h:57</a></div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Jobs must be heap-allocated and owned via std::unique_ptr&lt;IJob&gt;. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/df3/i__job_8h_source.html#l00029">29</a> of file <a class="el" href="../../d0/df3/i__job_8h_source.html">i_job.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/df3/i__job_8h_source.html#l00056">56</a> of file <a class="el" href="../../d0/df3/i__job_8h_source.html">i_job.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e19effe332b5203d634957e6f92f592" name="a7e19effe332b5203d634957e6f92f592"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e19effe332b5203d634957e6f92f592">&#9670;&#160;</a></span>~IJob()</h2>
@@ -166,6 +171,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Virtual destructor for safe polymorphic cleanup. </p>
+<p>Ensures derived job objects are properly destroyed when accessed through a base <code>IJob*</code> pointer. </p>
 
 </div>
 </div>
@@ -192,12 +200,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+
+<p>Executes the job's logic. </p>
+<p>This function is called by worker threads. Derived classes should provide the actual operation that needs to be performed. The function must not throw exceptions out of the implementation — if it does, the <a class="el" href="../../dc/de7/classThreadPool.html" title="A fixed-size pool of worker threads executing asynchronous jobs.">ThreadPool</a> catches them and continues running. </p>
 
 <p>Implemented in <a class="el" href="../../de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f">PrintJob</a>, <a class="el" href="../../db/ded/classFakeJob.html#afe0d9a30a7b18c8caa6896f79fbf8569">FakeJob</a>, <a class="el" href="../../de/d3d/classFakeSlowJob.html#abaefc0cb768df7a2a55d80b85799d8da">FakeSlowJob</a>, and <a class="el" href="../../de/d34/classFakeThrowingJob.html#a696e09e2ddb2bf4ed53e98624cbbe780">FakeThrowingJob</a>.</p>
 
@@ -212,7 +217,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d75/classIJob.html">IJob</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

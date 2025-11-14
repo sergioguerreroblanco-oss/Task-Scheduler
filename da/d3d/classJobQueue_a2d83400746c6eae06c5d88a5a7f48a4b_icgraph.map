@@ -1,8 +1,8 @@
 <map id="JobQueue::shutdown" name="JobQueue::shutdown">
-<area shape="rect" id="Node000001" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="483,215,637,240"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="254,129,421,155"/>
+<area shape="rect" id="Node000001" title="Closes the queue and wakes all waiting threads." alt="" coords="483,215,637,240"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,129,421,155"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="512,212,371,157,372,152,514,207"/>
-<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="shutdown" alt="" coords="240,215,435,240"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,215,435,240"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="469,230,435,230,435,225,469,225"/>
 <area shape="rect" id="Node000010" href="$d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="303,264,372,289"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="489,246,373,272,372,266,488,240"/>
@@ -14,7 +14,7 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="239,134,133,123,134,118,240,129"/>
 <area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="240,154,134,165,133,160,239,149"/>
-<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,203,192,228"/>
+<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="287,162,193,193,149,205,147,200,191,187,286,157"/>
 <area shape="rect" id="Node000009" href="$df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,252,133,277"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="242,245,134,262,133,257,242,240"/>

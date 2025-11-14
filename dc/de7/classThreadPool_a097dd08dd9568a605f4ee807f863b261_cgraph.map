@@ -1,0 +1,11 @@
+<map id="ThreadPool::tryEnqueue" name="ThreadPool::tryEnqueue">
+<area shape="rect" id="Node000001" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="5,55,183,80"/>
+<area shape="rect" id="Node000002" href="$da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c" title="Returns whether the queue is closed." alt="" coords="231,5,383,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,52,237,31,238,36,150,57"/>
+<area shape="rect" id="Node000003" href="$da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="245,55,368,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,65,232,65,232,70,183,70"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="253,104,360,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,77,241,99,240,104,149,83"/>
+<area shape="rect" id="Node000005" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="431,104,525,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="360,114,417,114,417,119,360,119"/>
+</map>

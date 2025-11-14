@@ -10,13 +10,13 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="404,31,404,65,399,65,399,31"/>
 <area shape="rect" id="Node000009" href="$d5/d71/fake__throwing__job_8h.html" title=" " alt="" coords="489,79,642,104"/>
 <area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="429,28,527,71,525,76,427,33"/>
-<area shape="rect" id="Node000011" href="$d3/dec/thread__pool_8h.html" title="Thread pool manages multiple worker threads consuming tasks from a shared queue." alt="" coords="710,79,821,104"/>
+<area shape="rect" id="Node000011" href="$d3/dec/thread__pool_8h.html" title="ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue." alt="" coords="710,79,821,104"/>
 <area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="460,28,697,74,696,79,459,33"/>
 <area shape="rect" id="Node000019" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="1013,79,1088,104"/>
 <area shape="poly" id="edge27_Node000001_Node000019" title=" " alt="" coords="499,27,1000,82,999,87,499,33"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="365,152,432,177"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="291,102,366,143,364,147,289,106"/>
-<area shape="rect" id="Node000006" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="366,225,431,251"/>
+<area shape="rect" id="Node000006" href="$d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="366,225,431,251"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="282,103,381,213,377,217,278,106"/>
 <area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="404,104,402,139,397,138,398,104"/>
 <area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="390,106,371,127,356,153,354,169,358,185,378,214,374,217,353,187,349,169,351,151,367,123,386,102"/>
@@ -27,24 +27,24 @@
 <area shape="rect" id="Node000010" title=" " alt="" coords="507,152,594,177"/>
 <area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="566,105,558,139,553,138,560,104"/>
 <area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="710,106,446,157,445,152,709,101"/>
-<area shape="poly" id="edge18_Node000011_Node000008" title=" " alt="" coords="748,106,682,147,680,142,746,102"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="1031,225,1095,251"/>
-<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="786,102,922,175,1021,218,1019,223,920,180,784,107"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="1021,152,1080,177"/>
-<area shape="poly" id="edge17_Node000011_Node000013" title=" " alt="" coords="814,102,1009,149,1009,150,1008,155,1007,155,813,107"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="934,152,997,177"/>
-<area shape="poly" id="edge19_Node000011_Node000014" title=" " alt="" coords="798,102,922,145,920,150,797,107"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="675,225,752,251"/>
-<area shape="poly" id="edge20_Node000011_Node000015" title=" " alt="" coords="764,105,725,213,720,212,759,104"/>
-<area shape="rect" id="Node000016" href="$db/d9d/job__queue_8h.html" title=" " alt="" coords="757,152,859,177"/>
+<area shape="poly" id="edge19_Node000011_Node000008" title=" " alt="" coords="748,106,682,147,680,142,746,102"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="675,225,752,251"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="764,105,725,213,720,212,759,104"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1031,225,1095,251"/>
+<area shape="poly" id="edge17_Node000011_Node000013" title=" " alt="" coords="786,102,922,175,1021,218,1019,223,920,180,784,107"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1021,152,1080,177"/>
+<area shape="poly" id="edge18_Node000011_Node000014" title=" " alt="" coords="814,102,1009,149,1009,150,1008,155,1007,155,813,107"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="934,152,997,177"/>
+<area shape="poly" id="edge20_Node000011_Node000015" title=" " alt="" coords="798,102,922,145,920,150,797,107"/>
+<area shape="rect" id="Node000016" href="$db/d9d/job__queue_8h.html" title="Thread&#45;safe FIFO queue for IJob instances." alt="" coords="757,152,859,177"/>
 <area shape="poly" id="edge21_Node000011_Node000016" title=" " alt="" coords="775,103,796,139,792,142,770,106"/>
 <area shape="poly" id="edge26_Node000016_Node000006" title=" " alt="" coords="757,177,445,231,444,226,757,172"/>
-<area shape="poly" id="edge24_Node000016_Node000012" title=" " alt="" coords="850,175,1018,221,1016,227,848,180"/>
-<area shape="poly" id="edge25_Node000016_Node000015" title=" " alt="" coords="794,179,741,219,738,215,791,175"/>
+<area shape="poly" id="edge24_Node000016_Node000012" title=" " alt="" coords="794,179,741,219,738,215,791,175"/>
+<area shape="poly" id="edge25_Node000016_Node000013" title=" " alt="" coords="850,175,1018,221,1016,227,848,180"/>
 <area shape="rect" id="Node000017" title=" " alt="" coords="863,225,1006,251"/>
 <area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="830,175,903,216,901,221,827,180"/>
 <area shape="rect" id="Node000018" title=" " alt="" coords="777,225,839,251"/>
 <area shape="poly" id="edge23_Node000016_Node000018" title=" " alt="" coords="811,178,811,212,805,212,805,178"/>
-<area shape="poly" id="edge28_Node000019_Node000012" title=" " alt="" coords="1064,103,1081,124,1095,151,1097,168,1094,185,1081,215,1076,213,1089,184,1091,168,1089,153,1076,127,1060,106"/>
-<area shape="poly" id="edge29_Node000019_Node000013" title=" " alt="" coords="1053,104,1053,138,1048,138,1048,104"/>
+<area shape="poly" id="edge28_Node000019_Node000013" title=" " alt="" coords="1064,103,1081,124,1095,151,1097,168,1094,185,1081,215,1076,213,1089,184,1091,168,1089,153,1076,127,1060,106"/>
+<area shape="poly" id="edge29_Node000019_Node000014" title=" " alt="" coords="1053,104,1053,138,1048,138,1048,104"/>
 </map>

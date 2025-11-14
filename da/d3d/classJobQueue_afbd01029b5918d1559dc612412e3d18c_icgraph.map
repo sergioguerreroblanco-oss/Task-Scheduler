@@ -1,0 +1,5 @@
+<map id="JobQueue::is_closed" name="JobQueue::is_closed">
+<area shape="rect" id="Node000001" title="Returns whether the queue is closed." alt="" coords="231,5,383,31"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="5,5,183,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,21,183,21,183,15,217,15"/>
+</map>

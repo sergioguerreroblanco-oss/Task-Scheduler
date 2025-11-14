@@ -119,13 +119,13 @@ Include dependency graph for test_thread_pool.cpp:</div>
 <area shape="poly" title=" " alt="" coords="404,31,404,65,399,65,399,31"/>
 <area shape="rect" href="../../d5/d71/fake__throwing__job_8h.html" title=" " alt="" coords="489,79,642,104"/>
 <area shape="poly" title=" " alt="" coords="429,28,527,71,525,76,427,33"/>
-<area shape="rect" href="../../d3/dec/thread__pool_8h.html" title="Thread pool manages multiple worker threads consuming tasks from a shared queue." alt="" coords="710,79,821,104"/>
+<area shape="rect" href="../../d3/dec/thread__pool_8h.html" title="ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue." alt="" coords="710,79,821,104"/>
 <area shape="poly" title=" " alt="" coords="460,28,697,74,696,79,459,33"/>
 <area shape="rect" href="../../d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="1013,79,1088,104"/>
 <area shape="poly" title=" " alt="" coords="499,27,1000,82,999,87,499,33"/>
 <area shape="rect" title=" " alt="" coords="365,152,432,177"/>
 <area shape="poly" title=" " alt="" coords="291,102,366,143,364,147,289,106"/>
-<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="366,225,431,251"/>
+<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="366,225,431,251"/>
 <area shape="poly" title=" " alt="" coords="282,103,381,213,377,217,278,106"/>
 <area shape="poly" title=" " alt="" coords="404,104,402,139,397,138,398,104"/>
 <area shape="poly" title=" " alt="" coords="390,106,371,127,356,153,354,169,358,185,378,214,374,217,353,187,349,169,351,151,367,123,386,102"/>
@@ -137,19 +137,19 @@ Include dependency graph for test_thread_pool.cpp:</div>
 <area shape="poly" title=" " alt="" coords="566,105,558,139,553,138,560,104"/>
 <area shape="poly" title=" " alt="" coords="710,106,446,157,445,152,709,101"/>
 <area shape="poly" title=" " alt="" coords="748,106,682,147,680,142,746,102"/>
+<area shape="rect" title=" " alt="" coords="675,225,752,251"/>
+<area shape="poly" title=" " alt="" coords="764,105,725,213,720,212,759,104"/>
 <area shape="rect" title=" " alt="" coords="1031,225,1095,251"/>
 <area shape="poly" title=" " alt="" coords="786,102,922,175,1021,218,1019,223,920,180,784,107"/>
 <area shape="rect" title=" " alt="" coords="1021,152,1080,177"/>
 <area shape="poly" title=" " alt="" coords="814,102,1009,149,1009,150,1008,155,1007,155,813,107"/>
 <area shape="rect" title=" " alt="" coords="934,152,997,177"/>
 <area shape="poly" title=" " alt="" coords="798,102,922,145,920,150,797,107"/>
-<area shape="rect" title=" " alt="" coords="675,225,752,251"/>
-<area shape="poly" title=" " alt="" coords="764,105,725,213,720,212,759,104"/>
-<area shape="rect" href="../../db/d9d/job__queue_8h.html" title=" " alt="" coords="757,152,859,177"/>
+<area shape="rect" href="../../db/d9d/job__queue_8h.html" title="Thread&#45;safe FIFO queue for IJob instances." alt="" coords="757,152,859,177"/>
 <area shape="poly" title=" " alt="" coords="775,103,796,139,792,142,770,106"/>
 <area shape="poly" title=" " alt="" coords="757,177,445,231,444,226,757,172"/>
-<area shape="poly" title=" " alt="" coords="850,175,1018,221,1016,227,848,180"/>
 <area shape="poly" title=" " alt="" coords="794,179,741,219,738,215,791,175"/>
+<area shape="poly" title=" " alt="" coords="850,175,1018,221,1016,227,848,180"/>
 <area shape="rect" title=" " alt="" coords="863,225,1006,251"/>
 <area shape="poly" title=" " alt="" coords="830,175,903,216,901,221,827,180"/>
 <area shape="rect" title=" " alt="" coords="777,225,839,251"/>
@@ -215,7 +215,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
 <div class="line"><span class="lineno">   75</span>    <span class="comment">// GIVEN</span></div>
 <div class="line"><span class="lineno">   76</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> tPool;</div>
-<div class="line"><span class="lineno">   77</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(1);</div>
+<div class="line"><span class="lineno">   77</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(1);</div>
 <div class="line"><span class="lineno">   78</span> </div>
 <div class="line"><span class="lineno">   79</span>    <span class="keyword">auto</span> job = std::make_unique&lt;FakeJob&gt;();</div>
 <div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../db/ded/classFakeJob.html">FakeJob</a>* rawPtr = job.get();</div>
@@ -233,33 +233,33 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   92</span>}</div>
 <div class="ttc" id="aclassFakeJob_html"><div class="ttname"><a href="../../db/ded/classFakeJob.html">FakeJob</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d99/fake__job_8h_source.html#l00017">fake_job.h:18</a></div></div>
 <div class="ttc" id="aclassFakeJob_html_a79d106046e9a1ef3f847b1b61fbad2ec"><div class="ttname"><a href="../../db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec">FakeJob::wasExecuted</a></div><div class="ttdeci">bool wasExecuted() const</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d99/fake__job_8h_source.html#l00024">fake_job.h:24</a></div></div>
-<div class="ttc" id="aclassThreadPool_html"><div class="ttname"><a href="../../dc/de7/classThreadPool.html">ThreadPool</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/dec/thread__pool_8h_source.html#l00045">thread_pool.h:46</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a2e2c2e32e16067762ae159e61e76e775"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">ThreadPool::start</a></div><div class="ttdeci">void start(size_t number_workers=std::thread::hardware_concurrency())</div><div class="ttdoc">Starts.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00072">thread_pool.cpp:72</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a465c5f0162edf2b529e473b5873494eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">ThreadPool::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">shutdown</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00161">thread_pool.cpp:161</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a51043ddfec7df4cef92160ca85f583d2"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00105">thread_pool.cpp:105</a></div></div>
+<div class="ttc" id="aclassThreadPool_html"><div class="ttname"><a href="../../dc/de7/classThreadPool.html">ThreadPool</a></div><div class="ttdoc">A fixed-size pool of worker threads executing asynchronous jobs.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/dec/thread__pool_8h_source.html#l00061">thread_pool.h:62</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a465c5f0162edf2b529e473b5873494eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">ThreadPool::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">Gracefully shuts down the pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00090">thread_pool.cpp:90</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a51043ddfec7df4cef92160ca85f583d2"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdoc">Enqueues a job for execution.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00061">thread_pool.cpp:61</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_afdbd8eb5d2d3eeceae634a9b143aa9e0"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">ThreadPool::start</a></div><div class="ttdeci">void start(size_t number_threads=std::thread::hardware_concurrency())</div><div class="ttdoc">Starts the threads.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00043">thread_pool.cpp:43</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df8/test__thread__pool_8cpp_a83708d68c85b029cdf943819845eb516_cgraph.png" border="0" usemap="#adf/df8/test__thread__pool_8cpp_a83708d68c85b029cdf943819845eb516_cgraph" alt=""/></div>
 <map name="adf/df8/test__thread__pool_8cpp_a83708d68c85b029cdf943819845eb516_cgraph" id="adf/df8/test__thread__pool_8cpp_a83708d68c85b029cdf943819845eb516_cgraph">
 <area shape="rect" title=" " alt="" coords="5,207,75,232"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="127,56,285,81"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="127,56,285,81"/>
 <area shape="poly" title=" " alt="" coords="53,205,179,89,182,93,57,208"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="123,181,289,207"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="123,181,289,207"/>
 <area shape="poly" title=" " alt="" coords="74,212,109,206,110,211,75,217"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="348,307,481,332"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="348,307,481,332"/>
 <area shape="poly" title=" " alt="" coords="75,221,173,236,232,250,290,268,315,280,338,293,357,300,355,305,336,298,312,285,288,272,231,255,172,242,75,226"/>
 <area shape="rect" href="../../db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec" title=" " alt="" coords="124,283,288,308"/>
 <area shape="poly" title=" " alt="" coords="64,230,124,261,157,275,155,280,122,266,62,234"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title=" " alt="" coords="353,5,476,31"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="353,5,476,31"/>
 <area shape="poly" title=" " alt="" coords="259,53,348,31,349,37,260,58"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Checks whether the queue is currently empty." alt="" coords="347,156,482,181"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty." alt="" coords="347,156,482,181"/>
 <area shape="poly" title=" " alt="" coords="289,181,333,176,334,181,290,187"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="544,157,643,183"/>
 <area shape="poly" title=" " alt="" coords="290,196,387,196,492,190,532,183,533,188,492,195,387,202,290,201"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="351,257,478,283"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="351,257,478,283"/>
 <area shape="poly" title=" " alt="" coords="243,204,367,250,365,255,241,209"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="337,107,492,132"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="337,107,492,132"/>
 <area shape="poly" title=" " alt="" coords="238,179,336,141,358,134,359,139,338,146,240,184"/>
 <area shape="poly" title=" " alt="" coords="255,204,291,224,307,242,315,260,323,277,339,293,347,298,344,303,336,297,319,280,311,262,303,245,288,228,253,209"/>
 <area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="540,83,647,108"/>
@@ -306,7 +306,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
 <div class="line"><span class="lineno">  105</span>    <span class="comment">// GIVEN</span></div>
 <div class="line"><span class="lineno">  106</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> tPool;</div>
-<div class="line"><span class="lineno">  107</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(3);</div>
+<div class="line"><span class="lineno">  107</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(3);</div>
 <div class="line"><span class="lineno">  108</span> </div>
 <div class="line"><span class="lineno">  109</span>    <span class="comment">// WHEN</span></div>
 <div class="line"><span class="lineno">  110</span>    <span class="keyword">auto</span> job = std::make_unique&lt;FakeJob&gt;();</div>
@@ -328,23 +328,23 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="../../df/df8/test__thread__pool_8cpp_ad7c6395489bf152546a95fde1dacc29a_cgraph.png" border="0" usemap="#adf/df8/test__thread__pool_8cpp_ad7c6395489bf152546a95fde1dacc29a_cgraph" alt=""/></div>
 <map name="adf/df8/test__thread__pool_8cpp_ad7c6395489bf152546a95fde1dacc29a_cgraph" id="adf/df8/test__thread__pool_8cpp_ad7c6395489bf152546a95fde1dacc29a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,207,75,232"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="127,56,285,81"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="127,56,285,81"/>
 <area shape="poly" title=" " alt="" coords="53,205,179,89,182,93,57,208"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="123,181,289,207"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="123,181,289,207"/>
 <area shape="poly" title=" " alt="" coords="74,212,109,206,110,211,75,217"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="348,307,481,332"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="348,307,481,332"/>
 <area shape="poly" title=" " alt="" coords="75,221,173,236,232,250,290,268,315,280,338,293,357,300,355,305,336,298,312,285,288,272,231,255,172,242,75,226"/>
 <area shape="rect" href="../../db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec" title=" " alt="" coords="124,283,288,308"/>
 <area shape="poly" title=" " alt="" coords="64,230,124,261,157,275,155,280,122,266,62,234"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title=" " alt="" coords="353,5,476,31"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="353,5,476,31"/>
 <area shape="poly" title=" " alt="" coords="259,53,348,31,349,37,260,58"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Checks whether the queue is currently empty." alt="" coords="347,156,482,181"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty." alt="" coords="347,156,482,181"/>
 <area shape="poly" title=" " alt="" coords="289,181,333,176,334,181,290,187"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="544,157,643,183"/>
 <area shape="poly" title=" " alt="" coords="290,196,387,196,492,190,532,183,533,188,492,195,387,202,290,201"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="351,257,478,283"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="351,257,478,283"/>
 <area shape="poly" title=" " alt="" coords="243,204,367,250,365,255,241,209"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="337,107,492,132"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="337,107,492,132"/>
 <area shape="poly" title=" " alt="" coords="238,179,336,141,358,134,359,139,338,146,240,184"/>
 <area shape="poly" title=" " alt="" coords="255,204,291,224,307,242,315,260,323,277,339,293,347,298,344,303,336,297,319,280,311,262,303,245,288,228,253,209"/>
 <area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="540,83,647,108"/>
@@ -391,7 +391,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
 <div class="line"><span class="lineno">  135</span>    <span class="comment">// GIVEN</span></div>
 <div class="line"><span class="lineno">  136</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> tPool;</div>
-<div class="line"><span class="lineno">  137</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(3);</div>
+<div class="line"><span class="lineno">  137</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(3);</div>
 <div class="line"><span class="lineno">  138</span> </div>
 <div class="line"><span class="lineno">  139</span>    <span class="comment">// WHEN</span></div>
 <div class="line"><span class="lineno">  140</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">shutdown</a>();</div>
@@ -399,26 +399,26 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  142</span>    <span class="comment">// THEN</span></div>
 <div class="line"><span class="lineno">  143</span>    EXPECT_EQ(tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">size</a>(), 0) &lt;&lt; <span class="stringliteral">&quot;Workers vector should be empty after shutdown()&quot;</span>;</div>
 <div class="line"><span class="lineno">  144</span>}</div>
-<div class="ttc" id="aclassThreadPool_html_a16e5927283fc2e1828f08079bb010d52"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">ThreadPool::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">join</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00264">thread_pool.cpp:264</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a16e5927283fc2e1828f08079bb010d52"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">ThreadPool::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the number of active worker threads.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00157">thread_pool.cpp:157</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df8/test__thread__pool_8cpp_a91a536bfbe81340c8b1f0fd3f62dde39_cgraph.png" border="0" usemap="#adf/df8/test__thread__pool_8cpp_a91a536bfbe81340c8b1f0fd3f62dde39_cgraph" alt=""/></div>
 <map name="adf/df8/test__thread__pool_8cpp_a91a536bfbe81340c8b1f0fd3f62dde39_cgraph" id="adf/df8/test__thread__pool_8cpp_a91a536bfbe81340c8b1f0fd3f62dde39_cgraph">
 <area shape="rect" title=" " alt="" coords="5,209,75,234"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="123,134,289,159"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="123,134,289,159"/>
 <area shape="poly" title=" " alt="" coords="68,206,163,163,166,167,71,211"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="348,233,481,258"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="348,233,481,258"/>
 <area shape="poly" title=" " alt="" coords="75,221,334,238,334,243,75,226"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="join" alt="" coords="141,259,271,285"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="Returns the number of active worker threads." alt="" coords="141,259,271,285"/>
 <area shape="poly" title=" " alt="" coords="76,229,151,253,150,258,74,234"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Checks whether the queue is currently empty." alt="" coords="347,33,482,58"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty." alt="" coords="347,33,482,58"/>
 <area shape="poly" title=" " alt="" coords="229,131,336,75,368,61,370,66,338,80,231,136"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="544,134,643,159"/>
 <area shape="poly" title=" " alt="" coords="260,131,337,119,415,113,492,119,539,128,538,133,492,124,415,118,338,124,261,137"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="351,134,478,159"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="351,134,478,159"/>
 <area shape="poly" title=" " alt="" coords="289,144,338,144,338,149,289,149"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="337,183,492,209"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="337,183,492,209"/>
 <area shape="poly" title=" " alt="" coords="261,157,348,178,347,183,260,162"/>
 <area shape="poly" title=" " alt="" coords="228,157,277,187,338,219,355,226,354,231,336,224,274,192,225,162"/>
 <area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="540,34,647,59"/>
@@ -465,7 +465,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
 <div class="line"><span class="lineno">  158</span>    <span class="comment">// GIVEN</span></div>
 <div class="line"><span class="lineno">  159</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> tPool;</div>
-<div class="line"><span class="lineno">  160</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(1);</div>
+<div class="line"><span class="lineno">  160</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(1);</div>
 <div class="line"><span class="lineno">  161</span> </div>
 <div class="line"><span class="lineno">  162</span>    <span class="comment">// WHEN</span></div>
 <div class="line"><span class="lineno">  163</span>    <span class="keyword">auto</span> job = std::make_unique&lt;FakeSlowJob&gt;();</div>
@@ -483,30 +483,30 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  175</span>}</div>
 <div class="ttc" id="aclassFakeSlowJob_html"><div class="ttname"><a href="../../de/d3d/classFakeSlowJob.html">FakeSlowJob</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/dd8/fake__slow__job_8h_source.html#l00017">fake_slow_job.h:18</a></div></div>
 <div class="ttc" id="aclassFakeSlowJob_html_aa78279ce1b59c880d21d4a7b3daef253"><div class="ttname"><a href="../../de/d3d/classFakeSlowJob.html#aa78279ce1b59c880d21d4a7b3daef253">FakeSlowJob::hasStarted</a></div><div class="ttdeci">bool hasStarted() const</div><div class="ttdef"><b>Definition</b> <a href="../../dc/dd8/fake__slow__job_8h_source.html#l00029">fake_slow_job.h:29</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a7e017a077f358e3718f672a8bfb58922"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">ThreadPool::shutdownNow</a></div><div class="ttdeci">void shutdownNow()</div><div class="ttdoc">shutdown</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00205">thread_pool.cpp:205</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a7e017a077f358e3718f672a8bfb58922"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">ThreadPool::shutdownNow</a></div><div class="ttdeci">void shutdownNow()</div><div class="ttdoc">Immediately shuts down the pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00122">thread_pool.cpp:122</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df8/test__thread__pool_8cpp_a4cd072dcc8ecfc64bffa55c91897f49b_cgraph.png" border="0" usemap="#adf/df8/test__thread__pool_8cpp_a4cd072dcc8ecfc64bffa55c91897f49b_cgraph" alt=""/></div>
 <map name="adf/df8/test__thread__pool_8cpp_a4cd072dcc8ecfc64bffa55c91897f49b_cgraph" id="adf/df8/test__thread__pool_8cpp_a4cd072dcc8ecfc64bffa55c91897f49b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,105,75,131"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="141,7,299,32"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="141,7,299,32"/>
 <area shape="poly" title=" " alt="" coords="50,103,80,72,121,41,136,34,138,39,124,46,83,76,54,107"/>
 <area shape="rect" href="../../de/d3d/classFakeSlowJob.html#aa78279ce1b59c880d21d4a7b3daef253" title=" " alt="" coords="130,56,310,81"/>
 <area shape="poly" title=" " alt="" coords="74,105,122,90,151,82,153,87,123,95,76,110"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="shutdown" alt="" coords="123,105,317,131"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="123,105,317,131"/>
 <area shape="poly" title=" " alt="" coords="75,115,109,115,109,121,75,121"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="join" alt="" coords="155,155,285,180"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="Returns the number of active worker threads." alt="" coords="155,155,285,180"/>
 <area shape="poly" title=" " alt="" coords="76,126,123,139,157,149,156,154,122,145,74,131"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="376,205,509,231"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="376,205,509,231"/>
 <area shape="poly" title=" " alt="" coords="53,129,82,161,102,178,124,190,184,210,246,220,307,224,362,223,362,228,307,229,246,226,182,215,122,195,99,182,78,165,49,133"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title=" " alt="" coords="381,5,504,31"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="381,5,504,31"/>
 <area shape="poly" title=" " alt="" coords="300,16,367,16,367,21,300,22"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="568,156,667,181"/>
 <area shape="poly" title=" " alt="" coords="283,103,365,91,444,81,478,81,521,92,564,115,597,144,593,148,561,119,519,96,478,86,444,86,366,97,284,108"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="379,107,506,132"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="379,107,506,132"/>
 <area shape="poly" title=" " alt="" coords="318,116,365,116,365,122,318,121"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="365,156,520,181"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="365,156,520,181"/>
 <area shape="poly" title=" " alt="" coords="277,128,373,150,372,156,276,133"/>
 <area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="715,156,809,181"/>
 <area shape="poly" title=" " alt="" coords="667,166,701,166,701,171,667,171"/>
@@ -551,7 +551,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   55</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> tPool;</div>
 <div class="line"><span class="lineno">   56</span> </div>
 <div class="line"><span class="lineno">   57</span>    <span class="comment">// WHEN</span></div>
-<div class="line"><span class="lineno">   58</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(3);</div>
+<div class="line"><span class="lineno">   58</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(3);</div>
 <div class="line"><span class="lineno">   59</span> </div>
 <div class="line"><span class="lineno">   60</span>    <span class="comment">// THEN</span></div>
 <div class="line"><span class="lineno">   61</span>    EXPECT_EQ(tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">size</a>(), 3);</div>
@@ -562,9 +562,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="../../df/df8/test__thread__pool_8cpp_a1cd649348a2e765ccd35ce64a68665e0_cgraph.png" border="0" usemap="#adf/df8/test__thread__pool_8cpp_a1cd649348a2e765ccd35ce64a68665e0_cgraph" alt=""/></div>
 <map name="adf/df8/test__thread__pool_8cpp_a1cd649348a2e765ccd35ce64a68665e0_cgraph" id="adf/df8/test__thread__pool_8cpp_a1cd649348a2e765ccd35ce64a68665e0_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,75,56"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="join" alt="" coords="125,5,254,31"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="Returns the number of active worker threads." alt="" coords="125,5,254,31"/>
 <area shape="poly" title=" " alt="" coords="75,35,111,29,112,34,75,40"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="123,55,256,80"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="123,55,256,80"/>
 <area shape="poly" title=" " alt="" coords="75,46,109,52,108,57,75,51"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="304,55,403,80"/>
 <area shape="poly" title=" " alt="" coords="256,65,290,65,290,70,256,70"/>
@@ -613,7 +613,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  191</span>{</div>
 <div class="line"><span class="lineno">  192</span>    <span class="comment">// GIVEN</span></div>
 <div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a> tPool;</div>
-<div class="line"><span class="lineno">  194</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(1);</div>
+<div class="line"><span class="lineno">  194</span>    tPool.<a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(1);</div>
 <div class="line"><span class="lineno">  195</span> </div>
 <div class="line"><span class="lineno">  196</span>    <span class="keyword">auto</span> throwingJob = std::make_unique&lt;FakeThrowingJob&gt;();</div>
 <div class="line"><span class="lineno">  197</span>    <a class="code hl_class" href="../../de/d34/classFakeThrowingJob.html">FakeThrowingJob</a>* throwingPtr = throwingJob.get();</div>
@@ -648,25 +648,25 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="../../df/df8/test__thread__pool_8cpp_a8c767900ff84db83e98cc658a3883310_cgraph.png" border="0" usemap="#adf/df8/test__thread__pool_8cpp_a8c767900ff84db83e98cc658a3883310_cgraph" alt=""/></div>
 <map name="adf/df8/test__thread__pool_8cpp_a8c767900ff84db83e98cc658a3883310_cgraph" id="adf/df8/test__thread__pool_8cpp_a8c767900ff84db83e98cc658a3883310_cgraph">
 <area shape="rect" title="Workers must survive exceptions thrown by jobs." alt="" coords="5,232,75,257"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="155,56,314,81"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="155,56,314,81"/>
 <area shape="poly" title=" " alt="" coords="53,230,121,167,207,89,211,92,124,171,57,234"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="151,181,318,207"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="151,181,318,207"/>
 <area shape="poly" title=" " alt="" coords="74,233,172,208,173,213,75,238"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="405,307,539,332"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="405,307,539,332"/>
 <area shape="poly" title=" " alt="" coords="75,240,197,243,272,251,348,267,372,279,396,293,414,300,412,305,394,298,370,284,346,273,272,256,196,248,75,246"/>
 <area shape="rect" href="../../db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec" title=" " alt="" coords="153,283,317,308"/>
 <area shape="poly" title=" " alt="" coords="75,251,173,277,172,282,74,256"/>
 <area shape="rect" href="../../de/d34/classFakeThrowingJob.html#aed2b793070d9b1643ffa9f55e134752b" title=" " alt="" coords="123,332,347,357"/>
 <area shape="poly" title=" " alt="" coords="53,256,83,288,124,318,139,325,136,330,121,323,79,292,49,259"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title=" " alt="" coords="411,5,533,31"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title="Pushes a job into the queue." alt="" coords="411,5,533,31"/>
 <area shape="poly" title=" " alt="" coords="295,53,398,31,399,36,296,58"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Checks whether the queue is currently empty." alt="" coords="405,156,539,181"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty." alt="" coords="405,156,539,181"/>
 <area shape="poly" title=" " alt="" coords="318,182,391,175,391,180,318,188"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="601,157,700,183"/>
 <area shape="poly" title=" " alt="" coords="318,196,428,197,549,190,589,183,590,188,550,195,428,202,318,201"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="409,257,535,283"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="Waits for all worker threads to finish." alt="" coords="409,257,535,283"/>
 <area shape="poly" title=" " alt="" coords="283,204,347,223,425,250,423,255,346,229,282,209"/>
-<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="395,107,549,132"/>
+<area shape="rect" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="395,107,549,132"/>
 <area shape="poly" title=" " alt="" coords="275,179,394,141,417,134,418,139,395,146,277,184"/>
 <area shape="poly" title=" " alt="" coords="308,204,348,224,365,241,373,259,381,277,396,293,404,298,401,303,393,297,377,280,368,262,361,244,345,228,306,209"/>
 <area shape="rect" href="../../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="597,83,704,108"/>
@@ -687,7 +687,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="../../df/df8/test__thread__pool_8cpp.html">test_thread_pool.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

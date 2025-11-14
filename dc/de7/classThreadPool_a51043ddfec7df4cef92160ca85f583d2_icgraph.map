@@ -1,5 +1,5 @@
 <map id="ThreadPool::enqueue" name="ThreadPool::enqueue">
-<area shape="rect" id="Node000001" title=" " alt="" coords="123,80,281,105"/>
+<area shape="rect" id="Node000001" title="Enqueues a job for execution." alt="" coords="123,80,281,105"/>
 <area shape="rect" id="Node000002" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="5,5,75,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,77,67,33,69,28,162,72"/>
 <area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="5,55,75,80"/>

@@ -44,6 +44,5 @@ var annotated_dup =
     [ "PrintJob", "de/d95/classPrintJob.html", "de/d95/classPrintJob" ],
     [ "PrintJobTest", "d7/d12/classPrintJobTest.html", "d7/d12/classPrintJobTest" ],
     [ "ThreadPool", "dc/de7/classThreadPool.html", "dc/de7/classThreadPool" ],
-    [ "ThreadPoolTest", "d6/d6b/classThreadPoolTest.html", "d6/d6b/classThreadPoolTest" ],
-    [ "ThreadSafeQueue", "da/d7e/classThreadSafeQueue.html", null ]
+    [ "ThreadPoolTest", "d6/d6b/classThreadPoolTest.html", "d6/d6b/classThreadPoolTest" ]
 ];

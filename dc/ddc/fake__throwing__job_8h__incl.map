@@ -4,6 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,48,66,87,63,82,114,43"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="97,93,183,119"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,46,143,79,137,79,137,46"/>
-<area shape="rect" id="Node000004" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="207,93,273,119"/>
+<area shape="rect" id="Node000004" href="$d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="207,93,273,119"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,43,216,82,213,87,163,48"/>
 </map>

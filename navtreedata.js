@@ -63,7 +63,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"db/dd5/optional_8hpp.html#a128d82a6ef5add900753e3b5c5e6e8b6",
+"db/dd5/optional_8hpp.html#a13eb29f1c476dc064e3bc46d153cc8ea",
 "index.html#autotoc_md27"
 ];
 

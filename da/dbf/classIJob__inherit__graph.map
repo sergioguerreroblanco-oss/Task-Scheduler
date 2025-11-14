@@ -1,11 +1,11 @@
 <map id="IJob" name="IJob">
-<area shape="rect" id="Node000001" title="Abstract interface for jobs." alt="" coords="247,5,336,91"/>
+<area shape="rect" id="Node000001" title="Abstract interface representing a unit of executable work." alt="" coords="247,5,336,91"/>
 <area shape="rect" id="Node000002" href="$db/ded/classFakeJob.html" title=" " alt="" coords="5,149,129,254"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,82,142,141,129,151,126,147,139,136,233,78"/>
 <area shape="rect" id="Node000003" href="$de/d3d/classFakeSlowJob.html" title=" " alt="" coords="153,139,272,264"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,104,247,139,243,137,261,102"/>
 <area shape="rect" id="Node000004" href="$de/d34/classFakeThrowingJob.html" title=" " alt="" coords="296,149,444,254"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="322,102,345,147,341,150,317,104"/>
-<area shape="rect" id="Node000005" href="$de/d95/classPrintJob.html" title=" " alt="" coords="468,159,557,244"/>
+<area shape="rect" id="Node000005" href="$de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed." alt="" coords="468,159,557,244"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="350,72,404,100,458,137,480,157,477,160,455,141,401,105,347,77"/>
 </map>

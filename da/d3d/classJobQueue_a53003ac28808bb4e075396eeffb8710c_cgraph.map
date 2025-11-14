@@ -1,5 +1,5 @@
 <map id="JobQueue::clear" name="JobQueue::clear">
-<area shape="rect" id="Node000001" title="Clears all elements currently stored in the queue." alt="" coords="5,5,129,31"/>
+<area shape="rect" id="Node000001" title="Removes all pending jobs." alt="" coords="5,5,129,31"/>
 <area shape="rect" id="Node000002" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="177,5,276,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,15,164,15,164,21,130,21"/>
 <area shape="rect" id="Node000003" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="324,5,419,31"/>

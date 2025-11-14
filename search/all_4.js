@@ -9,10 +9,12 @@ var searchData=
   ['cli_6',['Windows (PowerShell/CLI)',['../index.html#autotoc_md13',1,'']]],
   ['code_20powershell_7',['Windows (Visual Studio Code / PowerShell)',['../index.html#autotoc_md40',1,'']]],
   ['code_20style_20clang_20format_8',['🎨 Code Style (clang-format)',['../index.html#autotoc_md37',1,'']]],
-  ['conditional_9',['conditional',['../d4/dae/structnonstd_1_1optional__lite_1_1std11_1_1conditional.html',1,'nonstd::optional_lite::std11']]],
-  ['conditional_3c_20false_2c_20t_2c_20f_20_3e_10',['conditional&lt; false, T, F &gt;',['../d5/d61/structnonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4.html',1,'nonstd::optional_lite::std11']]],
-  ['construct_5fvalue_11',['construct_value',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#afab300a66c2083a0772fe2123321319d',1,'nonstd::optional_lite::detail::storage_t']]],
-  ['continuous_20integration_12',['🔄 Continuous Integration',['../index.html#autotoc_md26',1,'']]],
-  ['core_20features_13',['✨ Core Features',['../index.html#autotoc_md2',1,'']]],
-  ['covered_20scenarios_14',['✅ Covered Scenarios',['../index.html#autotoc_md19',1,'']]]
+  ['concurrency_20guarantees_3a_9',['Concurrency guarantees:',['../db/d9d/job__queue_8h.html#autotoc_md45',1,'']]],
+  ['concurrency_3a_10',['concurrency:',['../da/d3d/classJobQueue.html#autotoc_md58',1,'Concurrency:'],['../da/d3d/classJobQueue.html#autotoc_md56',1,'Concurrency:'],['../da/d3d/classJobQueue.html#autotoc_md54',1,'Concurrency:'],['../da/d3d/classJobQueue.html#autotoc_md50',1,'Concurrency:']]],
+  ['conditional_11',['conditional',['../d4/dae/structnonstd_1_1optional__lite_1_1std11_1_1conditional.html',1,'nonstd::optional_lite::std11']]],
+  ['conditional_3c_20false_2c_20t_2c_20f_20_3e_12',['conditional&lt; false, T, F &gt;',['../d5/d61/structnonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4.html',1,'nonstd::optional_lite::std11']]],
+  ['construct_5fvalue_13',['construct_value',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#afab300a66c2083a0772fe2123321319d',1,'nonstd::optional_lite::detail::storage_t']]],
+  ['continuous_20integration_14',['🔄 Continuous Integration',['../index.html#autotoc_md26',1,'']]],
+  ['core_20features_15',['✨ Core Features',['../index.html#autotoc_md2',1,'']]],
+  ['covered_20scenarios_16',['✅ Covered Scenarios',['../index.html#autotoc_md19',1,'']]]
 ];

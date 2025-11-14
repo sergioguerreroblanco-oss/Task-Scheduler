@@ -12,5 +12,6 @@ var classThreadPool =
     [ "shutdown", "dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb", null ],
     [ "shutdownNow", "dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922", null ],
     [ "size", "dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52", null ],
-    [ "start", "dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775", null ]
+    [ "start", "dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0", null ],
+    [ "tryEnqueue", "dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261", null ]
 ];

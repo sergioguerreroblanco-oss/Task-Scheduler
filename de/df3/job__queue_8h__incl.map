@@ -1,13 +1,13 @@
 <map id="include/job_queue.h" name="include/job_queue.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="215,5,367,31"/>
+<area shape="rect" id="Node000001" title="Thread&#45;safe FIFO queue for IJob instances." alt="" coords="222,5,374,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,148,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,33,125,77,124,72,256,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,33,126,77,124,72,262,28"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="172,79,235,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,33,230,72,227,68,276,29"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="259,79,323,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="294,31,294,65,289,65,289,31"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="347,79,425,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="308,29,361,68,358,72,305,33"/>
-<area shape="rect" id="Node000006" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="449,79,515,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="323,28,439,71,437,76,321,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="284,33,231,72,228,68,281,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="259,79,337,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="301,31,301,65,295,65,295,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="361,79,425,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="315,29,368,68,365,72,312,33"/>
+<area shape="rect" id="Node000006" href="$d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="449,79,515,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="329,28,440,71,438,76,327,33"/>
 </map>

@@ -97,23 +97,26 @@ $(document).ready(function(){initNavTree('da/d3d/classJobQueue.html','../../'); 
 </div><!--header-->
 <div class="contents">
 
+<p>A thread-safe FIFO queue for job dispatching.  
+ <a href="../../da/d3d/classJobQueue.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../db/d9d/job__queue_8h_source.html">job_queue.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for JobQueue:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d4c/classJobQueue__coll__graph.png" border="0" usemap="#aJobQueue_coll__map" alt="Collaboration graph"/></div>
 <map name="aJobQueue_coll__map" id="aJobQueue_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,117,311"/>
+<area shape="rect" title="A thread&#45;safe FIFO queue for job dispatching." alt="" coords="5,5,117,311"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9c7798005e708d3d1d5ce63c59d31a2" id="r_ab9c7798005e708d3d1d5ce63c59d31a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2">JobQueue</a> ()=default</td></tr>
-<tr class="memdesc:ab9c7798005e708d3d1d5ce63c59d31a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
+<tr class="memdesc:ab9c7798005e708d3d1d5ce63c59d31a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty, open queue.  <br /></td></tr>
 <tr class="separator:ab9c7798005e708d3d1d5ce63c59d31a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a314163f0addf40e7cec54d045a0e4fba" id="r_a314163f0addf40e7cec54d045a0e4fba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba">~JobQueue</a> ()=default</td></tr>
-<tr class="memdesc:a314163f0addf40e7cec54d045a0e4fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
+<tr class="memdesc:a314163f0addf40e7cec54d045a0e4fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a314163f0addf40e7cec54d045a0e4fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14042d9082e1c93c45295418386cc1e9" id="r_a14042d9082e1c93c45295418386cc1e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9">JobQueue</a> (const <a class="el" href="../../da/d3d/classJobQueue.html">JobQueue</a> &amp;)=delete</td></tr>
 <tr class="memdesc:a14042d9082e1c93c45295418386cc1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable copy constructor.  <br /></td></tr>
@@ -128,27 +131,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2fa457d4e2373411581f5a2dbbe9f3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable move assignment operator.  <br /></td></tr>
 <tr class="separator:a2fa457d4e2373411581f5a2dbbe9f3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79de1d086432c032080063c8dd7b3253" id="r_a79de1d086432c032080063c8dd7b3253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253">push</a> (std::unique_ptr&lt; <a class="el" href="../../d4/d75/classIJob.html">IJob</a> &gt; job)</td></tr>
+<tr class="memdesc:a79de1d086432c032080063c8dd7b3253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a job into the queue.  <br /></td></tr>
 <tr class="separator:a79de1d086432c032080063c8dd7b3253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba89c3dc3da5dd8b0b788b095f57d95" id="r_afba89c3dc3da5dd8b0b788b095f57d95"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d4/d75/classIJob.html">IJob</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">pop</a> ()</td></tr>
+<tr class="memdesc:afba89c3dc3da5dd8b0b788b095f57d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops the next available job (blocking).  <br /></td></tr>
 <tr class="separator:afba89c3dc3da5dd8b0b788b095f57d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9129916bf11174629c02459cf0a0313c" id="r_a9129916bf11174629c02459cf0a0313c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c">empty</a> () const</td></tr>
-<tr class="memdesc:a9129916bf11174629c02459cf0a0313c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the queue is currently empty.  <br /></td></tr>
+<tr class="memdesc:a9129916bf11174629c02459cf0a0313c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the queue is currently empty.  <br /></td></tr>
 <tr class="separator:a9129916bf11174629c02459cf0a0313c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2fbfee64d3c0ca5fbe2919dc7179406" id="r_ae2fbfee64d3c0ca5fbe2919dc7179406"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#ae2fbfee64d3c0ca5fbe2919dc7179406">size</a> () const</td></tr>
-<tr class="memdesc:ae2fbfee64d3c0ca5fbe2919dc7179406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current number of elements in the queue.  <br /></td></tr>
+<tr class="memdesc:ae2fbfee64d3c0ca5fbe2919dc7179406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of pending jobs.  <br /></td></tr>
 <tr class="separator:ae2fbfee64d3c0ca5fbe2919dc7179406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53003ac28808bb4e075396eeffb8710c" id="r_a53003ac28808bb4e075396eeffb8710c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c">clear</a> ()</td></tr>
-<tr class="memdesc:a53003ac28808bb4e075396eeffb8710c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all elements currently stored in the queue.  <br /></td></tr>
+<tr class="memdesc:a53003ac28808bb4e075396eeffb8710c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all pending jobs.  <br /></td></tr>
 <tr class="separator:a53003ac28808bb4e075396eeffb8710c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d83400746c6eae06c5d88a5a7f48a4b" id="r_a2d83400746c6eae06c5d88a5a7f48a4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b">shutdown</a> ()</td></tr>
-<tr class="memdesc:a2d83400746c6eae06c5d88a5a7f48a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown the queue, unblocking all waiting threads.  <br /></td></tr>
+<tr class="memdesc:a2d83400746c6eae06c5d88a5a7f48a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the queue and wakes all waiting threads.  <br /></td></tr>
 <tr class="separator:a2d83400746c6eae06c5d88a5a7f48a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd01029b5918d1559dc612412e3d18c" id="r_afbd01029b5918d1559dc612412e3d18c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c">is_closed</a> ()</td></tr>
+<tr class="memdesc:afbd01029b5918d1559dc612412e3d18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the queue is closed.  <br /></td></tr>
 <tr class="separator:afbd01029b5918d1559dc612412e3d18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../db/d9d/job__queue_8h_source.html#l00044">44</a> of file <a class="el" href="../../db/d9d/job__queue_8h_source.html">job_queue.h</a>.</p>
+<div class="textblock"><p>A thread-safe FIFO queue for job dispatching. </p>
+<p>This queue is intended for use in thread pools and other concurrent job-processing systems. It provides deterministic shutdown semantics and safe synchronization between multiple producers and consumers.</p>
+<h3><a class="anchor" id="autotoc_md47"></a>
+Queue states:</h3>
+<ul>
+<li><b>Open</b>: accepts new jobs; <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code> may block.</li>
+<li><b>Closed</b>: rejects no jobs explicitly, but <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code> returns <code>nullptr</code> once the queue drains. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d9d/job__queue_8h_source.html#l00063">63</a> of file <a class="el" href="../../db/d9d/job__queue_8h_source.html">job_queue.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab9c7798005e708d3d1d5ce63c59d31a2" name="ab9c7798005e708d3d1d5ce63c59d31a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9c7798005e708d3d1d5ce63c59d31a2">&#9670;&#160;</a></span>JobQueue() <span class="overload">[1/3]</span></h2>
@@ -173,7 +187,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Default constructor. </p>
+<p>Constructs an empty, open queue. </p>
 
 </div>
 </div>
@@ -200,8 +214,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destructor. </p>
-<p>Automatically releases resources. If <code>close()</code> was not called, any threads waiting on <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">pop()</a></code> may be unblocked during destruction. </p>
+<p>Default destructor. </p>
+<p>If the queue was closed via <code><a class="el" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads.">shutdown()</a></code>, any threads blocked on <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code> will already have been awakened. </p>
 
 </div>
 </div>
@@ -230,7 +244,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Disable copy constructor. </p>
-<p><a class="el" href="../../da/d3d/classJobQueue.html">JobQueue</a> cannot be copied because it manages synchronization primitives (<code>std::mutex</code>, <code>std::condition_variable</code>), which are inherently non-copyable. </p>
+<p><a class="el" href="../../da/d3d/classJobQueue.html" title="A thread-safe FIFO queue for job dispatching.">JobQueue</a> cannot be copied because it manages synchronization primitives (<code>std::mutex</code>, <code>std::condition_variable</code>), which are inherently non-copyable. </p>
 
 </div>
 </div>
@@ -279,23 +293,35 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clears all elements currently stored in the queue. </p>
-<p>Removes all elements from the internal buffer. Does not affect the <code>closed</code> state.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Should be used carefully in concurrent environments to avoid discarding data being produced/consumed simultaneously. </dd></dl>
+<p>Removes all pending jobs. </p>
+<p>Removes all jobs currently stored in the queue.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Does not affect the open/closed state of the queue.</dd></dl>
+<p>Primarily used during manual cleanup or tests.</p>
+<h3><a class="anchor" id="autotoc_md55"></a>
+Important:</h3>
+<ul>
+<li>This does <em>not</em> wake consumers.</li>
+<li>Does <em>not</em> affect the closed state.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md56"></a>
+Concurrency:</h3>
+<ul>
+<li>Exclusive lock for the duration of the clear. </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
-<div class="line"><span class="lineno">  105</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Queue Job] Jobs cleaned&quot;</span>);</div>
-<div class="line"><span class="lineno">  107</span>    buffer.clear();</div>
-<div class="line"><span class="lineno">  108</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00136">136</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Queue Job] Jobs cleaned&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span>    buffer.clear();</div>
+<div class="line"><span class="lineno">  141</span>}</div>
 <div class="ttc" id="aclassLogger_html_afaac8d8aba7262900267f1e3779bd657"><div class="ttname"><a href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a></div><div class="ttdeci">static void info(const std::string &amp;msg)</div><div class="ttdoc">Logs an informational message (INFO level).</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d30/logger_8cpp_source.html#l00082">logger.cpp:82</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a53003ac28808bb4e075396eeffb8710c_cgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a53003ac28808bb4e075396eeffb8710c_cgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a53003ac28808bb4e075396eeffb8710c_cgraph" id="ada/d3d/classJobQueue_a53003ac28808bb4e075396eeffb8710c_cgraph">
-<area shape="rect" title="Clears all elements currently stored in the queue." alt="" coords="5,5,129,31"/>
+<area shape="rect" title="Removes all pending jobs." alt="" coords="5,5,129,31"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="177,5,276,31"/>
 <area shape="poly" title=" " alt="" coords="130,15,164,15,164,21,130,21"/>
 <area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="324,5,419,31"/>
@@ -320,22 +346,27 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Checks whether the queue is currently empty. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the queue is empty, <code>false</code> otherwise.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This method is thread-safe and can be called concurrently with other operations. </dd></dl>
+<p>Returns whether the queue is currently empty. </p>
+<p>Returns whether the queue is empty.</p>
+<dl class="section note"><dt>Note</dt><dd>Thread-safe.</dd></dl>
+<ul>
+<li>Non-blocking.</li>
+<li>Requires acquiring <code>mtx</code> briefly.</li>
+</ul>
+<dl class="section warning"><dt>Warning</dt><dd>The result is only a snapshot; another thread may enqueue immediately after. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
-<div class="line"><span class="lineno">   74</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> buffer.empty();</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> buffer.empty();</div>
+<div class="line"><span class="lineno">  108</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph" id="ada/d3d/classJobQueue_a9129916bf11174629c02459cf0a0313c_icgraph">
-<area shape="rect" title="Checks whether the queue is currently empty." alt="" coords="455,104,589,129"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="240,104,407,129"/>
+<area shape="rect" title="Returns whether the queue is currently empty." alt="" coords="455,104,589,129"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="240,104,407,129"/>
 <area shape="poly" title=" " alt="" coords="441,119,407,119,407,114,441,114"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
 <area shape="poly" title=" " alt="" coords="291,99,245,71,191,44,133,27,134,22,193,40,247,66,294,94"/>
@@ -345,7 +376,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="226,119,134,119,134,114,226,114"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
 <area shape="poly" title=" " alt="" coords="252,135,134,161,133,156,251,130"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,203,192,228"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
 <area shape="poly" title=" " alt="" coords="293,139,247,166,193,192,156,205,154,200,191,188,244,162,290,134"/>
 </map>
 </div>
@@ -367,11 +398,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> closed;</div>
-<div class="line"><span class="lineno">  136</span>}</div>
-</div><!-- fragment -->
+<p>Returns whether the queue is closed. </p>
+<p>Returns whether the queue has been closed.</p>
+<ul>
+<li>Thread-safe.</li>
+<li>Reads protected by mutex. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00170">170</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>{</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> closed;</div>
+<div class="line"><span class="lineno">  173</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d3d/classJobQueue_afbd01029b5918d1559dc612412e3d18c_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_afbd01029b5918d1559dc612412e3d18c_icgraph" alt=""/></div>
+<map name="ada/d3d/classJobQueue_afbd01029b5918d1559dc612412e3d18c_icgraph" id="ada/d3d/classJobQueue_afbd01029b5918d1559dc612412e3d18c_icgraph">
+<area shape="rect" title="Returns whether the queue is closed." alt="" coords="231,5,383,31"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="5,5,183,31"/>
+<area shape="poly" title=" " alt="" coords="217,21,183,21,183,15,217,15"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a758604671f152362d072fa04cd027171" name="a758604671f152362d072fa04cd027171"></a>
@@ -446,36 +494,63 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>return </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
-<div class="line"><span class="lineno">   49</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   50</span>    std::unique_ptr&lt;IJob&gt;        data;</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <span class="comment">// Wait until new data is added</span></div>
-<div class="line"><span class="lineno">   53</span>    cv.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> closed || !buffer.empty(); });</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (closed &amp;&amp; buffer.empty())</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span> data;</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Queue Job] Job extracted successfully&quot;</span>);</div>
-<div class="line"><span class="lineno">   59</span>    data = std::move(buffer.front());</div>
-<div class="line"><span class="lineno">   60</span>    buffer.pop_front();</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> data;</div>
-<div class="line"><span class="lineno">   62</span>}</div>
+<p>Pops the next available job (blocking). </p>
+<p>Retrieves the next available job, blocking if necessary.</p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>std::unique_ptr&lt;<a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a>&gt;</code> containing the next job, or <code>nullptr</code> if the queue has been closed and no jobs remain.</dd></dl>
+<ul>
+<li>Blocks while the queue is empty and still open.</li>
+<li>If the queue is closed and empty, returns <code>nullptr</code> immediately.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>A <code>std::unique_ptr&lt;<a class="el" href="../../d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work.">IJob</a>&gt;</code> containing the next job.</li>
+<li><code>nullptr</code> if the queue is closed AND empty.</li>
+</ul>
+</dd></dl>
+<h3><a class="anchor" id="autotoc_md52"></a>
+Blocking behaviour:</h3>
+<ul>
+<li>If the queue is empty and <em>not closed</em>, the caller blocks.</li>
+<li>The thread wakes when:<ol type="1">
+<li>A new job is pushed, or</li>
+<li><code><a class="el" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads.">shutdown()</a></code> is called.</li>
+</ol>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md53"></a>
+Shutdown semantics:</h3>
+<ul>
+<li>If <code>closed == true</code> and there are no jobs remaining, this function returns <code>nullptr</code> immediately.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md54"></a>
+Concurrency:</h3>
+<ul>
+<li><code>buffer</code> is protected by <code>mtx</code>.</li>
+<li>Uses a condition-variable predicate (<code>closed || !buffer.<a class="el" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Returns whether the queue is currently empty.">empty()</a></code>), which prevents spurious wakeups causing incorrect behaviour. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   80</span>    std::unique_ptr&lt;IJob&gt;        data;</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">// Wait until new data is added</span></div>
+<div class="line"><span class="lineno">   83</span>    cv.wait(lock, [<span class="keyword">this</span>] { <span class="keywordflow">return</span> closed || !buffer.empty(); });</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span> (closed &amp;&amp; buffer.empty())</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span> data;</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Queue Job] Job extracted successfully&quot;</span>);</div>
+<div class="line"><span class="lineno">   89</span>    data = std::move(buffer.front());</div>
+<div class="line"><span class="lineno">   90</span>    buffer.pop_front();</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> data;</div>
+<div class="line"><span class="lineno">   92</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_cgraph.png" border="0" usemap="#ada/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_cgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_cgraph" id="ada/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,121,31"/>
+<area shape="rect" title="Pops the next available job (blocking)." alt="" coords="5,5,121,31"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="169,5,268,31"/>
 <area shape="poly" title=" " alt="" coords="122,15,156,15,156,21,122,21"/>
 <area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="316,5,411,31"/>
@@ -487,7 +562,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_icgraph" id="ada/d3d/classJobQueue_afba89c3dc3da5dd8b0b788b095f57d95_icgraph">
-<area shape="rect" title=" " alt="" coords="123,55,239,80"/>
+<area shape="rect" title="Pops the next available job (blocking)." alt="" coords="123,55,239,80"/>
 <area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="5,5,75,31"/>
 <area shape="poly" title=" " alt="" coords="130,52,74,32,76,27,132,47"/>
 <area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="5,55,75,80"/>
@@ -514,40 +589,63 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pushes a job into the queue. </p>
+<p>Inserts a job into the queue and wakes one waiting consumer.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramname">job</td><td>Exclusive pointer to the job to insert (must be non-null).</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd></dd></dl>
+<p>Wakes one waiting consumer if any are blocked on <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">job</td><td>A non-null unique_ptr owning the job to insert.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h3><a class="anchor" id="autotoc_md50"></a>
+Concurrency:</h3>
+<ul>
+<li>Acquires <code>mtx</code> exclusively.</li>
+<li>Appends the job to the FIFO buffer.</li>
+<li>Calls <code>notify_one()</code> to wake exactly one thread blocked in <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md51"></a>
+Notes:</h3>
+<ul>
+<li>There is no rejection of jobs after shutdown; the thread pool is responsible for preventing enqueue after close. </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
-<div class="line"><span class="lineno">   34</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   35</span>    buffer.emplace_back(std::move(job));</div>
-<div class="line"><span class="lineno">   36</span>    cv.notify_one();</div>
-<div class="line"><span class="lineno">   37</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    std::unique_lock&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">   50</span>    buffer.emplace_back(std::move(job));</div>
+<div class="line"><span class="lineno">   51</span>    cv.notify_one();</div>
+<div class="line"><span class="lineno">   52</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph" id="ada/d3d/classJobQueue_a79de1d086432c032080063c8dd7b3253_icgraph">
-<area shape="rect" title=" " alt="" coords="329,128,452,153"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="123,79,281,104"/>
-<area shape="poly" title=" " alt="" coords="328,127,251,107,252,102,329,122"/>
-<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="167,128,237,153"/>
-<area shape="poly" title=" " alt="" coords="315,143,237,143,237,138,315,138"/>
-<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="167,177,237,203"/>
-<area shape="poly" title=" " alt="" coords="329,159,238,184,236,178,328,154"/>
+<area shape="rect" title="Pushes a job into the queue." alt="" coords="348,153,471,179"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="132,79,291,104"/>
+<area shape="poly" title=" " alt="" coords="371,150,299,118,264,107,266,102,301,113,373,145"/>
+<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="177,128,246,153"/>
+<area shape="poly" title=" " alt="" coords="334,159,246,148,247,142,335,154"/>
+<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="177,177,246,203"/>
+<area shape="poly" title=" " alt="" coords="334,178,247,189,246,183,334,172"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="123,227,300,252"/>
+<area shape="poly" title=" " alt="" coords="372,187,301,218,265,229,264,224,299,213,370,182"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="5,5,75,31"/>
-<area shape="poly" title=" " alt="" coords="159,75,68,33,70,28,162,70"/>
+<area shape="poly" title=" " alt="" coords="167,76,70,33,72,28,169,71"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="5,55,75,80"/>
-<area shape="poly" title=" " alt="" coords="109,80,75,75,75,70,110,75"/>
+<area shape="poly" title=" " alt="" coords="118,81,75,75,75,69,118,76"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="5,104,75,129"/>
-<area shape="poly" title=" " alt="" coords="110,109,75,114,75,109,109,103"/>
+<area shape="poly" title=" " alt="" coords="118,108,75,114,74,109,118,103"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="5,153,75,179"/>
-<area shape="poly" title=" " alt="" coords="141,111,124,118,90,136,61,155,58,151,87,132,122,113,139,106"/>
+<area shape="poly" title=" " alt="" coords="142,111,124,118,89,136,60,155,57,151,86,132,122,113,140,106"/>
 </map>
 </div>
 
@@ -568,23 +666,37 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Shutdown the queue, unblocking all waiting threads. </p>
-<p>Sets an internal flag (<code>closed = true</code>) and notifies all waiting threads so they can exit gracefully.</p>
-<p>After calling this, subsequent calls to <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">pop()</a></code> will return <code>false</code> once the queue is empty. </p>
+<p>Closes the queue and wakes all waiting threads. </p>
+<p>Once closed:</p><ul>
+<li>Consumers eventually return <code>nullptr</code> from <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</li>
+<li>The queue will not block again.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md57"></a>
+Effects:</h3>
+<ul>
+<li>Sets <code>closed = true</code>.</li>
+<li>Wakes <em>all</em> threads waiting on <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code>.</li>
+<li>Allows <code><a class="el" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking).">pop()</a></code> to return <code>nullptr</code> when the queue becomes empty.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md58"></a>
+Concurrency:</h3>
+<ul>
+<li>Fully thread-safe; multiple calls are safe (idempotent). </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00120">120</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>{</div>
-<div class="line"><span class="lineno">  122</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">  123</span>    closed = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  124</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Queue Job] Queue job closed&quot;</span>);</div>
-<div class="line"><span class="lineno">  125</span>    cv.notify_all();</div>
-<div class="line"><span class="lineno">  126</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>{</div>
+<div class="line"><span class="lineno">  157</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  158</span>    closed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_function" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657">Logger::info</a>(<span class="stringliteral">&quot;[Queue Job] Queue job closed&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span>    cv.notify_all();</div>
+<div class="line"><span class="lineno">  161</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_cgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_cgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_cgraph" id="ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_cgraph">
-<area shape="rect" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="5,5,160,31"/>
+<area shape="rect" title="Closes the queue and wakes all waiting threads." alt="" coords="5,5,160,31"/>
 <area shape="rect" href="../../db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="208,5,307,31"/>
 <area shape="poly" title=" " alt="" coords="160,15,194,15,194,21,160,21"/>
 <area shape="rect" href="../../db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="355,5,449,31"/>
@@ -596,10 +708,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph.png" border="0" usemap="#ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph" alt=""/></div>
 <map name="ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph" id="ada/d3d/classJobQueue_a2d83400746c6eae06c5d88a5a7f48a4b_icgraph">
-<area shape="rect" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="483,215,637,240"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="254,129,421,155"/>
+<area shape="rect" title="Closes the queue and wakes all waiting threads." alt="" coords="483,215,637,240"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,129,421,155"/>
 <area shape="poly" title=" " alt="" coords="512,212,371,157,372,152,514,207"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="shutdown" alt="" coords="240,215,435,240"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,215,435,240"/>
 <area shape="poly" title=" " alt="" coords="469,230,435,230,435,225,469,225"/>
 <area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html#afeec0dbb23da7828615b1004c860355e" title=" " alt="" coords="303,264,372,289"/>
 <area shape="poly" title=" " alt="" coords="489,246,373,272,372,266,488,240"/>
@@ -611,7 +723,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="239,134,133,123,134,118,240,129"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
 <area shape="poly" title=" " alt="" coords="240,154,134,165,133,160,239,149"/>
-<area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,203,192,228"/>
+<area shape="rect" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,203,192,228"/>
 <area shape="poly" title=" " alt="" coords="287,162,193,193,149,205,147,200,191,187,286,157"/>
 <area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,252,133,277"/>
 <area shape="poly" title=" " alt="" coords="242,245,134,262,133,257,242,240"/>
@@ -635,15 +747,19 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the current number of elements in the queue. </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of elements stored in the internal buffer.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This method acquires a lock briefly to read the size safely. </dd></dl>
+<p>Returns the number of pending jobs. </p>
+<p>Returns the number of pending jobs currently stored.</p>
+<dl class="section note"><dt>Note</dt><dd>Thread-safe.</dd></dl>
+<ul>
+<li>Thread-safe snapshot.</li>
+<li>Does not block waiting consumers or producers for long. </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00086">86</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>{</div>
-<div class="line"><span class="lineno">   88</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> buffer.size();</div>
-<div class="line"><span class="lineno">   90</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../dd/d4c/job__queue_8cpp_source.html">job_queue.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
+<div class="line"><span class="lineno">  119</span>    std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> buffer.size();</div>
+<div class="line"><span class="lineno">  121</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -657,7 +773,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d3d/classJobQueue.html">JobQueue</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -1,17 +1,19 @@
 <map id="JobQueue::push" name="JobQueue::push">
-<area shape="rect" id="Node000001" title=" " alt="" coords="329,128,452,153"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="123,79,281,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="328,127,251,107,252,102,329,122"/>
-<area shape="rect" id="Node000007" href="$d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="167,128,237,153"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="315,143,237,143,237,138,315,138"/>
-<area shape="rect" id="Node000008" href="$d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="167,177,237,203"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="329,159,238,184,236,178,328,154"/>
+<area shape="rect" id="Node000001" title="Pushes a job into the queue." alt="" coords="348,153,471,179"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title="Enqueues a job for execution." alt="" coords="132,79,291,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="371,150,299,118,264,107,266,102,301,113,373,145"/>
+<area shape="rect" id="Node000007" href="$d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="177,128,246,153"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="334,159,246,148,247,142,335,154"/>
+<area shape="rect" id="Node000008" href="$d9/dc8/test__job__queue_8cpp.html#a26282195a8585e0f673c4387ff5caa9b" title=" " alt="" coords="177,177,246,203"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="334,178,247,189,246,183,334,172"/>
+<area shape="rect" id="Node000009" href="$dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261" title="Attempts to enqueue a job without guaranteeing acceptance." alt="" coords="123,227,300,252"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="372,187,301,218,265,229,264,224,299,213,370,182"/>
 <area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="5,5,75,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="159,75,68,33,70,28,162,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="167,76,70,33,72,28,169,71"/>
 <area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="5,55,75,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="109,80,75,75,75,70,110,75"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="118,81,75,75,75,69,118,76"/>
 <area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="5,104,75,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="110,109,75,114,75,109,109,103"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="118,108,75,114,74,109,118,103"/>
 <area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="5,153,75,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="141,111,124,118,90,136,61,155,58,151,87,132,122,113,139,106"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="142,111,124,118,89,136,60,155,57,151,86,132,122,113,140,106"/>
 </map>

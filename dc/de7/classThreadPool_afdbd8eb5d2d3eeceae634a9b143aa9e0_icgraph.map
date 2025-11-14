@@ -1,6 +1,6 @@
 <map id="ThreadPool::start" name="ThreadPool::start">
-<area shape="rect" id="Node000001" title="Starts." alt="" coords="455,156,588,181"/>
-<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="240,105,407,131"/>
+<area shape="rect" id="Node000001" title="Starts the threads." alt="" coords="455,156,588,181"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="240,105,407,131"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="457,155,373,133,374,128,458,150"/>
 <area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
 <area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="501,147,460,102,434,81,405,63,370,49,333,37,258,24,188,19,134,19,134,13,188,13,258,19,334,32,372,44,408,58,437,76,464,99,504,143"/>
@@ -18,6 +18,6 @@
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,105,133,79,134,74,252,100"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="254,136,134,164,133,158,252,131"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="294,140,248,169,193,196,134,214,133,209,191,192,245,164,291,136"/>
-<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,105,192,131"/>
+<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,105,192,131"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="226,121,192,121,192,115,226,115"/>
 </map>

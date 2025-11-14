@@ -1,20 +1,20 @@
 <map id="Logger::info" name="Logger::info">
 <area shape="rect" id="Node000001" title="Logs an informational message (INFO level)." alt="" coords="685,179,784,204"/>
-<area shape="rect" id="Node000002" href="$da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c" title="Clears all elements currently stored in the queue." alt="" coords="498,5,622,31"/>
+<area shape="rect" id="Node000002" href="$da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c" title="Removes all pending jobs." alt="" coords="498,5,622,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="721,167,689,105,665,72,636,44,616,33,619,28,639,40,669,69,693,102,726,165"/>
-<area shape="rect" id="Node000003" href="$de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f" title=" " alt="" coords="495,55,625,80"/>
+<area shape="rect" id="Node000003" href="$de/d95/classPrintJob.html#aa0b21720cc3bce16a990b7d94d2f8b8f" title="Executes the job by printing the stored message." alt="" coords="495,55,625,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="714,170,681,131,636,94,613,83,615,78,639,89,684,127,719,166"/>
 <area shape="rect" id="Node000004" href="$df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Application entry point." alt="" coords="533,104,587,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="699,174,636,143,587,126,588,121,638,138,701,169"/>
-<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title=" " alt="" coords="502,153,618,179"/>
+<area shape="rect" id="Node000005" href="$da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95" title="Pops the next available job (blocking)." alt="" coords="502,153,618,179"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="671,185,618,177,619,172,672,180"/>
-<area shape="rect" id="Node000009" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="483,255,637,280"/>
+<area shape="rect" id="Node000009" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Closes the queue and wakes all waiting threads." alt="" coords="483,255,637,280"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="695,212,638,238,593,257,591,252,636,233,693,207"/>
-<area shape="rect" id="Node000010" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="254,252,421,277"/>
+<area shape="rect" id="Node000010" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="Gracefully shuts down the pool." alt="" coords="254,252,421,277"/>
 <area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="672,205,407,255,407,249,671,200"/>
-<area shape="rect" id="Node000016" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="shutdown" alt="" coords="240,301,435,327"/>
+<area shape="rect" id="Node000016" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="Immediately shuts down the pool." alt="" coords="240,301,435,327"/>
 <area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="720,217,686,258,664,278,638,294,588,312,536,322,483,326,435,326,435,321,483,321,535,317,587,307,636,289,661,274,683,254,716,214"/>
-<area shape="rect" id="Node000018" href="$dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="493,428,627,453"/>
+<area shape="rect" id="Node000018" href="$dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0" title="Starts the threads." alt="" coords="493,428,627,453"/>
 <area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="720,217,640,338,573,430,569,426,635,335,715,214"/>
 <area shape="rect" id="Node000006" href="$d9/dc8/test__job__queue_8cpp.html#aa0891ab2ecae37f21fabfc9dd7abfea6" title=" " alt="" coords="303,153,372,179"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="488,169,372,169,372,163,488,163"/>
@@ -33,7 +33,7 @@
 <area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="249,286,242,291,225,308,218,326,210,346,194,365,165,384,135,396,133,391,162,379,190,361,205,343,213,324,221,305,238,287,247,281"/>
 <area shape="rect" id="Node000014" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,447,133,472"/>
 <area shape="poly" id="edge13_Node000010_Node000014" title=" " alt="" coords="247,287,242,291,228,307,221,323,218,357,215,393,208,411,194,429,165,448,134,458,133,452,163,443,190,425,203,409,210,392,213,357,216,322,224,304,238,287,243,283"/>
-<area shape="rect" id="Node000015" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,252,192,277"/>
+<area shape="rect" id="Node000015" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructs the thread pool." alt="" coords="5,252,192,277"/>
 <area shape="poly" id="edge14_Node000010_Node000015" title=" " alt="" coords="240,267,192,267,192,262,240,262"/>
 <area shape="rect" id="Node000017" href="$df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,579,133,604"/>
 <area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="325,340,251,475,194,569,164,584,134,592,133,586,163,579,190,565,246,472,320,338"/>

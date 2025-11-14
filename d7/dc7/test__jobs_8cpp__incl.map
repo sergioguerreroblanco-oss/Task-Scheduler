@@ -8,11 +8,11 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="366,33,305,73,302,69,363,28"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="337,79,426,104"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="384,31,384,65,379,65,379,31"/>
-<area shape="rect" id="Node000006" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="437,152,502,177"/>
+<area shape="rect" id="Node000006" href="$d0/df3/i__job_8h.html" title="Interface definition for executable job units." alt="" coords="437,152,502,177"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="397,29,418,50,440,77,455,108,465,138,460,140,450,110,435,80,414,54,393,33"/>
 <area shape="rect" id="Node000007" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="616,79,691,104"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="426,28,604,74,602,79,424,33"/>
-<area shape="rect" id="Node000010" href="$d8/d07/print__job_8h.html" title=" " alt="" coords="501,79,592,104"/>
+<area shape="rect" id="Node000010" href="$d8/d07/print__job_8h.html" title="Definition of PrintJob, a simple job that logs a message when executed." alt="" coords="501,79,592,104"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="409,28,508,71,506,76,407,33"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="621,152,685,177"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="656,104,656,138,651,138,651,104"/>

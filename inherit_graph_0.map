@@ -1,11 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$d4/d75/classIJob.html" title="Abstract interface for jobs." alt="" coords="5,80,52,105"/>
+<area shape="rect" id="Node000000" href="$d4/d75/classIJob.html" title="Abstract interface representing a unit of executable work." alt="" coords="5,80,52,105"/>
 <area shape="rect" id="Node000001" href="$db/ded/classFakeJob.html" title=" " alt="" coords="130,5,201,31"/>
 <area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="55,69,99,40,128,27,130,32,101,44,58,73"/>
 <area shape="rect" id="Node000002" href="$de/d3d/classFakeSlowJob.html" title=" " alt="" coords="114,55,217,80"/>
 <area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="65,83,113,74,114,80,66,89"/>
 <area shape="rect" id="Node000003" href="$de/d34/classFakeThrowingJob.html" title=" " alt="" coords="100,104,231,129"/>
 <area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="66,96,100,103,99,108,65,102"/>
-<area shape="rect" id="Node000004" href="$de/d95/classPrintJob.html" title=" " alt="" coords="129,153,201,179"/>
+<area shape="rect" id="Node000004" href="$de/d95/classPrintJob.html" title="A job that prints a message to the logger when executed." alt="" coords="129,153,201,179"/>
 <area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="59,111,101,138,130,151,128,156,99,143,56,116"/>
 </map>

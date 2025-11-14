@@ -99,114 +99,110 @@ $(document).ready(function(){initNavTree('d3/dec/thread__pool_8h_source.html','.
 </div><!--header-->
 <div class="contents">
 <a href="../../d3/dec/thread__pool_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/* Include Guard */</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/* Standard libraries */</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/* Project libraries */</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d9d/job__queue_8h.html">job_queue.h</a>&quot;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    /*****************************************************************************/</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html">   45</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">    /******************************************************************/</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">/* Private Constants */</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* DEFAULT_WORKER_NAME = <span class="stringliteral">&quot;Worker &quot;</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    /******************************************************************/</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">/* Public Methods */</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a3225e86aa7835545b3f6c2c8d363d5e5">ThreadPool</a>();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb">~ThreadPool</a>();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#a8af7ebd9779dcab6e0a48f80e8962d08">   95</a></span>    <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a8af7ebd9779dcab6e0a48f80e8962d08">ThreadPool</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#afec5f97d2b512da75aa10897ef12a2a8">  104</a></span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp; <a class="code hl_function" href="../../dc/de7/classThreadPool.html#afec5f97d2b512da75aa10897ef12a2a8">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#ad1bbb23b57e3ae24cdc7df015c49fba1">  114</a></span>    <a class="code hl_function" href="../../dc/de7/classThreadPool.html#ad1bbb23b57e3ae24cdc7df015c49fba1">ThreadPool</a>(<a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#ad979aa170c8c04f5fb5f1d941ef9d5a2">  122</a></span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp; <a class="code hl_function" href="../../dc/de7/classThreadPool.html#ad979aa170c8c04f5fb5f1d941ef9d5a2">operator=</a>(<a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">start</a>(<span class="keywordtype">size_t</span> number_workers = std::thread::hardware_concurrency());</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">enqueue</a>(std::unique_ptr&lt;IJob&gt; job);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">shutdown</a>();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">shutdownNow</a>();</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1">join</a>();</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/* Include Guard */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/* Standard libraries */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/* Project libraries */</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d9d/job__queue_8h.html">job_queue.h</a>&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html">   61</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">/* Public Methods */</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a3225e86aa7835545b3f6c2c8d363d5e5">ThreadPool</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb">~ThreadPool</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#a8af7ebd9779dcab6e0a48f80e8962d08">   91</a></span>    <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a8af7ebd9779dcab6e0a48f80e8962d08">ThreadPool</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#afec5f97d2b512da75aa10897ef12a2a8">  100</a></span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp; <a class="code hl_function" href="../../dc/de7/classThreadPool.html#afec5f97d2b512da75aa10897ef12a2a8">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#ad1bbb23b57e3ae24cdc7df015c49fba1">  110</a></span>    <a class="code hl_function" href="../../dc/de7/classThreadPool.html#ad1bbb23b57e3ae24cdc7df015c49fba1">ThreadPool</a>(<a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../dc/de7/classThreadPool.html#ad979aa170c8c04f5fb5f1d941ef9d5a2">  118</a></span>    <a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp; <a class="code hl_function" href="../../dc/de7/classThreadPool.html#ad979aa170c8c04f5fb5f1d941ef9d5a2">operator=</a>(<a class="code hl_class" href="../../dc/de7/classThreadPool.html">ThreadPool</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">start</a>(<span class="keywordtype">size_t</span> number_threads = std::thread::hardware_concurrency());</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">enqueue</a>(std::unique_ptr&lt;IJob&gt; job);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261">tryEnqueue</a>(std::unique_ptr&lt;IJob&gt; job);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">shutdown</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">shutdownNow</a>();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1">join</a>();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66">isRunning</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="comment">/* Private Methods */</span></div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66">isRunning</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">    /******************************************************************/</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="comment">/* Private Methods */</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordtype">void</span> threadLoop(<span class="keyword">const</span> std::string&amp; worker_name);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordtype">void</span> threadLoop(<span class="keyword">const</span> std::string&amp; worker_name);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="comment">/* Private Attributes */</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a> queue;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    std::atomic&lt;bool&gt; running;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    std::vector&lt;std::thread&gt; threads;</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">/* Private Attributes */</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a> queue;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    std::atomic&lt;bool&gt; running;</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    std::vector&lt;std::thread&gt; threads;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">    /******************************************************************/</span></div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>};</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>};</div>
 </div>
-<div class="ttc" id="aclassJobQueue_html"><div class="ttname"><a href="../../da/d3d/classJobQueue.html">JobQueue</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d9d/job__queue_8h_source.html#l00044">job_queue.h:45</a></div></div>
-<div class="ttc" id="aclassThreadPool_html"><div class="ttname"><a href="../../dc/de7/classThreadPool.html">ThreadPool</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/dec/thread__pool_8h_source.html#l00045">thread_pool.h:46</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a16e5927283fc2e1828f08079bb010d52"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">ThreadPool::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">join</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00264">thread_pool.cpp:264</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a2e2c2e32e16067762ae159e61e76e775"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775">ThreadPool::start</a></div><div class="ttdeci">void start(size_t number_workers=std::thread::hardware_concurrency())</div><div class="ttdoc">Starts.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00072">thread_pool.cpp:72</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a3225e86aa7835545b3f6c2c8d363d5e5"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a3225e86aa7835545b3f6c2c8d363d5e5">ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool()</div><div class="ttdoc">Constructs a ThreadPool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00038">thread_pool.cpp:38</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a44d3d2ab618970605e684efc216655eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb">ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00049">thread_pool.cpp:49</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a465c5f0162edf2b529e473b5873494eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">ThreadPool::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">shutdown</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00161">thread_pool.cpp:161</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a51043ddfec7df4cef92160ca85f583d2"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00105">thread_pool.cpp:105</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a7abfdc1b1a1d13fd02f4dd58beac2d66"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66">ThreadPool::isRunning</a></div><div class="ttdeci">bool isRunning() const</div><div class="ttdoc">join</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00284">thread_pool.cpp:284</a></div></div>
-<div class="ttc" id="aclassThreadPool_html_a7e017a077f358e3718f672a8bfb58922"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">ThreadPool::shutdownNow</a></div><div class="ttdeci">void shutdownNow()</div><div class="ttdoc">shutdown</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00205">thread_pool.cpp:205</a></div></div>
+<div class="ttc" id="aclassJobQueue_html"><div class="ttname"><a href="../../da/d3d/classJobQueue.html">JobQueue</a></div><div class="ttdoc">A thread-safe FIFO queue for job dispatching.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d9d/job__queue_8h_source.html#l00063">job_queue.h:64</a></div></div>
+<div class="ttc" id="aclassThreadPool_html"><div class="ttname"><a href="../../dc/de7/classThreadPool.html">ThreadPool</a></div><div class="ttdoc">A fixed-size pool of worker threads executing asynchronous jobs.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/dec/thread__pool_8h_source.html#l00061">thread_pool.h:62</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a097dd08dd9568a605f4ee807f863b261"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a097dd08dd9568a605f4ee807f863b261">ThreadPool::tryEnqueue</a></div><div class="ttdeci">bool tryEnqueue(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdoc">Attempts to enqueue a job without guaranteeing acceptance.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00069">thread_pool.cpp:69</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a16e5927283fc2e1828f08079bb010d52"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52">ThreadPool::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the number of active worker threads.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00157">thread_pool.cpp:157</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a3225e86aa7835545b3f6c2c8d363d5e5"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a3225e86aa7835545b3f6c2c8d363d5e5">ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool()</div><div class="ttdoc">Constructs an empty thread pool (not running).</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00030">thread_pool.cpp:30</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a44d3d2ab618970605e684efc216655eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb">ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdoc">Destructs the thread pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00035">thread_pool.cpp:35</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a465c5f0162edf2b529e473b5873494eb"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb">ThreadPool::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">Gracefully shuts down the pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00090">thread_pool.cpp:90</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a51043ddfec7df4cef92160ca85f583d2"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdoc">Enqueues a job for execution.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00061">thread_pool.cpp:61</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a7abfdc1b1a1d13fd02f4dd58beac2d66"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66">ThreadPool::isRunning</a></div><div class="ttdeci">bool isRunning() const</div><div class="ttdoc">Indicates if the pool is running.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00165">thread_pool.cpp:165</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_a7e017a077f358e3718f672a8bfb58922"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922">ThreadPool::shutdownNow</a></div><div class="ttdeci">void shutdownNow()</div><div class="ttdoc">Immediately shuts down the pool.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00122">thread_pool.cpp:122</a></div></div>
 <div class="ttc" id="aclassThreadPool_html_a8af7ebd9779dcab6e0a48f80e8962d08"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#a8af7ebd9779dcab6e0a48f80e8962d08">ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(const ThreadPool &amp;)=delete</div><div class="ttdoc">Deleted copy constructor.</div></div>
-<div class="ttc" id="aclassThreadPool_html_aa12157caf7e934a8f56c6f9ce79af4b1"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1">ThreadPool::join</a></div><div class="ttdeci">void join()</div><div class="ttdoc">join</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00237">thread_pool.cpp:237</a></div></div>
+<div class="ttc" id="aclassThreadPool_html_aa12157caf7e934a8f56c6f9ce79af4b1"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1">ThreadPool::join</a></div><div class="ttdeci">void join()</div><div class="ttdoc">Waits for all worker threads to finish.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00142">thread_pool.cpp:142</a></div></div>
 <div class="ttc" id="aclassThreadPool_html_ad1bbb23b57e3ae24cdc7df015c49fba1"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#ad1bbb23b57e3ae24cdc7df015c49fba1">ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool(ThreadPool &amp;&amp;)=delete</div><div class="ttdoc">Deleted move constructor.</div></div>
 <div class="ttc" id="aclassThreadPool_html_ad979aa170c8c04f5fb5f1d941ef9d5a2"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#ad979aa170c8c04f5fb5f1d941ef9d5a2">ThreadPool::operator=</a></div><div class="ttdeci">ThreadPool &amp; operator=(ThreadPool &amp;&amp;)=delete</div><div class="ttdoc">Deleted move assignment operator.</div></div>
+<div class="ttc" id="aclassThreadPool_html_afdbd8eb5d2d3eeceae634a9b143aa9e0"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#afdbd8eb5d2d3eeceae634a9b143aa9e0">ThreadPool::start</a></div><div class="ttdeci">void start(size_t number_threads=std::thread::hardware_concurrency())</div><div class="ttdoc">Starts the threads.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d17/thread__pool_8cpp_source.html#l00043">thread_pool.cpp:43</a></div></div>
 <div class="ttc" id="aclassThreadPool_html_afec5f97d2b512da75aa10897ef12a2a8"><div class="ttname"><a href="../../dc/de7/classThreadPool.html#afec5f97d2b512da75aa10897ef12a2a8">ThreadPool::operator=</a></div><div class="ttdeci">ThreadPool &amp; operator=(const ThreadPool &amp;)=delete</div><div class="ttdoc">Deleted copy assignment operator.</div></div>
-<div class="ttc" id="ajob__queue_8h_html"><div class="ttname"><a href="../../db/d9d/job__queue_8h.html">job_queue.h</a></div></div>
+<div class="ttc" id="ajob__queue_8h_html"><div class="ttname"><a href="../../db/d9d/job__queue_8h.html">job_queue.h</a></div><div class="ttdoc">Thread-safe FIFO queue for IJob instances.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d3/dec/thread__pool_8h.html">thread_pool.h</a></li>
-    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 08:22:13 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
