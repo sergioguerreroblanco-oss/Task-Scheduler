@@ -1,17 +1,18 @@
 ﻿/**
- * @file        queue_job.h
- * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
- * @date        <2025-09-26>
- * @version     0.0.0
- *
- * @brief
- *
- * @details
- */
+    * @file        job_queue.h
+    * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
+    * @date        <2025-09-26>
+    * @version     0.0.0
+    *
+    * @brief
+    *
+    * @details
+    */
 
 /*****************************************************************************/
 
 /* Include Guard */
+
 #pragma once
 
 /*****************************************************************************/
@@ -21,25 +22,26 @@
 #include <condition_variable>
 #include <deque>
 #include <mutex>
+#include <memory> 
 
 /* Project libraries */
 
 #include "i_job.h"
 
-/*****************************************************************************/
+    /*****************************************************************************/
 
-/**
- * @class ThreadSafeQueue
- * @brief Thread-safe FIFO queue supporting multiple producers and consumers.
- *
- * @tparam T Type of element stored in the queue.
- *
- * @note
- * This queue is designed for use in multi-threaded environments.
- * It provides blocking (`pop`) and non-blocking (`try_pop`) retrieval operations,
- * as well as a `close()` method for graceful termination of waiting consumers.
- */
-class JobQueue
+    /**
+     * @class ThreadSafeQueue
+     * @brief Thread-safe FIFO queue supporting multiple producers and consumers.
+     *
+     * @tparam T Type of element stored in the queue.
+     *
+     * @note
+     * This queue is designed for use in multi-threaded environments.
+     * It provides blocking (`pop`) and non-blocking (`try_pop`) retrieval operations,
+     * as well as a `close()` method for graceful termination of waiting consumers.
+     */
+    class JobQueue
 {
     /******************************************************************/
 

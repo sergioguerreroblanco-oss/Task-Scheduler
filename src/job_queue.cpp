@@ -1,5 +1,5 @@
 ﻿/**
- * @file        queue_job.cpp
+ * @file        job_queue.cpp
  * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
  * @date        <2025-10-27>
  * @version     0.0.0
@@ -16,7 +16,6 @@
 /* Project libraries */
 
 #include "job_queue.h"
-
 #include "logger.h"
 
 /*****************************************************************************/

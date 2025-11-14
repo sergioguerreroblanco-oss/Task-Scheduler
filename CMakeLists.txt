@@ -1,6 +1,6 @@
 ﻿cmake_minimum_required(VERSION 3.21)
 
-project(worker_cola_multithread 
+project(TaskScheduler 
     VERSION 1.0.0
     DESCRIPTION "Multithreaded Task Scheduler in C++14"
     HOMEPAGE_URL "https://github.com/sergioguerreroblanco-oss/Task_Scheduler"
@@ -11,16 +11,19 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# -----------------------------------------------------------
+# Enable testing framework
+# -----------------------------------------------------------
 include(CTest)
 
 # -----------------------------------------------------------
 # Core library
 # -----------------------------------------------------------
 add_library(core STATIC
-    "src/logger.cpp"
-    "src/print_job.cpp"
-    "src/job_queue.cpp"
-)
+    src/job_queue.cpp
+    src/logger.cpp
+    src/print_job.cpp
+    src/thread_pool.cpp)
 
 target_include_directories(core
     PUBLIC
@@ -58,7 +61,10 @@ if(BUILD_TESTING)
         tests/test_main.cpp 
         tests/test_jobs.cpp
         tests/test_job_queue.cpp
-    )
+        tests/test_thread_pool.cpp
+        tests/fake_job.h 
+        tests/fake_slow_job.h
+        tests/fake_throwing_job.h)
     target_link_libraries(tests PRIVATE core gtest_main)
 
     include(GoogleTest)
