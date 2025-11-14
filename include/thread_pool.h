@@ -1,14 +1,26 @@
 ﻿/**
-    * @file        thread_pool.h
-    * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
-    * @date        <2025-11-10>
-    * @version     1.0.0
-    *
-    * @brief       Thread pool manages multiple worker threads consuming tasks from a shared queue.
-    *
-    * @details
-    *
-    */
+ * @file        thread_pool.h
+ * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
+ * @date        <2025-11-10>
+ * @version     1.0.0
+ *
+ * @brief ThreadPool manages a group of worker threads consuming jobs from a shared JobQueue.
+ *
+ * @details
+ * The ThreadPool provides:
+ *  - A configurable number of worker threads (default = hardware concurrency).
+ *  - FIFO job submission through `enqueue()` and `tryEnqueue()`.
+ *  - Graceful shutdown (`shutdown()`): waits for queued jobs to finish.
+ *  - Immediate shutdown (`shutdownNow()`): stops accepting jobs, interrupts waiting workers.
+ *  - Automatic thread joining and safe cleanup.
+ *
+ * Jobs must inherit from `IJob` and override `execute()`.
+ *
+ * The pool guarantees:
+ *  - No job is lost after being accepted.
+ *  - Workers survive job exceptions.
+ *  - Shutdown always joins all threads safely.
+ */
 
 /*****************************************************************************/
 
@@ -21,67 +33,51 @@
 /* Standard libraries */
 
 #include <atomic>
+#include <memory>
 #include <mutex>
 #include <string>
 #include <thread>
 #include <vector>
-#include <memory>
 
 /* Project libraries */
 
 #include "job_queue.h"
 
-    /*****************************************************************************/
+/*****************************************************************************/
 
-    /**
-     * @class ThreadPool
-     * @brief
-     *
-     * @details
-     *
-     * @note
-     *
-     */
-    class ThreadPool
+/**
+ * @class ThreadPool
+ * @brief A fixed-size pool of worker threads executing asynchronous jobs.
+ *
+ * @details
+ * The pool starts N worker threads that repeatedly:
+ *   1. Block on the shared JobQueue.
+ *   2. Retrieve the next job.
+ *   3. Execute it inside a try/catch to prevent worker termination.
+ *
+ * ThreadPool is non-copyable and non-movable to avoid transferring thread ownership.
+ * Lifetime is strictly controlled: destruction forces a complete shutdown.
+ */
+class ThreadPool
 {
-    /******************************************************************/
-
-    /* Private Constants */
-
-   private:
-    /**
-     * @brief Default prefix for worker thread names.
-     */
-    static constexpr const char* DEFAULT_WORKER_NAME = "Worker ";
-
     /******************************************************************/
 
     /* Public Methods */
 
    public:
     /**
-     * @brief Constructs a ThreadPool
-     *
-     * @param
+     * @brief Constructs an empty thread pool (not running).
      *
      * @details
-     * GIVEN
-     * WHEN
-     * THEN
-     *
-     * @note
-     *
+     * Workers are NOT created until `start()` is called.
      */
     explicit ThreadPool();
 
     /**
-     * @brief Destructor.
+     * @brief Destructs the thread pool.
      *
      * @details
-     * Ensures that all threads are stopped and joined before destruction.
-     *
-     * @note
-     * Calls `stop()` automatically for safety, even if the user forgets.
+     * Automatically performs `shutdown()` to ensure all threads are joined.
      */
     ~ThreadPool();
 
@@ -122,97 +118,84 @@
     ThreadPool& operator=(ThreadPool&&) = delete;
 
     /**
-     * @brief Starts
+     * @brief Starts the threads.
      *
-     * @param
-     *
+     * @param number_workers Number of threads to create.
      * @details
-     * GIVEN
-     * WHEN
-     * THEN
+     * If called multiple times, only the first one creates threads.
      *
-     * @note
-     *
+     * If number_threads == 0, the pool forces 1 thread.
      */
-    void start(size_t number_workers = std::thread::hardware_concurrency());
+    void start(size_t number_threads = std::thread::hardware_concurrency());
 
     /**
-     * @brief
+     * @brief Enqueues a job for execution.
      *
-     * @param
+     * @param job Unique pointer to an `IJob` instance.
      *
      * @details
-     * GIVEN
-     * WHEN
-     * THEN
+     * The job is ALWAYS accepted as long as:
+     *  - the pool is running, and
+     *  - the queue is not closed.
      *
-     * @note
-     *
+     * @warning This function throws if `job` is nullptr.
      */
     void enqueue(std::unique_ptr<IJob> job);
 
     /**
-     * @brief shutdown
+     * @brief Attempts to enqueue a job without guaranteeing acceptance.
+     *
+     * @param job Unique pointer to an `IJob` instance.
+     * @return `true` if the job was accepted, `false` otherwise.
      *
      * @details
-     * GIVEN
-     * WHEN
-     * THEN:
+     * Useful when external systems must avoid blocking or must not enqueue
+     * tasks during shutdown.
+     */
+    bool tryEnqueue(std::unique_ptr<IJob> job);
+
+    /**
+     * @brief Gracefully shuts down the pool.
      *
-     * @note
+     * @details
+     * - Stops accepting new jobs.
+     * - Waits up to 1 second for the queue to drain.
+     * - Closes the queue.
+     * - Joins all workers.
      *
+     * Workers finish any job already in progress.
      */
     void shutdown();
 
     /**
-     * @brief shutdown
+     * @brief Immediately shuts down the pool.
      *
      * @details
-     * GIVEN
-     * WHEN
-     * THEN:
+     * - Stops accepting new jobs.
+     * - Immediately closes the queue.
+     * - Workers unblock and exit even if jobs remain unprocessed.
      *
-     * @note
-     *
+     * This is the “fail-fast” version of shutdown().
      */
     void shutdownNow();
 
     /**
-     * @brief join
+     * @brief Waits for all worker threads to finish.
      *
      * @details
-     * GIVEN
-     * WHEN
-     * THEN:
-     *
-     * @note
-     *
+     * Called automatically by shutdown() and shutdownNow().
      */
     void join();
 
     /**
-     * @brief join
-     *
-     * @details
-     * GIVEN
-     * WHEN
-     * THEN:
-     *
-     * @note
-     *
+     * @brief Returns the number of active worker threads.
      */
     size_t size() const;
 
-        /**
-     * @brief join
+    /**
+     * @brief Indicates if the pool is running.
      *
-     * @details
-     * GIVEN
-     * WHEN
-     * THEN:
-     *
-     * @note
-     *
+     * @return true if workers are still active.
      */
     bool isRunning() const;
 
@@ -222,14 +205,13 @@
 
    private:
     /**
-     * @brief
-     *
-     * @param
+     * @brief Main loop executed by each worker thread.
      *
      * @details
-     *
-     * @note
-     *
+     * Each worker:
+     *  - Blocks on JobQueue::pop()
+     *  - Exits when `nullptr` is returned (queue closed)
+     *  - Catches exceptions thrown by jobs
      */
     void threadLoop(const std::string& worker_name);
 
@@ -239,26 +221,17 @@
 
    private:
     /**
-     * @brief Jobs queue
-     *
-     * @details
-     *
+     * @brief Shared job queue.
      */
     JobQueue queue;
 
     /**
-     * @brief
-     *
-     * @details
-     *
+     * @brief Indicates whether the pool is in running state.
      */
     std::atomic<bool> running;
 
     /**
-     * @brief
-     *
-     * @details
-     *
+     * @brief Threads.
      */
     std::vector<std::thread> threads;
 

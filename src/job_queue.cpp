@@ -1,12 +1,20 @@
 ﻿/**
  * @file        job_queue.cpp
- * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
- * @date        <2025-10-27>
- * @version     0.0.0
+ * @author      Sergio Guerrero Blanco
+ * @date        2025-09-26
+ * @version     1.0.0
  *
- * @brief
+ * @brief Implementation of the thread-safe job queue.
  *
  * @details
+ * This file contains the full implementation of `JobQueue`, a multi-producer
+ * multi-consumer FIFO queue used as the backbone of the thread pool.
+ *
+ * Key properties:
+ * - Safe concurrent access through `std::mutex`.
+ * - Blocking pop with condition variable.
+ * - Deterministic shutdown: waiting consumers wake up and return nullptr.
+ * - Ownership is transferred using `std::unique_ptr<IJob>`.
  */
 
 /*****************************************************************************/
@@ -16,18 +24,25 @@
 /* Project libraries */
 
 #include "job_queue.h"
+
 #include "logger.h"
 
 /*****************************************************************************/
 
 /**
- * @brief
+ * @brief Inserts a job into the queue and wakes one waiting consumer.
  *
- * @param
+ * @param job A non-null unique_ptr owning the job to insert.
  *
  * @details
+ * ### Concurrency:
+ * - Acquires `mtx` exclusively.
+ * - Appends the job to the FIFO buffer.
+ * - Calls `notify_one()` to wake exactly one thread blocked in `pop()`.
  *
- * @warning
+ * ### Notes:
+ * - There is no rejection of jobs after shutdown; the thread pool
+ *   is responsible for preventing enqueue after close.
  */
 void JobQueue::push(std::unique_ptr<IJob> job)
 {
@@ -37,12 +52,27 @@ void JobQueue::push(std::unique_ptr<IJob> job)
 }
 
 /**
- * @brief
+ * @brief Retrieves the next available job, blocking if necessary.
  *
- * @param
  * @return
+ * - A `std::unique_ptr<IJob>` containing the next job.
+ * - `nullptr` if the queue is closed AND empty.
  *
  * @details
+ * ### Blocking behaviour:
+ * - If the queue is empty and *not closed*, the caller blocks.
+ * - The thread wakes when:
+ *      1. A new job is pushed, or
+ *      2. `shutdown()` is called.
+ *
+ * ### Shutdown semantics:
+ * - If `closed == true` and there are no jobs remaining,
+ *   this function returns `nullptr` immediately.
+ *
+ * ### Concurrency:
+ * - `buffer` is protected by `mtx`.
+ * - Uses a condition-variable predicate (`closed || !buffer.empty()`),
+ *   which prevents spurious wakeups causing incorrect behaviour.
  */
 std::unique_ptr<IJob> JobQueue::pop()
 {
@@ -62,12 +92,14 @@ std::unique_ptr<IJob> JobQueue::pop()
 }
 
 /**
- * @brief Checks whether the queue is currently empty.
+ * @brief Returns whether the queue is empty.
  *
- * @return `true` if the queue is empty, `false` otherwise.
+ * @details
+ * - Non-blocking.
+ * - Requires acquiring `mtx` briefly.
  *
- * @note
- * This method is thread-safe and can be called concurrently with other operations.
+ * @warning
+ * The result is only a snapshot; another thread may enqueue immediately after.
  */
 bool JobQueue::empty() const
 {
@@ -76,12 +108,11 @@ bool JobQueue::empty() const
 }
 
 /**
- * @brief Returns the current number of elements in the queue.
+ * @brief Returns the number of pending jobs currently stored.
  *
- * @return Number of elements stored in the internal buffer.
- *
- * @note
- * This method acquires a lock briefly to read the size safely.
+ * @details
+ * - Thread-safe snapshot.
+ * - Does not block waiting consumers or producers for long.
  */
 size_t JobQueue::size() const
 {
@@ -90,15 +121,17 @@ size_t JobQueue::size() const
 }
 
 /**
- * @brief Clears all elements currently stored in the queue.
+ * @brief Removes all jobs currently stored in the queue.
  *
  * @details
- * Removes all elements from the internal buffer.
- * Does not affect the `closed` state.
+ * Primarily used during manual cleanup or tests.
  *
- * @warning
- * Should be used carefully in concurrent environments to avoid discarding
- * data being produced/consumed simultaneously.
+ * ### Important:
+ * - This does *not* wake consumers.
+ * - Does *not* affect the closed state.
+ *
+ * ### Concurrency:
+ * - Exclusive lock for the duration of the clear.
  */
 void JobQueue::clear()
 {
@@ -108,14 +141,16 @@ void JobQueue::clear()
 }
 
 /**
- * @brief Shutdown the queue, unblocking all waiting threads.
+ * @brief Closes the queue and wakes all waiting threads.
  *
  * @details
- * Sets an internal flag (`closed = true`) and notifies all waiting threads
- * so they can exit gracefully.
+ * ### Effects:
+ * - Sets `closed = true`.
+ * - Wakes *all* threads waiting on `pop()`.
+ * - Allows `pop()` to return `nullptr` when the queue becomes empty.
  *
- * After calling this, subsequent calls to `pop()` will return `false`
- * once the queue is empty.
+ * ### Concurrency:
+ * - Fully thread-safe; multiple calls are safe (idempotent).
  */
 void JobQueue::shutdown()
 {
@@ -126,9 +161,11 @@ void JobQueue::shutdown()
 }
 
 /**
- * @brief
+ * @brief Returns whether the queue has been closed.
  *
  * @details
+ * - Thread-safe.
+ * - Reads protected by mutex.
  */
 bool JobQueue::is_closed()
 {

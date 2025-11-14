@@ -1,13 +1,28 @@
 ﻿/**
-    * @file        job_queue.h
-    * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
-    * @date        <2025-09-26>
-    * @version     0.0.0
-    *
-    * @brief
-    *
-    * @details
-    */
+ * @file        job_queue.h
+ * @author      Sergio Guerrero Blanco
+ * @date        2025-09-26
+ * @version     1.0.0
+ *
+ * @brief Thread-safe FIFO queue for `IJob` instances.
+ *
+ * @details
+ * `JobQueue` implements a multi-producer / multi-consumer work queue.
+ * It provides:
+ *  - Blocking pop (`pop()`)
+ *  - Non-blocking queries (`empty()`, `size()`)
+ *  - Graceful shutdown (`shutdown()`)
+ *
+ * ### Concurrency guarantees:
+ * - All operations are thread-safe.
+ * - FIFO ordering is strictly preserved.
+ * - `pop()` blocks until a job becomes available or the queue is closed.
+ * - Once closed, consumers are awakened and eventually return `nullptr`.
+ *
+ * ### Design:
+ * - Uses `std::unique_ptr<IJob>` for exclusive ownership.
+ * - Protected internally by `std::mutex` and a `std::condition_variable`.
+ */
 
 /*****************************************************************************/
 
@@ -21,27 +36,31 @@
 
 #include <condition_variable>
 #include <deque>
+#include <memory>
 #include <mutex>
-#include <memory> 
 
 /* Project libraries */
 
 #include "i_job.h"
 
-    /*****************************************************************************/
+/*****************************************************************************/
 
-    /**
-     * @class ThreadSafeQueue
-     * @brief Thread-safe FIFO queue supporting multiple producers and consumers.
-     *
-     * @tparam T Type of element stored in the queue.
-     *
-     * @note
-     * This queue is designed for use in multi-threaded environments.
-     * It provides blocking (`pop`) and non-blocking (`try_pop`) retrieval operations,
-     * as well as a `close()` method for graceful termination of waiting consumers.
-     */
-    class JobQueue
+/**
+ * @class JobQueue
+ *
+ * @brief A thread-safe FIFO queue for job dispatching.
+ *
+ * @details
+ * This queue is intended for use in thread pools and other concurrent
+ * job-processing systems. It provides deterministic shutdown semantics
+ * and safe synchronization between multiple producers and consumers.
+ *
+ * ### Queue states:
+ * - **Open**: accepts new jobs; `pop()` may block.
+ * - **Closed**: rejects no jobs explicitly, but `pop()` returns `nullptr`
+ *   once the queue drains.
+ */
+class JobQueue
 {
     /******************************************************************/
 
@@ -49,15 +68,16 @@
 
    public:
     /**
-     * @brief Default constructor.
+     * @brief Constructs an empty, open queue.
      */
     explicit JobQueue() = default;
 
     /**
-     * @brief Destructor.
+     * @brief Default destructor.
      *
-     * Automatically releases resources. If `close()` was not called, any threads waiting
-     * on `pop()` may be unblocked during destruction.
+     * @details
+     * If the queue was closed via `shutdown()`, any threads blocked on
+     * `pop()` will already have been awakened.
      */
     ~JobQueue() = default;
 
@@ -93,75 +113,60 @@
     JobQueue& operator=(JobQueue&&) = delete;
 
     /**
-     * @brief
+     * @brief Pushes a job into the queue.
      *
-     * @param
+     * @param job Exclusive pointer to the job to insert (must be non-null).
      *
      * @details
-     *
-     * @warning
+     * Wakes one waiting consumer if any are blocked on `pop()`.
      */
     void push(std::unique_ptr<IJob> job);
 
     /**
-     * @brief
+     * @brief Pops the next available job (blocking).
      *
-     * @param
-     * @return
+     * @return A `std::unique_ptr<IJob>` containing the next job, or `nullptr`
+     *         if the queue has been closed and no jobs remain.
      *
      * @details
+     * - Blocks while the queue is empty and still open.
+     * - If the queue is closed and empty, returns `nullptr` immediately.
      */
     std::unique_ptr<IJob> pop();
 
     /**
-     * @brief Checks whether the queue is currently empty.
+     * @brief Returns whether the queue is currently empty.
      *
-     * @return `true` if the queue is empty, `false` otherwise.
-     *
-     * @note
-     * This method is thread-safe and can be called concurrently with other operations.
+     * @note Thread-safe.
      */
     bool empty() const;
 
     /**
-     * @brief Returns the current number of elements in the queue.
+     * @brief Returns the number of pending jobs.
      *
-     * @return Number of elements stored in the internal buffer.
-     *
-     * @note
-     * This method acquires a lock briefly to read the size safely.
+     * @note Thread-safe.
      */
     size_t size() const;
 
     /**
-     * @brief Clears all elements currently stored in the queue.
+     * @brief Removes all pending jobs.
      *
-     * @details
-     * Removes all elements from the internal buffer.
-     * Does not affect the `closed` state.
-     *
-     * @warning
-     * Should be used carefully in concurrent environments to avoid discarding
-     * data being produced/consumed simultaneously.
+     * @warning Does not affect the open/closed state of the queue.
      */
     void clear();
 
     /**
-     * @brief Shutdown the queue, unblocking all waiting threads.
+     * @brief Closes the queue and wakes all waiting threads.
      *
      * @details
-     * Sets an internal flag (`closed = true`) and notifies all waiting threads
-     * so they can exit gracefully.
-     *
-     * After calling this, subsequent calls to `pop()` will return `false`
-     * once the queue is empty.
+     * Once closed:
+     *  - Consumers eventually return `nullptr` from `pop()`.
+     *  - The queue will not block again.
      */
     void shutdown();
 
     /**
-     * @brief
-     *
-     * @details
+     * @brief Returns whether the queue is closed.
      */
     bool is_closed();
 
@@ -171,22 +176,22 @@
 
    private:
     /**
-     * @brief Internal FIFO buffer used to store queued elements.
+     * @brief FIFO storage.
      */
     std::deque<std::unique_ptr<IJob>> buffer;
 
     /**
-     * @brief Mutex protecting access to the buffer and synchronization state.
+     * @brief Synchronization primitive.
      */
     mutable std::mutex mtx;
 
     /**
-     * @brief Condition variable used to signal availability of data.
+     * @brief Wakes consumers on push/shutdown.
      */
     std::condition_variable cv;
 
     /**
-     * @brief Indicates whether the queue has been closed (graceful shutdown flag).
+     * @brief Indicates whether the queue is closed.
      */
     bool closed = false;
 

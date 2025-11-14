@@ -1,13 +1,14 @@
 ﻿/**
  * @file        thread_pool.cpp
- * @author      Sergio Guerrero Blanco <sergioguerreroblanco@hotmail.com>
+ * @author      Sergio Guerrero Blanco
  * @date        <2025-09-26>
  * @version     1.0.0
  *
- * @brief
+ * @brief Implementation of ThreadPool.
  *
  * @details
- *
+ * This file contains the execution logic for worker threads,
+ * enqueue operations, and shutdown mechanisms.
  */
 
 /*****************************************************************************/
@@ -24,27 +25,12 @@
 /* Public Methods */
 
 /**
- * @brief
- *
- * @param
- *
- * @details
- * GIVEN
- * WHEN
- * THEN
- *
- *
+ * @brief Creates a non-running thread pool.
  */
 ThreadPool::ThreadPool() : running(false) {}
 
 /**
- * @brief
- *
- * @details
- *
- *
- * @note
- *
+ * @brief Ensures all worker threads are stopped and joined.
  */
 ThreadPool::~ThreadPool()
 {
@@ -52,55 +38,25 @@ ThreadPool::~ThreadPool()
 }
 
 /**
- * @brief
- *
- * @param
- *
- * @details
- * GIVEN
- * WHEN
- * THEN:
- *
- * Example:
- * ```cpp
- *
- * ```
- *
- * @note
- *
+ * @brief Starts N threads.
  */
-void ThreadPool::start(size_t number_workers)
+void ThreadPool::start(size_t number_threads)
 {
     if (running)
         return;
 
     running = true;
-    if (number_workers == 0)
-        number_workers = 1;
-    Logger::info("[Thread Pool] Starting " + std::to_string(number_workers) + " workers");
-    for (size_t i = 0; i < number_workers; ++i)
+    if (number_threads == 0)
+        number_threads = 1;
+    Logger::info("[Thread Pool] Starting " + std::to_string(number_threads) + " threads");
+    for (size_t i = 0; i < number_threads; ++i)
     {
-        threads.emplace_back([this, i]() { threadLoop("Worker " + std::to_string(i)); });
+        threads.emplace_back([this, i]() { threadLoop("Thread " + std::to_string(i)); });
     }
 }
 
 /**
- * @brief
- *
- * @param
- *
- * @details
- * GIVEN
- * WHEN
- * THEN
- *
- * Example:
- * ```cpp
- *
- * ```
- *
- * @note
- *
+ * @brief Enqueues a job for later execution.
  */
 void ThreadPool::enqueue(std::unique_ptr<IJob> job)
 {
@@ -108,22 +64,7 @@ void ThreadPool::enqueue(std::unique_ptr<IJob> job)
 }
 
 /**
- * @brief
- *
- * @param
- *
- * @details
- * GIVEN
- * WHEN
- * THEN
- *
- * Example:
- * ```cpp
- *
- * ```
- *
- * @note
- *
+ * @brief Attempts to enqueue a job only if pool is running.
  */
 bool ThreadPool::tryEnqueue(std::unique_ptr<IJob> job)
 {
@@ -144,19 +85,7 @@ bool ThreadPool::tryEnqueue(std::unique_ptr<IJob> job)
 }
 
 /**
- * @brief
- *
- * @details
- * GIVEN
- * WHEN
- * THEN:
- *
- *
- * @note
- *
- *
- * @warning
- *
+ * @brief Gracefully shuts down the pool.
  */
 void ThreadPool::shutdown()
 {
@@ -188,19 +117,7 @@ void ThreadPool::shutdown()
 }
 
 /**
- * @brief
- *
- * @details
- * GIVEN
- * WHEN
- * THEN:
- *
- *
- * @note
- *
- *
- * @warning
- *
+ * @brief Immediately stops all workers, discarding queued jobs.
  */
 void ThreadPool::shutdownNow()
 {
@@ -220,19 +137,7 @@ void ThreadPool::shutdownNow()
 }
 
 /**
- * @brief
- *
- * @details
- * GIVEN
- * WHEN
- * THEN:
- *
- *
- * @note
- *
- *
- * @warning
- *
+ * @brief Waits for all threads to finish.
  */
 void ThreadPool::join()
 {
@@ -247,19 +152,7 @@ void ThreadPool::join()
 }
 
 /**
- * @brief
- *
- * @details
- * GIVEN
- * WHEN
- * THEN:
- *
- *
- * @note
- *
- *
- * @warning
- *
+ * @brief Returns number of worker threads.
  */
 size_t ThreadPool::size() const
 {
@@ -267,19 +160,7 @@ size_t ThreadPool::size() const
 }
 
 /**
- * @brief
- *
- * @details
- * GIVEN
- * WHEN
- * THEN:
- *
- *
- * @note
- *
- *
- * @warning
- *
+ * @brief Returns true if pool is still operational.
  */
 bool ThreadPool::isRunning() const
 {
@@ -291,22 +172,13 @@ bool ThreadPool::isRunning() const
 /* Private Methods */
 
 /**
- * @brief
- *
- * @param
+ * @brief Worker execution loop.
  *
  * @details
- *
- * GIVEN
- * WHEN
- * THEN:
- *
- *
- * @note
- *
- *
- * @exception std::exception
- *
+ * Each worker:
+ *  - Blocks on queue.pop()
+ *  - Exits when pop() returns nullptr (queue closed)
+ *  - Catches exceptions thrown by jobs to avoid worker death
  */
 void ThreadPool::threadLoop(const std::string& worker_name)
 {
