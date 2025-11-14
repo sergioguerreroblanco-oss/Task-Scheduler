@@ -11,14 +11,14 @@
  *  - A configurable number of worker threads (default = hardware concurrency).
  *  - FIFO job submission through `enqueue()` and `tryEnqueue()`.
  *  - Graceful shutdown (`shutdown()`): waits for queued jobs to finish.
- *  - Immediate shutdown (`shutdownNow()`): stops accepting jobs, interrupts waiting workers.
+ *  - Immediate shutdown (`shutdownNow()`): stops accepting jobs, interrupts waiting threads.
  *  - Automatic thread joining and safe cleanup.
  *
  * Jobs must inherit from `IJob` and override `execute()`.
  *
  * The pool guarantees:
  *  - No job is lost after being accepted.
- *  - Workers survive job exceptions.
+ *  - threads survive job exceptions.
  *  - Shutdown always joins all threads safely.
  */
 
@@ -69,7 +69,7 @@ class ThreadPool
      * @brief Constructs an empty thread pool (not running).
      *
      * @details
-     * Workers are NOT created until `start()` is called.
+     * threads are NOT created until `start()` is called.
      */
     explicit ThreadPool();
 
@@ -120,7 +120,7 @@ class ThreadPool
     /**
      * @brief Starts the threads.
      *
-     * @param number_workers Number of threads to create.
+     * @param number_threads Number of threads to create.
      * @details
      * If called multiple times, only the first one creates threads.
      *
@@ -161,9 +161,9 @@ class ThreadPool
      * - Stops accepting new jobs.
      * - Waits up to 1 second for the queue to drain.
      * - Closes the queue.
-     * - Joins all workers.
+     * - Joins all threads.
      *
-     * Workers finish any job already in progress.
+     * threads finish any job already in progress.
      */
     void shutdown();
 
@@ -173,7 +173,7 @@ class ThreadPool
      * @details
      * - Stops accepting new jobs.
      * - Immediately closes the queue.
-     * - Workers unblock and exit even if jobs remain unprocessed.
+     * - threads unblock and exit even if jobs remain unprocessed.
      *
      * This is the “fail-fast” version of shutdown().
      */
@@ -195,7 +195,7 @@ class ThreadPool
     /**
      * @brief Indicates if the pool is running.
      *
-     * @return true if workers are still active.
+     * @return true if threads are still active.
      */
     bool isRunning() const;
 

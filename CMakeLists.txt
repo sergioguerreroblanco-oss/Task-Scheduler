@@ -27,9 +27,7 @@ add_library(core STATIC
 
 target_include_directories(core
     PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/third_party/optional-lite/include
-)
+        ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 if(MSVC)
     target_compile_options(core PRIVATE /W4 /permissive- /wd26495)

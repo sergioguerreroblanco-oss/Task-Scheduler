@@ -3,37 +3,83 @@
 ![CI](https://github.com/sergioguerreroblanco-oss/task_scheduler/actions/workflows/ci.yml/badge.svg)
 
 
-
-
-
 ---
 
 ## ✨ Core Features
 
-- **...**
-    - A
-    - B
-    - C
+- **Multithreaded Thread Pool**
+  - Fixed-size pool created at startup.
+  - Each worker thread runs an independent job execution loop.
+  - Fully thread-safe job submission via a synchronized job queue.
 
-- **Logging System (`Logger`)**  
-  - Thread-safe static utility for centralized logging.  
-  - Configurable minimum log level (`DEBUG`, `INFO`, `WARN`, `ERROR`).  
-  - Adds timestamp and severity to each log line.  
-  - Used across all components for consistent diagnostics.
+- **Lock-free style Job Queue (internally synchronized)**
+  - Uses `std::mutex` + `std::condition_variable` for safe blocking `pop()`.
+  - Supports graceful shutdown and immediate shutdown modes.
+  - Ensures no job is lost on normal shutdown.
+
+- **Extensible Job Interface (`IJob`)**
+  - Abstract base class representing a unit of work.
+  - Enables custom job types such as `PrintJob`, `FakeJob`, `FakeSlowJob`.
+  - Easy to extend for real-world tasks (I/O, timers, background tasks…).
+
+- **Graceful and Immediate Shutdown**
+  - `shutdown()` → waits for queued work to finish.
+  - `shutdownNow()` → wakes all workers and stops immediately (no new jobs accepted).
+
+- **Exception-resistant Worker Loop**
+  - Exceptions thrown by job handlers **do not** crash the worker thread.
+  - Ensures long-running systems remain stable.
+
+- **Logging System (`Logger`)**
+  - Thread-safe global logger.
+  - Timestamped and color-coded message formatting.
+  - Severity levels: `DEBUG`, `INFO`, `WARN`, `ERROR`.
+  - Used across all subsystems for homogeneous diagnostics.
 
 ---
 
 ## 🌟 Project Highlights
 
-- **Unit testing** with GoogleTest (`ctest` integrated).  
-- **CMake presets** for consistent builds (`debug` / `release`).  
-- **Cross-platform**: builds cleanly on Linux, Windows, and inside Docker.  
-- **CI integration** via GitHub Actions:
-  - Builds and runs all unit tests automatically.
-  - Validates Docker image reproducibility.
-- **Reproducible builds** using a minimal **Ubuntu 22.04** image and **CMake 3.28**.
-- **Strict compiler flags** (`-Wall -Wextra -Wpedantic`) to enforce quality and correctness.
-- **C++14 compliance** — no dependency on newer standards.
+- **Modern CMake Build System**
+  - Clear separation between core library, tests, and executable.
+  - CMake presets (`debug` / `release`) for consistent multi-platform builds.
+
+- **Extensive Unit Testing (GoogleTest + CTest)**
+  - Full coverage of:
+    - Job queue behavior (blocking pop, shutdown, sequential operations)
+    - Thread pool lifecycle
+    - Worker execution, exception handling, shutdown modes
+  - Automatically executed in CI pipelines.
+
+- **Cross-Platform Compatibility**
+  - Fully validated on:
+    - 🪟 Windows 10/11 (MSVC 2022)
+    - 🐧 Linux (g++ / clang++)
+    - 🐳 Docker containers (Ubuntu 22.04 base image)
+
+- **Continuous Integration with GitHub Actions**
+  - Builds both Debug and Release configurations.
+  - Runs all unit tests on every commit.
+  - Builds and validates a Docker image.
+  - Guarantees project reproducibility.
+
+- **Reproducible Development Environments**
+  - Docker image provides a clean, isolated environment.
+  - Ensures identical results regardless of host OS.
+
+- **Strict Compiler Warnings**
+  - `-Wall -Wextra -Wpedantic` (Linux/Clang/GCC)
+  - `/W4 /permissive-` (MSVC)
+  - Helps catch errors early and maintain code quality.
+
+- **Doxygen-Generated Documentation**
+  - Automatic HTML and PDF documentation.
+  - Generated via GitHub Actions (docs.yml).
+  - Deploys to GitHub Pages for public viewing.
+
+- **C++14-Compliant**
+  - No dependency on C++17/20 features.
+  - Ensures wider compatibility and avoids needless complexity.
 
 ---
 
@@ -43,6 +89,52 @@ The following diagram illustrates the internal architecture of the project:
 
 ```mermaid
 flowchart LR
+
+subgraph MAIN ["Main Application"]
+    M1["Start ThreadPool"]
+    M2["Enqueue Jobs"]
+    M3["Shutdown / ShutdownNow"]
+end
+
+subgraph TP ["ThreadPool"]
+    TP1["Threads"]
+    TP2["running flag (atomic<bool>)"]
+    TP3["threadLoop()"]
+end
+
+subgraph JQ ["JobQueue"]
+    Q1["queue buffer"]
+    Q2["mutex"]
+    Q3["condition_variable"]
+    Q4["closed flag"]
+end
+
+subgraph JOBS ["Jobs"]
+    J1["IJob"]
+    J2["PrintJob"]
+    J3["Fake Jobs"]
+end
+
+%% Flow
+M1 -- "start()" --> TP1
+M2 -- "enqueue()" --> Q1
+
+%% shutdown affects multiple internals
+M3 -- "shutdown()/shutdownNow()" --> TP2
+M3 -- "queue.shutdown()" --> Q4
+M3 -- "join()" --> TP1
+
+TP1 --> TP3
+TP3 -- "pop()" --> Q1
+Q1  -- "pop(): job or nullptr" --> TP3
+
+TP3 -- "execute()" --> J1
+J1 --> J2
+J1 --> J3
+
+TP3 -- "exit" --> TP1
+
+
 ```
 
 ---
@@ -51,10 +143,89 @@ flowchart LR
 
 ```mermaid
 classDiagram
-    %% Relationships
+    %% ===== Interfaces =====
+    class IJob {
+        <<interface>>
+        +execute()*
+    }
+
+    %% ===== Job Implementations =====
+    class PrintJob {
+        -string message
+        +PrintJob(message)
+        +execute()
+    }
+
+    class FakeJob {
+        -atomic~bool~ executed
+        +execute()
+        +wasExecuted() bool
+    }
+
+    class FakeSlowJob {
+        -atomic~bool~ started
+        -atomic~bool~ finished
+        +execute()
+        +hasStarted() bool
+        +hasFinished() bool
+    }
+
+    class FakeThrowingJob {
+        -atomic~bool~ executed
+        +execute()
+        +wasExecuted() bool
+    }
+
+    IJob <|-- PrintJob
+    IJob <|-- FakeJob
+    IJob <|-- FakeSlowJob
+    IJob <|-- FakeThrowingJob
+
+    %% ===== JobQueue =====
+    class JobQueue {
+        -queue~unique_ptr<IJob>~ buffer
+        -mutex mtx
+        -condition_variable cv
+        -bool closed
+        +push(job)
+        +pop() unique_ptr<IJob>
+        +shutdown()
+        +empty() bool
+        +is_closed() bool
+    }
+
+    JobQueue --> IJob : stores
+
+    %% ===== ThreadPool =====
+    class ThreadPool {
+        -JobQueue queue
+        -atomic~bool~ running
+        -vector~thread~ threads
+        +start(workers)
+        +enqueue(job)
+        +shutdown()
+        +shutdownNow()
+        +join()
+        -threadLoop(worker_name)
+    }
+
+    ThreadPool --> JobQueue : owns
+    ThreadPool ..> IJob : consumes
+    ThreadPool ..> Logger : logs
+
+    %% ===== Logger =====
+    class Logger {
+        <<static>>
+        +debug(msg)
+        +info(msg)
+        +warn(msg)
+        +error(msg)
+        +set_min_level(level)
+    }
+
+    PrintJob ..> Logger
+
 ```
-🔍 Explanation
-- Logger — shared static utility providing thread-safe logging.
 
 ---
 
@@ -64,7 +235,7 @@ classDiagram
 
 1. Open Visual Studio 2022.
 
-2. Choose “Open Folder” → select the project root (worker_cola_multithread/).
+2. Choose “Open Folder” → select the project root (Task-Scheduler/).
 
 3. Visual Studio automatically detects CMakePresets.json.
 
@@ -120,25 +291,75 @@ ctest --preset debug
 ```
 The resulting binary will be located in:
 ```
-build/release/Task_Scheduler
+build/release/task_scheduler
 ```
 
 ### Docker (fully reproducible environment)
 The project includes a Dockerfile that performs a clean build and runs tests automatically:
 ```bash
-docker build -t Task_Scheduler:local .
-docker run --rm Task_Scheduler:local
+docker build -t task_scheduler:local .
+docker run --rm task_scheduler:local
 ```
 
 ---
 
 ## 🧪 Unit Tests
 
-Unit tests are implemented with GoogleTest and integrated into the CMake build system via CTest.
-They validate the core behavior of ...
+Unit tests are implemented using GoogleTest and fully integrated into the build system via CTest.
+Running a Debug build automatically enables all tests (BUILD_TESTING=ON).
+
+The test suite ensures the correctness and thread-safety of all major components in the project.
 
 ### ✅ Covered Scenarios
 
+Below is the list of all behaviors validated by the current test suite:
+
+#### 🧵 ThreadPool
+
+| Test Name                               | Validates                                                                                                  |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **StartsCorrectNumberOfThreads**        | `start(N)` correctly spawns N worker threads.                                                              |
+| **EnqueueExecutesAJob**                 | Enqueued job is executed by a worker thread.                                                               |
+| **EnqueueExecutesJob**                  | Multiple workers consume tasks correctly.                                                                  |
+| **ShutdownCorrectNumberOfThreads**      | `shutdown()` stops all workers and clears thread vector.                                                   |
+| **ShutdownNowStopsImmediately**         | `shutdownNow()` stops the pool immediately, skipping queue drain.                                          |
+| **WorkerSurvivesExceptionAndContinues** | Exceptions thrown inside jobs do **not** crash the thread — worker continues processing the following job. |
+
+#### 📦 JobQueue
+
+| Test Name                 | Validates                                                            |
+| ------------------------- | -------------------------------------------------------------------- |
+| **PushPopSequence**       | FIFO push/pop ordering and correctness.                              |
+| **BlockPopInOtherThread** | `pop()` blocks correctly and wakes when data is available.           |
+| **ShutdownBehaviour**     | `shutdown()` unblocks waiting threads and prevents further blocking. |
+
+#### 💼 Jobs
+
+| Test Name                           | Validates                                      |
+| ----------------------------------- | ---------------------------------------------- |
+| **PrintJob.ExecutesAndLogsMessage** | `PrintJob::execute()` logs the correct output. |
+| **JobInterfaceTest.IsAbstract**     | Ensures `IJob` is a true abstract interface.   |
+
+
+#### 🧩 Behavioral Guarantees Provided by Tests
+
+The test suite ensures:
+
+✔ ThreadPool is safe
+- No thread leaks
+- Correct shutdown semantics (shutdown() + shutdownNow())
+- Robust to exceptions inside jobs
+- No job is silently lost unless shutdownNow() is explicit
+
+✔ JobQueue is safe
+- Fully blocking FIFO queue
+- Wakes consumers properly
+- Graceful exit on shutdown
+
+✔ Jobs execute correctly
+- Clear interface (IJob)
+- Real jobs (PrintJob)
+- Test jobs (FakeJob, FakeThrowingJob, FakeSlowJob)
 
 ### Running Tests (Windows)
 
@@ -173,7 +394,31 @@ This will automatically discover and execute all registered GoogleTest cases.
 ### Example output:
 (example output inside container) 
 ```
-
+Test project C:/PROJECTS/Task-Scheduler/build/debug
+      Start  1: PrintJobTest.ExecutesAndLogsMessage
+ 1/11 Test  #1: PrintJobTest.ExecutesAndLogsMessage ..................   Passed    0.01 sec
+      Start  2: JobInterfaceTest.IsAbstract
+ 2/11 Test  #2: JobInterfaceTest.IsAbstract ..........................   Passed    0.01 sec
+      Start  3: JobQueueTest.PushPopSquence
+ 3/11 Test  #3: JobQueueTest.PushPopSquence ..........................   Passed    0.01 sec
+      Start  4: JobQueueTest.BlockPopInOtherThread
+ 4/11 Test  #4: JobQueueTest.BlockPopInOtherThread ...................   Passed    0.02 sec
+      Start  5: JobQueueTest.ShutdownBehaviour
+ 5/11 Test  #5: JobQueueTest.ShutdownBehaviour .......................   Passed    0.01 sec
+      Start  6: ThreadPoolTest.StartsCorrectNumberOfThreads
+ 6/11 Test  #6: ThreadPoolTest.StartsCorrectNumberOfThreads ..........   Passed    0.01 sec
+      Start  7: ThreadPoolTest.EnqueueExecutesAJob
+ 7/11 Test  #7: ThreadPoolTest.EnqueueExecutesAJob ...................   Passed    0.08 sec
+      Start  8: ThreadPoolTest.EnqueueExecutesJob
+ 8/11 Test  #8: ThreadPoolTest.EnqueueExecutesJob ....................   Passed    0.03 sec
+      Start  9: ThreadPoolTest.ShutdownCorrectNumberOfThreads
+ 9/11 Test  #9: ThreadPoolTest.ShutdownCorrectNumberOfThreads ........   Passed    0.01 sec
+      Start 10: ThreadPoolTest.ShutdownNowStopsImmediately
+10/11 Test #10: ThreadPoolTest.ShutdownNowStopsImmediately ...........   Passed    0.21 sec
+      Start 11: ThreadPoolTest.threadsurvivesExceptionAndContinues
+11/11 Test #11: ThreadPoolTest.threadsurvivesExceptionAndContinues ...   Passed    0.03 sec
+100% tests passed, 0 tests failed out of 11
+Total Test time (real) =   0.44 sec
 ```
 
 ---
@@ -186,15 +431,15 @@ Requires Docker installed and running on your system.
 
 Build image:
 
-```docker build -t Task_Scheduler:dev .```
+```docker build -t task_scheduler:dev .```
 
 Run tests inside container:
 
-```docker run --rm Task_Scheduler:dev```
+```docker run --rm task_scheduler:dev```
 
 Run main binary:
 
-```docker run --rm Task_Scheduler:dev ./build/release/Task_Scheduler```
+```docker run --rm task_scheduler:dev ./build/release/task_scheduler```
 
 By default, the container builds the project in /app/build/. The binary can be invoked as shown.
 
@@ -234,7 +479,54 @@ This workflow automates documentation generation:
 ## 📂 Project Structure
 
 ```
-
+Task-Scheduler/
+├── .github/
+│   └── workflows/
+│       ├── ci.yml                 # CI pipeline: build + tests + Docker
+│       └── docs.yml               # Auto-generate Doxygen docs (HTML + PDF)
+│
+├── docs/
+│   ├── Doxyfile                   # Doxygen configuration
+│   └── README.md                  # Additional documentation notes
+│
+├── include/                       # Public headers (library interface)
+│   ├── i_job.h                    # Abstract job interface
+│   ├── job_queue.h                # Thread-safe queue of jobs
+│   ├── logger.h                   # Thread-safe logging utility
+│   ├── print_job.h                # Example job implementation
+│   └── thread_pool.h              # Thread pool interface & declarations
+│
+├── scripts/                       # Automation scripts
+│   ├── build.ps1                  # Windows build helper (PowerShell)
+│   ├── build.sh                   # Linux build helper
+│   ├── generate_docs.ps1          # Windows Doxygen generator
+│   └── generate_docs.sh           # Linux Doxygen generator
+│
+├── src/                           # Private implementation files
+│   ├── job_queue.cpp              # JobQueue implementation
+│   ├── logger.cpp                 # Logger implementation
+│   ├── main.cpp                   # Application entry point
+│   ├── print_job.cpp              # PrintJob implementation
+│   └── thread_pool.cpp            # ThreadPool implementation
+│
+├── tests/                         # GoogleTest unit tests
+│   ├── fake_job.h                 # Fake job for basic testing
+│   ├── fake_slow_job.h            # Slow job used for shutdown tests
+│   ├── fake_throwing_job.h        # Job that throws exceptions
+│   ├── test_jobs.cpp              # Tests for job behavior
+│   ├── test_job_queue.cpp         # Tests for JobQueue
+│   ├── test_main.cpp              # Tests related to main / app behavior
+│   └── test_thread_pool.cpp       # Tests for ThreadPool
+│
+├── .clang-format                  # Code style configuration
+├── .dockerignore                  # Ignore files in Docker context
+├── .gitattributes                 # Git attribute configuration
+├── .gitignore                     # Files ignored by Git
+│
+├── CMakeLists.txt                 # Root CMake build file
+├── CMakePresets.json              # Presets for build/debug/release/CI
+├── Dockerfile                     # Reproducible CI/Docker environment
+└── README.md                      # Project documentation
 ```
 
 ---
@@ -345,11 +637,25 @@ clang-format -i include/*.h include/*.ipp src/*.cpp tests/*.cpp
 
 ## 📌 Notes
 
-- **C++ Standard**: C++ 14 (set(CMAKE_CXX_STANDARD 14)).
+- **C++ Standard**: The project uses **C++14**, configured via ```set(CMAKE_CXX_STANDARD 14)``` ensuring maximum compatibility with embedded systems, legacy compilers, and cross-platform builds.
     
 - **Logging**:
 
-    Centralized thread-safe Logger utility with severity levels (DEBUG, INFO, WARN, ERROR), ensuring coherent runtime diagnostics across threads.
+    A fully centralized, thread-safe Logger utility is used throughout the project.
+    It provides:
+    - Atomic writes to avoid interleaved logs
+    - Timestamps with millisecond precision
+    - Configurable severity levels (DEBUG, INFO, WARN, ERROR)
+    - Uniform log formatting across all components (ThreadPool, JobQueue, Jobs, main application)
+
+- **Thread Safety**:
+
+    Core concurrency structures (ThreadPool, JobQueue) use:
+    - std::mutex
+    - std::condition_variable
+    - std::atomic<bool> 
+    
+    ensuring correct synchronization across multiple worker threads without data races.
 
 - **Cross-Platform Compatibility**:
 
@@ -361,15 +667,33 @@ clang-format -i include/*.h include/*.ipp src/*.cpp tests/*.cpp
 
         Each environment uses consistent CMake presets to simplify builds and CI/CD automation.
 
+- **Reproducibility**:
+
+    Thanks to Docker + CI:
+    - Every build uses the same compiler version and toolchain.
+    - Unit tests run automatically inside a clean container.
+    - Documentation is generated predictably using Doxygen + Graphviz.
+
 ---
 
 ## ❤️ Acknowledgements
 
-This project was originally developed as part of a technical assessment,
-then extended into a fully professional implementation showcasing:
-- Clean architecture and modular design.
-- Thread-safe data structures and concurrency patterns.
-- Comprehensive Doxygen documentation.
-- Automated testing (GoogleTest + CTest).
-- CI/CD pipelines (GitHub Actions).
-- Cross-platform Docker-based builds.
+his project was originally developed as part of a technical assessment and was later expanded into a full professional-grade implementation demonstrating:
+
+- **Clean architecture** with clear responsibility boundaries (ThreadPool, JobQueue, Jobs, Logger).
+- **Robust multithreading design** using condition variables, atomics, and safe shutdown semantics.
+- **Thread-safe data structures** and exception-resilient worker loops.
+- **Comprehensive unit testing** using GoogleTest + CTest, covering all core scenarios.
+- **Automated documentation** using Doxygen, Graphviz, and optional LaTeX PDF generation.
+- **Modern CI/CD pipelines** with GitHub Actions validating build, tests, Docker reproducibility, and documentation.
+- **Cross-platform tooling**, building cleanly on Windows, Linux, and inside containerized environments.
+
+Special thanks to the open-source community behind:
+- CMake  
+- GoogleTest  
+- Doxygen  
+- Graphviz  
+- LLVM / clang-format  
+- The GitHub Actions ecosystem  
+
+Their tools made this project reliable, maintainable, and fully reproducible.

@@ -96,7 +96,7 @@ TEST_F(ThreadPoolTest, EnqueueExecutesAJob)
  * @brief
  *
  * @details
- * GIVEN a thread pool started with 3 workers
+ * GIVEN a thread pool started with 3 threads
  * WHEN enqueue a FakeJob
  * THEN the job must be executed (wasExecuted == true)
  */
@@ -128,7 +128,7 @@ TEST_F(ThreadPoolTest, EnqueueExecutesJob)
  * @details
  * GIVEN a pool
  * WHEN shutdown()
- * THEN workers.size() == 0
+ * THEN threads.size() == 0
  */
 TEST_F(ThreadPoolTest, ShutdownCorrectNumberOfThreads)
 {
@@ -140,7 +140,7 @@ TEST_F(ThreadPoolTest, ShutdownCorrectNumberOfThreads)
     tPool.shutdown();
 
     // THEN
-    EXPECT_EQ(tPool.size(), 0) << "Workers vector should be empty after shutdown()";
+    EXPECT_EQ(tPool.size(), 0) << "threads vector should be empty after shutdown()";
 }
 
 /**
@@ -176,7 +176,7 @@ TEST_F(ThreadPoolTest, ShutdownNowStopsImmediately)
 
 /**
  * @test
- * @brief Workers must survive exceptions thrown by jobs.
+ * @brief threads must survive exceptions thrown by jobs.
  *
  * @details
  * GIVEN a thread pool with 1 worker
@@ -187,7 +187,7 @@ TEST_F(ThreadPoolTest, ShutdownNowStopsImmediately)
  *  - The next job must still be executed (worker is still alive)
  *  - No crash must occur
  */
-TEST_F(ThreadPoolTest, WorkerSurvivesExceptionAndContinues)
+TEST_F(ThreadPoolTest, threadsurvivesExceptionAndContinues)
 {
     // GIVEN
     ThreadPool tPool;

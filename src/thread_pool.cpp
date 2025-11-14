@@ -113,11 +113,11 @@ void ThreadPool::shutdown()
     queue.shutdown();
 
     join();
-    Logger::info("[Thread Pool] All workers joined. Shutdown complete.");
+    Logger::info("[Thread Pool] All threads joined. Shutdown complete.");
 }
 
 /**
- * @brief Immediately stops all workers, discarding queued jobs.
+ * @brief Immediately stops all threads, discarding queued jobs.
  */
 void ThreadPool::shutdownNow()
 {
@@ -133,7 +133,7 @@ void ThreadPool::shutdownNow()
     queue.shutdown();
 
     join();
-    Logger::info("[Thread Pool] All workers joined. Shutdown complete.");
+    Logger::info("[Thread Pool] All threads joined. Shutdown complete.");
 }
 
 /**
