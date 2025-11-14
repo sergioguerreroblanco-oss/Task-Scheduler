@@ -1,0 +1,32 @@
+<map id="src/thread_pool.cpp" name="src/thread_pool.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="201,5,350,31"/>
+<area shape="rect" id="Node000002" href="$d3/dec/thread__pool_8h.html" title="Thread pool manages multiple worker threads consuming tasks from a shared queue." alt="" coords="220,79,331,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,31,278,65,273,65,273,31"/>
+<area shape="rect" id="Node000012" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="620,225,686,251"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="321,28,378,46,447,72,520,106,588,150,619,180,642,212,637,215,615,184,585,154,517,111,445,77,376,51,320,33"/>
+<area shape="rect" id="Node000013" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="14,79,89,104"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="240,33,102,77,100,72,239,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="382,152,449,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,102,382,143,380,148,297,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="86,225,150,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="226,107,183,125,163,138,146,154,130,182,123,212,118,210,125,180,141,150,160,133,181,120,224,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="22,152,81,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="240,107,95,153,93,147,239,101"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="156,152,220,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="263,106,214,145,211,141,260,102"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="244,152,307,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="278,104,278,138,273,138,273,104"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="265,225,342,251"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="290,102,307,124,322,151,324,183,317,213,312,212,319,183,317,153,303,127,286,106"/>
+<area shape="rect" id="Node000009" href="$db/d9d/job__queue_8h.html" title=" " alt="" coords="473,152,574,177"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="316,101,471,146,470,151,315,107"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="473,178,461,180,164,232,163,226,460,175,472,173"/>
+<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="489,180,353,224,351,219,487,175"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="367,225,510,251"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="512,179,464,219,461,214,508,175"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="534,225,596,251"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="533,176,554,212,549,215,528,179"/>
+<area shape="poly" id="edge13_Node000009_Node000012" title=" " alt="" coords="546,175,621,216,618,221,543,180"/>
+<area shape="poly" id="edge16_Node000013_Node000004" title=" " alt="" coords="40,106,27,121,15,139,9,158,13,176,24,191,39,204,74,222,72,226,36,208,21,195,8,178,3,158,10,137,22,118,36,103"/>
+<area shape="poly" id="edge17_Node000013_Node000005" title=" " alt="" coords="54,104,54,138,49,138,49,104"/>
+</map>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_7eijob_0',['~IJob',['../d4/d75/classIJob.html#a7e19effe332b5203d634957e6f92f592',1,'IJob']]],
-  ['_7ejobqueue_1',['~JobQueue',['../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba',1,'JobQueue']]],
-  ['_7eoptional_2',['~optional',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a85649b228f6422000d4ddbf67e4d79be',1,'nonstd::optional_lite::optional']]]
+  ['warn_0',['warn',['../db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52',1,'Logger']]],
+  ['wasexecuted_1',['wasexecuted',['../db/ded/classFakeJob.html#a79d106046e9a1ef3f847b1b61fbad2ec',1,'FakeJob::wasExecuted()'],['../de/d34/classFakeThrowingJob.html#aed2b793070d9b1643ffa9f55e134752b',1,'FakeThrowingJob::wasExecuted()']]]
 ];

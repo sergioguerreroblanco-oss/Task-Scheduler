@@ -1,0 +1,22 @@
+<map id="ThreadPool::~ThreadPool" name="ThreadPool::~ThreadPool">
+<area shape="rect" id="Node000001" title="Destructor." alt="" coords="5,132,192,157"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="240,132,407,157"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,142,226,142,226,147,192,147"/>
+<area shape="rect" id="Node000003" href="$da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c" title="Checks whether the queue is currently empty." alt="" coords="465,5,599,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,130,388,91,453,48,482,34,484,38,456,52,391,95,342,134"/>
+<area shape="rect" id="Node000004" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="661,181,760,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="347,130,396,108,462,87,499,80,537,78,574,81,610,92,637,107,661,127,696,168,692,172,657,130,634,111,608,96,573,86,537,83,500,85,464,92,398,113,349,134"/>
+<area shape="rect" id="Node000006" href="$dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="469,107,595,132"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="406,132,455,126,455,131,407,137"/>
+<area shape="rect" id="Node000007" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="455,156,609,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="407,152,441,156,441,161,406,157"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="465,205,599,231"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="359,155,456,190,479,198,478,203,454,195,357,160"/>
+<area shape="rect" id="Node000009" href="$db/d67/classLogger.html#adcbe6e560903cbb4257bccf546789e52" title="Logs a warning message (WARN level)." alt="" coords="657,231,764,256"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="338,156,386,200,419,224,456,241,503,252,553,256,643,252,644,257,552,262,502,257,454,246,416,228,382,205,334,159"/>
+<area shape="rect" id="Node000005" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="812,207,907,232"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="761,200,799,206,798,212,760,205"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="610,177,648,182,647,188,609,182"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="599,206,647,200,648,205,599,212"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="764,232,798,227,799,232,765,237"/>
+</map>

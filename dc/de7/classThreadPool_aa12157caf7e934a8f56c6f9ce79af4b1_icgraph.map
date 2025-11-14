@@ -1,0 +1,19 @@
+<map id="ThreadPool::join" name="ThreadPool::join">
+<area shape="rect" id="Node000001" title="join" alt="" coords="483,179,609,204"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="254,129,421,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="478,178,391,157,393,152,479,173"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="shutdown" alt="" coords="240,203,435,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="469,203,435,207,435,201,468,198"/>
+<area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,123,257,83,191,44,133,26,135,21,193,40,260,78,313,118"/>
+<area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,55,133,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="289,127,191,94,133,78,134,73,193,89,291,122"/>
+<area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,104,133,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="239,134,133,123,134,118,240,129"/>
+<area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="240,154,134,165,133,160,239,149"/>
+<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,203,192,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="287,162,193,193,149,205,147,200,191,187,286,157"/>
+<area shape="rect" id="Node000009" href="$df/df8/test__thread__pool_8cpp.html#a4cd072dcc8ecfc64bffa55c91897f49b" title=" " alt="" coords="64,252,133,277"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="262,233,134,260,133,255,261,228"/>
+</map>

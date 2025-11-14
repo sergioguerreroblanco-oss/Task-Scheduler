@@ -1,15 +1,19 @@
 <map id="include/logger.h" name="include/logger.h">
-<area shape="rect" id="Node000001" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="364,5,489,31"/>
+<area shape="rect" id="Node000001" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="516,5,641,31"/>
 <area shape="rect" id="Node000002" href="$dd/d4c/job__queue_8cpp.html" title=" " alt="" coords="5,79,144,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,36,132,81,131,76,356,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,33,145,83,144,78,502,27"/>
 <area shape="rect" id="Node000003" href="$d3/d30/logger_8cpp.html" title="Implementation of the thread&#45;safe Logger class." alt="" coords="168,79,280,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="382,38,258,81,256,76,381,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="509,36,281,81,280,76,508,31"/>
 <area shape="rect" id="Node000004" href="$df/d0a/main_8cpp.html" title=" " alt="" coords="303,79,409,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="407,43,369,80,366,77,403,39"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="531,37,393,81,391,76,529,32"/>
 <area shape="rect" id="Node000005" href="$d4/d44/print__job_8cpp.html" title=" " alt="" coords="433,79,562,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="450,39,488,77,484,80,446,43"/>
-<area shape="rect" id="Node000006" href="$d9/dc8/test__job__queue_8cpp.html" title=" " alt="" coords="587,79,771,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="481,32,639,76,637,81,480,37"/>
-<area shape="rect" id="Node000007" href="$d7/d28/test__jobs_8cpp.html" title="Unit tests for IJob and PrintJob components." alt="" coords="795,79,939,104"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="503,29,797,76,796,81,503,34"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="557,42,512,80,509,76,554,38"/>
+<area shape="rect" id="Node000006" href="$df/d17/thread__pool_8cpp.html" title=" " alt="" coords="587,79,736,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="604,38,650,76,646,80,601,42"/>
+<area shape="rect" id="Node000007" href="$d9/dc8/test__job__queue_8cpp.html" title=" " alt="" coords="760,79,944,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="636,32,808,76,807,81,635,37"/>
+<area shape="rect" id="Node000008" href="$d7/d28/test__jobs_8cpp.html" title="Unit tests for IJob and PrintJob components." alt="" coords="968,79,1112,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="655,28,968,76,968,82,654,34"/>
+<area shape="rect" id="Node000009" href="$df/df8/test__thread__pool_8cpp.html" title=" " alt="" coords="1136,79,1331,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="655,25,1136,77,1136,82,654,30"/>
 </map>

@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['set_5fmin_5flevel_0',['set_min_level',['../db/d67/classLogger.html#a5a979e9c0f7e33c3663dcd69a0f62f98',1,'Logger']]],
-  ['setup_1',['setup',['../df/d3f/classJobQueueTest.html#a74af6a4347fa0f69ffaa20d3155a4408',1,'JobQueueTest::SetUp()'],['../d7/d12/classPrintJobTest.html#aaa6a4d87e7f2b0dd4d6f27536a44be10',1,'PrintJobTest::SetUp()']]],
-  ['shutdown_2',['shutdown',['../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b',1,'JobQueue']]],
-  ['size_3',['size',['../da/d3d/classJobQueue.html#ae2fbfee64d3c0ca5fbe2919dc7179406',1,'JobQueue']]],
-  ['storage_5ft_4',['storage_t',['../da/d46/unionnonstd_1_1optional__lite_1_1detail_1_1storage__t.html#a8a2cfcbee5187f6a4d5f5eb3e0f359bd',1,'nonstd::optional_lite::detail::storage_t']]],
-  ['swap_5',['swap',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a473a8646a91f486fd499f58db3cc15a7',1,'nonstd::optional_lite::optional::swap()'],['../d5/d98/namespacenonstd_1_1optional__lite.html#ab1410153235f5900a1006bce2bf4f140',1,'nonstd::optional_lite::swap()']]]
+  ['reset_0',['reset',['../d0/d1d/classnonstd_1_1optional__lite_1_1optional.html#a024284c4c1a99a5bf0813c3ec5d6b5b9',1,'nonstd::optional_lite::optional']]]
 ];

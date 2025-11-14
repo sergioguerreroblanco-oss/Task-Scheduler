@@ -1,0 +1,15 @@
+<map id="Logger::warn" name="Logger::warn">
+<area shape="rect" id="Node000001" title="Logs a warning message (WARN level)." alt="" coords="455,104,561,129"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a465c5f0162edf2b529e473b5873494eb" title="shutdown" alt="" coords="240,104,407,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,119,407,119,407,114,441,114"/>
+<area shape="rect" id="Node000003" href="$df/df8/test__thread__pool_8cpp.html#a83708d68c85b029cdf943819845eb516" title=" " alt="" coords="64,5,133,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="291,99,245,71,191,44,133,27,134,22,193,40,247,66,294,94"/>
+<area shape="rect" id="Node000004" href="$df/df8/test__thread__pool_8cpp.html#ad7c6395489bf152546a95fde1dacc29a" title=" " alt="" coords="64,55,133,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,104,133,77,134,72,252,98"/>
+<area shape="rect" id="Node000005" href="$df/df8/test__thread__pool_8cpp.html#a91a536bfbe81340c8b1f0fd3f62dde39" title=" " alt="" coords="64,104,133,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="226,119,134,119,134,114,226,114"/>
+<area shape="rect" id="Node000006" href="$df/df8/test__thread__pool_8cpp.html#a8c767900ff84db83e98cc658a3883310" title="Workers must survive exceptions thrown by jobs." alt="" coords="64,153,133,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="252,135,134,161,133,156,251,130"/>
+<area shape="rect" id="Node000007" href="$dc/de7/classThreadPool.html#a44d3d2ab618970605e684efc216655eb" title="Destructor." alt="" coords="5,203,192,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="293,139,247,166,193,192,156,205,154,200,191,188,244,162,290,134"/>
+</map>

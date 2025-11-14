@@ -98,21 +98,24 @@ $(document).ready(function(){initNavTree('db/d9d/job__queue_8h.html','../../'); 
 <div class="textblock"><code>#include &lt;condition_variable&gt;</code><br />
 <code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/df3/i__job_8h_source.html">i_job.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for job_queue.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/df3/job__queue_8h__incl.png" border="0" usemap="#ainclude_2job__queue_8h" alt=""/></div>
 <map name="ainclude_2job__queue_8h" id="ainclude_2job__queue_8h">
-<area shape="rect" title=" " alt="" coords="171,5,323,31"/>
+<area shape="rect" title=" " alt="" coords="215,5,367,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,148,104"/>
-<area shape="poly" title=" " alt="" coords="221,33,118,76,116,71,219,28"/>
+<area shape="poly" title=" " alt="" coords="258,33,125,77,124,72,256,28"/>
 <area shape="rect" title=" " alt="" coords="172,79,235,104"/>
-<area shape="poly" title=" " alt="" coords="242,32,220,68,215,66,238,30"/>
+<area shape="poly" title=" " alt="" coords="279,33,230,72,227,68,276,29"/>
 <area shape="rect" title=" " alt="" coords="259,79,323,104"/>
-<area shape="poly" title=" " alt="" coords="257,30,279,66,275,68,252,32"/>
-<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="348,79,413,104"/>
-<area shape="poly" title=" " alt="" coords="270,28,348,70,346,74,268,33"/>
+<area shape="poly" title=" " alt="" coords="294,31,294,65,289,65,289,31"/>
+<area shape="rect" title=" " alt="" coords="347,79,425,104"/>
+<area shape="poly" title=" " alt="" coords="308,29,361,68,358,72,305,33"/>
+<area shape="rect" href="../../d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="449,79,515,104"/>
+<area shape="poly" title=" " alt="" coords="323,28,439,71,437,76,321,33"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -120,11 +123,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d58/job__queue_8h__dep__incl.png" border="0" usemap="#ainclude_2job__queue_8hdep" alt=""/></div>
 <map name="ainclude_2job__queue_8hdep" id="ainclude_2job__queue_8hdep">
-<area shape="rect" title=" " alt="" coords="91,5,243,31"/>
-<area shape="rect" href="../../dd/d4c/job__queue_8cpp.html" title=" " alt="" coords="5,79,144,104"/>
-<area shape="poly" title=" " alt="" coords="143,41,91,81,88,76,140,37"/>
-<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html" title=" " alt="" coords="168,79,352,104"/>
-<area shape="poly" title=" " alt="" coords="194,37,246,76,243,81,191,41"/>
+<area shape="rect" title=" " alt="" coords="276,5,428,31"/>
+<area shape="rect" href="../../d3/dec/thread__pool_8h.html" title="Thread pool manages multiple worker threads consuming tasks from a shared queue." alt="" coords="96,79,259,104"/>
+<area shape="poly" title=" " alt="" coords="312,38,207,81,205,76,310,33"/>
+<area shape="rect" href="../../dd/d4c/job__queue_8cpp.html" title=" " alt="" coords="283,79,421,104"/>
+<area shape="poly" title=" " alt="" coords="355,44,355,79,349,79,349,44"/>
+<area shape="rect" href="../../d9/dc8/test__job__queue_8cpp.html" title=" " alt="" coords="445,79,629,104"/>
+<area shape="poly" title=" " alt="" coords="395,33,508,76,506,81,393,38"/>
+<area shape="rect" href="../../df/d17/thread__pool_8cpp.html" title=" " alt="" coords="5,152,155,177"/>
+<area shape="poly" title=" " alt="" coords="152,114,97,154,94,150,149,110"/>
+<area shape="rect" href="../../df/df8/test__thread__pool_8cpp.html" title=" " alt="" coords="179,152,373,177"/>
+<area shape="poly" title=" " alt="" coords="206,110,261,150,258,154,202,114"/>
 </map>
 </div>
 </div>
@@ -135,13 +144,19 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3d/classJobQueue.html">JobQueue</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Sergio Guerrero Blanco <a href="#" onclick="location.href='mai'+'lto:'+'ser'+'gi'+'ogu'+'er'+'rer'+'ob'+'lan'+'co'+'@ho'+'tm'+'ail'+'.c'+'om'; return false;">sergi<span class="obfuscator">.nosp@m.</span>ogue<span class="obfuscator">.nosp@m.</span>rrero<span class="obfuscator">.nosp@m.</span>blan<span class="obfuscator">.nosp@m.</span>co@ho<span class="obfuscator">.nosp@m.</span>tmai<span class="obfuscator">.nosp@m.</span>l.com</a> </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>&lt;2025-09-26&gt; </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.0.0 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="../../db/d9d/job__queue_8h_source.html">job_queue.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../db/d9d/job__queue_8h.html">job_queue.h</a></li>
-    <li class="footer">Generated on Fri Nov 7 2025 14:41:06 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

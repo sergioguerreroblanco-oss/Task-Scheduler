@@ -7,6 +7,9 @@ var hierarchy =
     [ "nonstd::optional_lite::std11::conditional< B, T, F >", "d4/dae/structnonstd_1_1optional__lite_1_1std11_1_1conditional.html", null ],
     [ "nonstd::optional_lite::std11::conditional< false, T, F >", "d5/d61/structnonstd_1_1optional__lite_1_1std11_1_1conditional_3_01false_00_01T_00_01F_01_4.html", null ],
     [ "IJob", "d4/d75/classIJob.html", [
+      [ "FakeJob", "db/ded/classFakeJob.html", null ],
+      [ "FakeSlowJob", "de/d3d/classFakeSlowJob.html", null ],
+      [ "FakeThrowingJob", "de/d34/classFakeThrowingJob.html", null ],
       [ "PrintJob", "de/d95/classPrintJob.html", null ]
     ] ],
     [ "nonstd::detail::in_place_index_tag< K >", "db/dbd/structnonstd_1_1detail_1_1in__place__index__tag.html", null ],
@@ -34,8 +37,10 @@ var hierarchy =
     [ "nonstd::optional_lite::detail::struct_t< T >", "d0/d00/structnonstd_1_1optional__lite_1_1detail_1_1struct__t.html", null ],
     [ "testing::Test", null, [
       [ "JobQueueTest", "df/d3f/classJobQueueTest.html", null ],
-      [ "PrintJobTest", "d7/d12/classPrintJobTest.html", null ]
+      [ "PrintJobTest", "d7/d12/classPrintJobTest.html", null ],
+      [ "ThreadPoolTest", "d6/d6b/classThreadPoolTest.html", null ]
     ] ],
+    [ "ThreadPool", "dc/de7/classThreadPool.html", null ],
     [ "ThreadSafeQueue", "da/d7e/classThreadSafeQueue.html", null ],
     [ "nonstd::optional_lite::detail::type_of_size< List, N >", "d8/d90/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size.html", null ],
     [ "nonstd::optional_lite::detail::type_of_size< nulltype, N >", "d4/de5/structnonstd_1_1optional__lite_1_1detail_1_1type__of__size_3_01nulltype_00_01N_01_4.html", null ],

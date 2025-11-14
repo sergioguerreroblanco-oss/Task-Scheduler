@@ -20,5 +20,6 @@ var searchData=
   ['is_5fnothrow_5fmove_5fassignable_17',['is_nothrow_move_assignable',['../d5/d7d/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__assignable.html',1,'nonstd::optional_lite::std11']]],
   ['is_5fnothrow_5fmove_5fconstructible_18',['is_nothrow_move_constructible',['../d1/d24/structnonstd_1_1optional__lite_1_1std11_1_1is__nothrow__move__constructible.html',1,'nonstd::optional_lite::std11']]],
   ['is_5ftrivially_5fcopy_5fconstructible_19',['is_trivially_copy_constructible',['../d8/d6d/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__copy__constructible.html',1,'nonstd::optional_lite::std11']]],
-  ['is_5ftrivially_5fmove_5fconstructible_20',['is_trivially_move_constructible',['../de/d48/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html',1,'nonstd::optional_lite::std11']]]
+  ['is_5ftrivially_5fmove_5fconstructible_20',['is_trivially_move_constructible',['../de/d48/structnonstd_1_1optional__lite_1_1std11_1_1is__trivially__move__constructible.html',1,'nonstd::optional_lite::std11']]],
+  ['isrunning_21',['isRunning',['../dc/de7/classThreadPool.html#a7abfdc1b1a1d13fd02f4dd58beac2d66',1,'ThreadPool']]]
 ];

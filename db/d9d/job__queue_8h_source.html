@@ -102,86 +102,88 @@ $(document).ready(function(){initNavTree('db/d9d/job__queue_8h_source.html','../
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/*****************************************************************************/</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/* Include Guard */</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/* Standard libraries */</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/* Project libraries */</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/* Standard libraries */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;memory&gt;</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/df3/i__job_8h.html">i_job.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/* Project libraries */</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/df3/i__job_8h.html">i_job.h</a>&quot;</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    /******************************************************************/</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">/* Public Methods */</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    /*****************************************************************************/</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html">   44</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    /******************************************************************/</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2">   52</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2">JobQueue</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba">   60</a></span>    <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba">~JobQueue</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9">   68</a></span>    <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9">JobQueue</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a758604671f152362d072fa04cd027171">   76</a></span>    <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp; <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a758604671f152362d072fa04cd027171">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448">   84</a></span>    <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448">JobQueue</a>(<a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a2fa457d4e2373411581f5a2dbbe9f3ba">   91</a></span>    <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp; <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a2fa457d4e2373411581f5a2dbbe9f3ba">operator=</a>(<a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253">push</a>(std::unique_ptr&lt;IJob&gt; job);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    std::unique_ptr&lt;IJob&gt; <a class="code hl_function" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">pop</a>();</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c">empty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#ae2fbfee64d3c0ca5fbe2919dc7179406">size</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c">clear</a>();</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b">shutdown</a>();</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c">is_closed</a>();</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">/* Public Methods */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2">   54</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2">JobQueue</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba">   62</a></span>    <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba">~JobQueue</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9">   70</a></span>    <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9">JobQueue</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a758604671f152362d072fa04cd027171">   78</a></span>    <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp; <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a758604671f152362d072fa04cd027171">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448">   86</a></span>    <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448">JobQueue</a>(<a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../da/d3d/classJobQueue.html#a2fa457d4e2373411581f5a2dbbe9f3ba">   93</a></span>    <a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp; <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a2fa457d4e2373411581f5a2dbbe9f3ba">operator=</a>(<a class="code hl_class" href="../../da/d3d/classJobQueue.html">JobQueue</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253">push</a>(std::unique_ptr&lt;IJob&gt; job);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    std::unique_ptr&lt;IJob&gt; <a class="code hl_function" href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">pop</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c">empty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#ae2fbfee64d3c0ca5fbe2919dc7179406">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c">clear</a>();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b">shutdown</a>();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="../../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c">is_closed</a>();</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">/* Private Attributes */</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">    /******************************************************************/</span></div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    std::deque&lt;std::unique_ptr&lt;IJob&gt;&gt; buffer;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">mutable</span> std::mutex mtx;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    std::condition_variable cv;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">bool</span> closed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">    /******************************************************************/</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>};</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">/* Private Attributes */</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    std::deque&lt;std::unique_ptr&lt;IJob&gt;&gt; buffer;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keyword">mutable</span> std::mutex mtx;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    std::condition_variable cv;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">bool</span> closed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">    /******************************************************************/</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>};</div>
 </div>
-<div class="ttc" id="aclassJobQueue_html"><div class="ttname"><a href="../../da/d3d/classJobQueue.html">JobQueue</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d9d/job__queue_8h_source.html#l00042">job_queue.h:43</a></div></div>
+<div class="ttc" id="aclassJobQueue_html"><div class="ttname"><a href="../../da/d3d/classJobQueue.html">JobQueue</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d9d/job__queue_8h_source.html#l00044">job_queue.h:45</a></div></div>
 <div class="ttc" id="aclassJobQueue_html_a14042d9082e1c93c45295418386cc1e9"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a14042d9082e1c93c45295418386cc1e9">JobQueue::JobQueue</a></div><div class="ttdeci">JobQueue(const JobQueue &amp;)=delete</div><div class="ttdoc">Disable copy constructor.</div></div>
-<div class="ttc" id="aclassJobQueue_html_a2d83400746c6eae06c5d88a5a7f48a4b"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b">JobQueue::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">Shutdown the queue, unblocking all waiting threads.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00121">job_queue.cpp:121</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_a2d83400746c6eae06c5d88a5a7f48a4b"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b">JobQueue::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdoc">Shutdown the queue, unblocking all waiting threads.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00120">job_queue.cpp:120</a></div></div>
 <div class="ttc" id="aclassJobQueue_html_a2fa457d4e2373411581f5a2dbbe9f3ba"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a2fa457d4e2373411581f5a2dbbe9f3ba">JobQueue::operator=</a></div><div class="ttdeci">JobQueue &amp; operator=(JobQueue &amp;&amp;)=delete</div><div class="ttdoc">Disable move assignment operator.</div></div>
 <div class="ttc" id="aclassJobQueue_html_a3054212dca513034c0fd2b73455bb448"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a3054212dca513034c0fd2b73455bb448">JobQueue::JobQueue</a></div><div class="ttdeci">JobQueue(JobQueue &amp;&amp;)=delete</div><div class="ttdoc">Disable move constructor.</div></div>
 <div class="ttc" id="aclassJobQueue_html_a314163f0addf40e7cec54d045a0e4fba"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a314163f0addf40e7cec54d045a0e4fba">JobQueue::~JobQueue</a></div><div class="ttdeci">~JobQueue()=default</div><div class="ttdoc">Destructor.</div></div>
-<div class="ttc" id="aclassJobQueue_html_a53003ac28808bb4e075396eeffb8710c"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c">JobQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears all elements currently stored in the queue.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00104">job_queue.cpp:104</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_a53003ac28808bb4e075396eeffb8710c"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a53003ac28808bb4e075396eeffb8710c">JobQueue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears all elements currently stored in the queue.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00103">job_queue.cpp:103</a></div></div>
 <div class="ttc" id="aclassJobQueue_html_a758604671f152362d072fa04cd027171"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a758604671f152362d072fa04cd027171">JobQueue::operator=</a></div><div class="ttdeci">JobQueue &amp; operator=(const JobQueue &amp;)=delete</div><div class="ttdoc">Disable copy assignment operator.</div></div>
-<div class="ttc" id="aclassJobQueue_html_a79de1d086432c032080063c8dd7b3253"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253">JobQueue::push</a></div><div class="ttdeci">void push(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00033">job_queue.cpp:33</a></div></div>
-<div class="ttc" id="aclassJobQueue_html_a9129916bf11174629c02459cf0a0313c"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c">JobQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Checks whether the queue is currently empty.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00073">job_queue.cpp:73</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_a79de1d086432c032080063c8dd7b3253"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253">JobQueue::push</a></div><div class="ttdeci">void push(std::unique_ptr&lt; IJob &gt; job)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00032">job_queue.cpp:32</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_a9129916bf11174629c02459cf0a0313c"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#a9129916bf11174629c02459cf0a0313c">JobQueue::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Checks whether the queue is currently empty.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00072">job_queue.cpp:72</a></div></div>
 <div class="ttc" id="aclassJobQueue_html_ab9c7798005e708d3d1d5ce63c59d31a2"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#ab9c7798005e708d3d1d5ce63c59d31a2">JobQueue::JobQueue</a></div><div class="ttdeci">JobQueue()=default</div><div class="ttdoc">Default constructor.</div></div>
-<div class="ttc" id="aclassJobQueue_html_ae2fbfee64d3c0ca5fbe2919dc7179406"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#ae2fbfee64d3c0ca5fbe2919dc7179406">JobQueue::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the current number of elements in the queue.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00087">job_queue.cpp:87</a></div></div>
-<div class="ttc" id="aclassJobQueue_html_afba89c3dc3da5dd8b0b788b095f57d95"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">JobQueue::pop</a></div><div class="ttdeci">std::unique_ptr&lt; IJob &gt; pop()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00048">job_queue.cpp:48</a></div></div>
-<div class="ttc" id="aclassJobQueue_html_afbd01029b5918d1559dc612412e3d18c"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c">JobQueue::is_closed</a></div><div class="ttdeci">bool is_closed()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00134">job_queue.cpp:134</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_ae2fbfee64d3c0ca5fbe2919dc7179406"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#ae2fbfee64d3c0ca5fbe2919dc7179406">JobQueue::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the current number of elements in the queue.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00086">job_queue.cpp:86</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_afba89c3dc3da5dd8b0b788b095f57d95"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#afba89c3dc3da5dd8b0b788b095f57d95">JobQueue::pop</a></div><div class="ttdeci">std::unique_ptr&lt; IJob &gt; pop()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00047">job_queue.cpp:47</a></div></div>
+<div class="ttc" id="aclassJobQueue_html_afbd01029b5918d1559dc612412e3d18c"><div class="ttname"><a href="../../da/d3d/classJobQueue.html#afbd01029b5918d1559dc612412e3d18c">JobQueue::is_closed</a></div><div class="ttdeci">bool is_closed()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d4c/job__queue_8cpp_source.html#l00133">job_queue.cpp:133</a></div></div>
 <div class="ttc" id="ai__job_8h_html"><div class="ttname"><a href="../../d0/df3/i__job_8h.html">i_job.h</a></div><div class="ttdoc">Abstract interface for jobs.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -189,7 +191,7 @@ $(document).ready(function(){initNavTree('db/d9d/job__queue_8h_source.html','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../db/d9d/job__queue_8h.html">job_queue.h</a></li>
-    <li class="footer">Generated on Fri Nov 7 2025 14:41:06 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 14 2025 07:11:31 for task_scheduler by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

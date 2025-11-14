@@ -8,21 +8,23 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="303,33,275,69,271,66,298,29"/>
 <area shape="rect" id="Node000005" href="$db/d9d/job__queue_8h.html" title=" " alt="" coords="312,79,413,104"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="320,29,348,66,344,69,316,33"/>
-<area shape="rect" id="Node000010" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="437,79,512,104"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="337,28,436,71,434,76,335,33"/>
-<area shape="rect" id="Node000012" href="$d8/d07/print__job_8h.html" title=" " alt="" coords="536,79,627,104"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="354,28,525,73,524,78,352,33"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="241,152,383,177"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="356,106,330,142,326,139,352,103"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="154,152,217,177"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="335,106,228,149,226,144,333,102"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="408,152,472,177"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="377,102,419,141,415,144,373,106"/>
-<area shape="rect" id="Node000009" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="497,152,562,177"/>
-<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="390,102,491,144,489,149,388,106"/>
-<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="471,106,454,141,449,138,467,103"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="587,152,645,177"/>
-<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="499,102,582,143,580,148,496,106"/>
-<area shape="poly" id="edge14_Node000012_Node000009" title=" " alt="" coords="575,106,548,142,544,139,571,103"/>
-<area shape="poly" id="edge13_Node000012_Node000011" title=" " alt="" coords="589,103,607,138,602,141,585,106"/>
+<area shape="rect" id="Node000011" href="$d1/d8c/logger_8h.html" title="Thread&#45;safe logging utility with multiple verbosity levels." alt="" coords="437,79,512,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="337,28,436,71,434,76,335,33"/>
+<area shape="rect" id="Node000013" href="$d8/d07/print__job_8h.html" title=" " alt="" coords="536,79,627,104"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="354,28,525,73,524,78,352,33"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="70,152,213,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="328,107,191,150,189,145,326,101"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="237,152,299,177"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="349,106,296,146,293,141,346,102"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="425,152,489,177"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="379,102,432,141,429,146,376,106"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="324,152,401,177"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="365,104,365,138,360,138,360,104"/>
+<area shape="rect" id="Node000010" href="$d0/df3/i__job_8h.html" title="Abstract interface for jobs." alt="" coords="514,152,579,177"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="393,102,505,144,503,149,391,107"/>
+<area shape="poly" id="edge11_Node000011_Node000008" title=" " alt="" coords="474,105,466,140,461,138,469,104"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="604,152,663,177"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="501,102,596,144,594,149,499,106"/>
+<area shape="poly" id="edge15_Node000013_Node000010" title=" " alt="" coords="578,106,561,141,556,138,573,103"/>
+<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="592,103,619,139,615,142,588,106"/>
 </map>

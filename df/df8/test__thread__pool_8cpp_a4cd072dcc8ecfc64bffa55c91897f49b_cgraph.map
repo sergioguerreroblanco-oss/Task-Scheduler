@@ -1,0 +1,25 @@
+<map id="TEST_F" name="TEST_F">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,75,131"/>
+<area shape="rect" id="Node000002" href="$dc/de7/classThreadPool.html#a51043ddfec7df4cef92160ca85f583d2" title=" " alt="" coords="141,7,299,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,103,80,72,121,41,136,34,138,39,124,46,83,76,54,107"/>
+<area shape="rect" id="Node000004" href="$de/d3d/classFakeSlowJob.html#aa78279ce1b59c880d21d4a7b3daef253" title=" " alt="" coords="130,56,310,81"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="74,105,122,90,151,82,153,87,123,95,76,110"/>
+<area shape="rect" id="Node000005" href="$dc/de7/classThreadPool.html#a7e017a077f358e3718f672a8bfb58922" title="shutdown" alt="" coords="123,105,317,131"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="75,115,109,115,109,121,75,121"/>
+<area shape="rect" id="Node000010" href="$dc/de7/classThreadPool.html#a16e5927283fc2e1828f08079bb010d52" title="join" alt="" coords="155,155,285,180"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="76,126,123,139,157,149,156,154,122,145,74,131"/>
+<area shape="rect" id="Node000011" href="$dc/de7/classThreadPool.html#a2e2c2e32e16067762ae159e61e76e775" title="Starts." alt="" coords="376,205,509,231"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="53,129,82,161,102,178,124,190,184,210,246,220,307,224,362,223,362,228,307,229,246,226,182,215,122,195,99,182,78,165,49,133"/>
+<area shape="rect" id="Node000003" href="$da/d3d/classJobQueue.html#a79de1d086432c032080063c8dd7b3253" title=" " alt="" coords="381,5,504,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,16,367,16,367,21,300,22"/>
+<area shape="rect" id="Node000006" href="$db/d67/classLogger.html#afaac8d8aba7262900267f1e3779bd657" title="Logs an informational message (INFO level)." alt="" coords="568,156,667,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="283,103,365,91,444,81,478,81,521,92,564,115,597,144,593,148,561,119,519,96,478,86,444,86,366,97,284,108"/>
+<area shape="rect" id="Node000008" href="$dc/de7/classThreadPool.html#aa12157caf7e934a8f56c6f9ce79af4b1" title="join" alt="" coords="379,107,506,132"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="318,116,365,116,365,122,318,121"/>
+<area shape="rect" id="Node000009" href="$da/d3d/classJobQueue.html#a2d83400746c6eae06c5d88a5a7f48a4b" title="Shutdown the queue, unblocking all waiting threads." alt="" coords="365,156,520,181"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="277,128,373,150,372,156,276,133"/>
+<area shape="rect" id="Node000007" href="$db/d67/classLogger.html#aa447c3fe852645bbd1f59168295f48fb" title="Core logging function that prints a message with explicit severity." alt="" coords="715,156,809,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="667,166,701,166,701,171,667,171"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="520,166,554,166,554,171,520,171"/>
+<area shape="poly" id="edge12_Node000011_Node000006" title=" " alt="" coords="488,203,557,183,559,188,489,208"/>
+</map>
