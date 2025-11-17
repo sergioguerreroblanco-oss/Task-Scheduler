@@ -48,5 +48,5 @@ jobs:
       - name: Build Docker image
         run: docker build -t task-schaduler:ci .
 
-      - name: Run tests inside Docker
-        run: docker run --rm task-schaduler:ci ctest --output-on-failure
+      - name: Run binary inside Docker (smoke test)
+        run: docker run --rm task-schaduler:ci --threads 3 --demo

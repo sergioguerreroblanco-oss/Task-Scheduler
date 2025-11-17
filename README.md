@@ -1,6 +1,6 @@
 # Task Scheduler
 
-![CI](https://github.com/sergioguerreroblanco-oss/task_scheduler/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/sergioguerreroblanco-oss/Task-Scheduler/actions/workflows/ci.yml/badge.svg)
 
 
 ---
